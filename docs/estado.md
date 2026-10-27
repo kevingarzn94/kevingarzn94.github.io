@@ -1,5 +1,7 @@
 # Estado
 
-Primera versión de diseño e implementación. Sitio creado en Sites con acceso privado; publicación pendiente. La versión pública para postulaciones requiere completar la selección fotográfica y revisar los contenidos editoriales.
+Primera versión del portafolio implementada. Sitio creado en Sites con acceso privado; paquete preparado para publicar. Contactos y redes confirmados por Kevin incorporados. Archivo fotográfico enlazado a Instagram y Flickr; selección de imágenes para galería local pendiente.
+
+Verificados: compilación, recursos locales, anclas, IDs, idioma, h1, alt y apertura del detalle del caso en navegador. No se realizaron pruebas en dispositivos físicos.
 
 La carpeta Ahead fue consultada como referencia de lectura. No se copiaron sus configuraciones, credenciales, historial Git ni backend.

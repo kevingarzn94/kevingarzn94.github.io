@@ -26,3 +26,6 @@ Estas imágenes documentan proyectos; no se presentan como fotografías tomadas 
 - Confirmar permanencia del enlace temporal de Colonia antes de enviar postulaciones.
 
 Fuentes: https://weareahead.co/ ; https://www.behance.net/kevingarzn ; https://we-are-ahead-dev--colonia-revision-v5u9agwe.web.app/ ; información aportada por Kevin el 27 de octubre de 2026.
+
+## Contacto confirmado
+Kevin autorizó añadir WhatsApp +57 319 321 2236, Instagram @kevingarzon, fotografía @kev.frame, Facebook y Flickr. Se eliminaron parámetros de seguimiento de los enlaces. Instagram fotográfico y Flickr se presentan como archivos en construcción.
