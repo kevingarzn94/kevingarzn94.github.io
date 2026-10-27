@@ -20,8 +20,8 @@ export async function build() {
   await writeFile(path.join(root, 'dist/index.html'), html);
   // CSS imports must precede all rules.
   const styles = await read('libs/ui/styles/site.css');
-  const imports = styles.match(/@import[^;]+;/g) || [];
-  await writeFile(path.join(root, 'dist/style.css'), imports.join('\n') + '\n' + await read('libs/ui/styles/tokens.css') + styles.replace(/@import[^;]+;/g, ''));
+  const imports = styles.match(/@import\s+url\([^)]*\);/g) || [];
+  await writeFile(path.join(root, 'dist/style.css'), imports.join('\n') + '\n' + await read('libs/ui/styles/tokens.css') + styles.replace(/@import\s+url\([^)]*\);/g, ''));
   await writeFile(path.join(root, 'dist/app.js'), await read('libs/ui/motion/hero.js'));
   console.log('Build listo: dist/');
 }

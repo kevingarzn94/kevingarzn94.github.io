@@ -16,3 +16,7 @@ assert(html.includes('lang="es"'),'Idioma no declarado');
 for (const image of html.matchAll(/<img\b[^>]*>/g)) assert(/alt="[^"]*"/.test(image[0]), 'Imagen sin alt');
 assert(!/{{/.test(html),'Contenido sin renderizar');
 console.log('OK: recursos, anclas, IDs, idioma, h1 y textos alternativos.');
+
+const css = await readFile(path.join(root,'dist/style.css'),'utf8');
+assert(css.startsWith("@import url('https://fonts.googleapis.com/"), 'Import de fuente incompleto');
+assert(css.indexOf("display=swap');") < css.indexOf(':root'), 'Tokens insertados dentro de la URL de fuentes');
