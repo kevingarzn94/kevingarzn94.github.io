@@ -27,3 +27,7 @@ Actualizado el 29 de octubre de 2026. Kevin decidió publicar el portafolio desd
 ## Dominio propio (después)
 
 Settings → Pages → Custom domain, más los registros DNS que indique GitHub. Entonces quitar `noindex` de las plantillas.
+
+## Cloudflare (descartado el 29/10/2026)
+
+Cloudflare entregó `kevingarzon.kevingarzon09.workers.dev` (Workers, no Pages) y Kevin prefirió quedarse con GitHub Pages: **https://kevingarzn94.github.io/**. Si se creó el proyecto en Cloudflare, puede borrarse desde su panel (Workers & Pages → proyecto → Settings → Delete) para no tener una copia pública duplicada. Un nombre en la URL se logra mejor con dominio propio (sección anterior) o renombrando la cuenta de GitHub.

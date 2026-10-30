@@ -544,3 +544,54 @@ html[data-motion=on] .v2 .contact h2 .orange{animation:av-spin 16s linear infini
 }
 .v2 .wedding-credits-list dd{font-family:var(--font-sans);font-weight:700;letter-spacing:-.035em}
 .wedding-v2 .wedding-credits-list dd{font-family:var(--font-editorial);font-weight:400;letter-spacing:-.025em}
+
+/* ---------- PARTE 5 ---------- */
+.v2 .contact .contact-bottom{display:flex!important;flex-direction:column;align-items:center;width:100%;max-width:none!important;grid-template-columns:none!important}
+.v2 .contact .contact-bottom>p{text-align:center}
+.v2 .contact .social-links{width:100%;max-width:760px;margin-inline:auto;justify-content:center!important;align-items:center}
+.v2 .contact .social-links .whatsapp{background:#fff!important;color:var(--av-ink)!important;padding:16px 28px;font-size:16px;box-shadow:0 18px 40px -18px #000;transition:transform .4s var(--av-ease),background .3s}
+.v2 .contact .social-links .whatsapp:hover{background:var(--av-coral)!important;transform:translateY(-2px)}
+.v2 .contact .social-links .whatsapp .social-icon{color:var(--av-ink)}
+.v2 .contact .social-links>a:not(.whatsapp){opacity:.8}
+.v2 .contact .social-links>a:not(.whatsapp):hover{opacity:1}
+.viajero-v2 .av-card img{object-position:top}
+.viajero-v2 .viajero-screens{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--av-gap)}
+.viajero-v2 .viajero-screens figure{display:grid;grid-template-columns:1fr 1fr;gap:8px;align-content:start}
+.viajero-v2 .viajero-screens img{display:block;width:100%;aspect-ratio:834/1402;object-fit:cover;border-radius:14px}
+.viajero-v2 .viajero-screens figcaption{grid-column:1/-1}
+.colonia-v2 .av-hero{grid-template-rows:auto 1fr auto auto auto}
+.colonia-v2 .av-hero-title{align-self:center}
+@media (max-width:1100px){.viajero-v2 .viajero-screens{grid-template-columns:1fr 1fr}}
+@media (max-width:760px){.viajero-v2 .viajero-screens{grid-template-columns:1fr}}
+
+/* ---------- PARTE 6 · íconos vectoriales (no emojis) ---------- */
+.ic{display:inline-block;width:.78em;height:.78em;vertical-align:-.06em;flex:none;fill:none;stroke:currentColor;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round;overflow:visible}
+.ic-ast{width:.9em;height:.9em;stroke-width:2.8;vertical-align:-.1em}
+.wordmark .ic-ast{width:1em;height:1em;stroke-width:3}
+.orange .ic-ast,.av-asterisk .ic-ast,.start-symbol .ic-ast{width:1em;height:1em;stroke-width:2.2;vertical-align:top}
+.ic-left{margin-right:.15em}
+
+/* ---------- PARTE 6 · ajustes móviles ---------- */
+.wordmark{white-space:nowrap}
+body.v2>header nav a{white-space:nowrap}
+@media (max-width:760px){
+ body.v2>header{padding-block:16px}
+ body.v2>header nav{gap:16px;font-size:13px}
+ body.v2>header nav a:first-child{display:inline-flex}
+ body.v2>header nav a:not(:first-child):not(:last-child){display:none}
+ [data-reveal]:not(.is-in){transform:translateY(18px)}
+ .home-v2 .av-hero.home-hero{min-height:0;grid-template-rows:auto auto auto auto;gap:28px;padding-bottom:36px}
+ .home-v2 .home-hero .av-hero-title{padding-top:28px}
+ .v2 .av-index{left:auto;right:12px;bottom:12px;padding:4px 10px 4px 4px;gap:8px}
+ .v2 .av-index li:has([aria-current]){flex:none}
+ .v2 .av-index a{padding:8px 12px;font-size:12px}
+ .v2 .av-index .av-bar{display:none}
+ .v2 .av-journey-visual{position:static;height:auto;display:none}
+ .v2 .av-journey-steps{gap:40px}
+ .v2 .av-journey-steps article{min-height:0;opacity:1;padding:0;align-content:start}
+ .v2 .av-journey-steps article::before{content:"";display:block;aspect-ratio:4/3;border-radius:var(--av-radius);background:var(--av-soft) var(--frame) center/contain no-repeat;box-shadow:inset 0 0 0 1px var(--av-line);margin-bottom:8px}
+ .v2 .contact h2 .orange{top:-1.1em}
+ .v2 .contact .social-links{gap:12px 18px}
+ .v2 .contact .social-links .whatsapp{font-size:15px;padding:14px 22px}
+}
+.v2 .av-hero h1{padding:0!important}
