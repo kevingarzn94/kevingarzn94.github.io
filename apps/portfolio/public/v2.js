@@ -214,3 +214,34 @@
   addEventListener('scroll', () => preview.classList.remove('is-visible'), { passive: true });
  }
 })();
+
+// Screen detail viewer: native modal, Escape and focus restoration.
+(() => {
+ const dialog = document.querySelector('.screen-dialog');
+ if (!dialog || typeof dialog.showModal !== 'function') return;
+ const image = dialog.querySelector('img');
+ const title = dialog.querySelector('h2');
+ const zoom = dialog.querySelector('[data-screen-zoom]');
+ let trigger;
+ for (const link of document.querySelectorAll('[data-screen-detail]')) {
+  link.setAttribute('aria-haspopup', 'dialog');
+  link.addEventListener('click', event => {
+   if (event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
+   event.preventDefault(); trigger = link;
+   image.src = link.href; image.alt = link.querySelector('img').alt;
+   title.textContent = image.alt;
+   dialog.classList.remove('is-zoomed'); zoom.setAttribute('aria-pressed', 'false');
+   zoom.textContent = 'Ampliar detalle';
+   dialog.showModal();
+   dialog.querySelector('.screen-dialog-view').scrollTop = 0;
+  });
+ }
+ zoom.addEventListener('click', () => {
+  const expanded = dialog.classList.toggle('is-zoomed');
+  zoom.setAttribute('aria-pressed', String(expanded));
+  zoom.textContent = expanded ? 'Ver completa' : 'Ampliar detalle';
+ });
+ dialog.querySelector('[data-screen-close]').addEventListener('click', () => dialog.close());
+ dialog.addEventListener('click', event => { if (event.target === dialog) dialog.close(); });
+ dialog.addEventListener('close', () => trigger?.focus({preventScroll:true}));
+})();

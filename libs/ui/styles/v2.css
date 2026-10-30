@@ -50,7 +50,7 @@ body.v2>header nav{display:flex;gap:22px;font-size:14px}
 
 /* Fan of key pieces (Spencer-like stack that opens on scroll) */
 .v2 .av-fan{--s:.38;--mx:0;--my:0;position:relative;min-height:clamp(220px,23vw,340px);perspective:1400px}
-.v2 .av-card{--w:clamp(150px,17.5vw,300px);position:absolute;left:50%;top:50%;width:var(--w);aspect-ratio:4/5;margin:0;border-radius:var(--av-radius);overflow:hidden;background:#222;box-shadow:0 30px 60px -20px #000c,0 0 0 1px #ffffff14;
+.v2 .av-card{--w:clamp(150px,17.5vw,300px);position:absolute;left:50%;top:50%;width:var(--w);aspect-ratio:1/1;margin:0;border-radius:var(--av-radius);overflow:hidden;background:#222;box-shadow:0 30px 60px -20px #000c,0 0 0 1px #ffffff14;
  transform:translate(-50%,-50%) translateX(calc(var(--i) * (34% + 70% * var(--s)))) translateY(calc(var(--a) * (8px + 22px * var(--s)))) rotate(calc(var(--i) * (7deg - 3deg * var(--s)))) rotateY(calc(var(--mx) * 10deg)) rotateX(calc(var(--my) * -8deg));
  z-index:calc(10 - var(--a));transition:transform .7s var(--av-ease),box-shadow .4s}
 .v2 .av-card img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .8s var(--av-ease)}
@@ -316,13 +316,13 @@ html[data-motion=off] .v2 .av-card,html[data-motion=off] .v2 .av-spread figure,h
 .home-v2 .home-intro{max-width:52ch;margin:0;font-size:clamp(16px,1.3vw,19px);line-height:1.55;opacity:.78}
 .home-v2 .home-hero .av-actions{justify-content:center}
 .home-v2 .home-featured{display:grid;grid-template-columns:1.25fr 1fr;gap:var(--av-gap)}
-.home-v2 .home-feature{position:relative;display:grid;gap:18px;color:#fff;text-decoration:none}
+.home-v2 .home-feature{position:relative;display:grid;align-content:start;align-self:start;gap:16px;color:#fff;text-decoration:none}
 .home-v2 .home-feature-media{position:relative;display:block;overflow:hidden;border-radius:calc(var(--av-radius) + 6px);aspect-ratio:4/3.1;background:#1a1a1a}
 .home-v2 .home-feature:nth-child(2) .home-feature-media{aspect-ratio:4/5}
 .home-v2 .home-feature-media img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 1.1s var(--av-ease),filter .8s}
 .home-v2 .home-feature-logo{position:absolute;left:8%;top:50%;width:46%!important;height:auto!important;transform:translateY(-50%);object-fit:contain!important;filter:drop-shadow(0 18px 40px #0008)}
 .home-v2 .home-feature:hover .home-feature-media img:first-child{transform:scale(1.05)}
-.home-v2 .home-feature-copy{display:grid;gap:8px}
+.home-v2 .home-feature-copy{display:grid;align-content:start;gap:8px}
 .home-v2 .home-feature-copy strong{font:700 clamp(30px,3.6vw,56px)/1 var(--font-sans);letter-spacing:-.045em}
 .home-v2 .home-feature-copy>span:last-child{opacity:.7;max-width:44ch}
 .home-v2 .home-feature-arrow{position:absolute;right:18px;top:18px;display:grid;place-items:center;width:52px;height:52px;border-radius:50%;background:#fff;color:var(--av-ink);font-size:20px;transform:scale(.8) rotate(-20deg);opacity:0;transition:transform .5s var(--av-ease),opacity .3s}
@@ -386,7 +386,7 @@ html[data-motion=off] .v2 .av-card,html[data-motion=off] .v2 .av-spread figure,h
 .wedding-v2 .av-paper .av-display em{color:var(--av-accent)}
 .wedding-v2 .wedding-hero::before{background:linear-gradient(180deg,#0d0d0d00 30%,#0d0d0d 92%)}
 .wedding-v2 .wedding-hero-line{margin:0;font:italic 400 clamp(18px,1.8vw,26px)/1.4 var(--font-editorial);opacity:.85}
-.wedding-v2 .av-card{aspect-ratio:2/3;--w:clamp(130px,14vw,240px)}
+.wedding-v2 .av-card{aspect-ratio:1/1;--w:clamp(130px,14vw,240px)}
 .wedding-v2 .av-card img{filter:saturate(.9)}
 .wedding-v2 .wedding-duo figure:nth-child(2){margin-top:clamp(40px,8vw,140px)}
 .wedding-v2 .wedding-duo img{aspect-ratio:4/5;object-fit:cover}
@@ -681,3 +681,28 @@ html:not(.av-js) .v2 .av-index ol{display:flex;flex-wrap:wrap}
  .home-v2 .start-steps p{max-width:60ch}
  .home-v2 .start-copy .av-button{max-width:100%;box-sizing:border-box}
 }
+
+/* Focus remains distinct on both photographs and flat light/dark surfaces. */
+.v2 :focus-visible{outline:3px solid #171717;outline-offset:3px;box-shadow:0 0 0 6px #fff}
+.v2 :is(.av-ink,.av-hero,.working-note,.contact,.av-next,.av-index) :focus-visible{outline-color:#fff;box-shadow:0 0 0 6px #171717}
+.v2 .av-index a[aria-current=step]:focus-visible{outline-color:#171717;outline-offset:-4px;box-shadow:none}
+.viajero-v2 .viajero-screens{grid-template-columns:repeat(2,minmax(0,1fr));gap:48px 32px;margin-block:32px 60px}
+.viajero-v2 .viajero-screens figure{margin:0;gap:16px}
+.viajero-v2 .viajero-screens img{height:auto;aspect-ratio:auto;object-fit:contain}
+.v2 .screen-detail{display:block;min-width:0;color:inherit;text-decoration:none;border-radius:14px}
+.v2 .screen-detail span{display:block;text-align:center;padding:12px 4px;font-size:13px;text-decoration:underline;text-underline-offset:4px}
+.v2 .screen-help{max-width:65ch;line-height:1.6}
+.v2 .screen-dialog{width:min(1000px,calc(100vw - 32px));max-width:none;height:calc(100dvh - 32px);max-height:none;padding:0;border:1px solid #555;border-radius:18px;background:#171717;color:#fff;overflow:hidden}
+.v2 .screen-dialog::backdrop{background:#000c}
+.v2 .screen-dialog[open]{display:flex;flex-direction:column}
+.v2 .screen-dialog-toolbar{display:flex;align-items:center;gap:12px;padding:16px;border-bottom:1px solid #555;flex-wrap:wrap}
+.v2 .screen-dialog-toolbar h2{font:600 17px/1.4 var(--font-sans);margin:0 auto 0 0}
+.v2 .screen-dialog-toolbar button{min-height:44px;padding:10px 16px;border:1px solid #999;border-radius:24px;background:#fff;color:#171717;font:inherit;cursor:pointer}
+.v2 .screen-dialog-view{flex:1;min-height:0;overflow:auto;padding:20px;overscroll-behavior:contain}
+.v2 .screen-dialog-view img{display:block;max-width:100%;width:auto;height:100%;object-fit:contain;margin:auto}
+.v2 .screen-dialog.is-zoomed .screen-dialog-view img{width:834px;max-width:none;height:auto}
+body:has(.screen-dialog[open]){overflow:hidden}
+@media(max-width:1000px){.viajero-v2 .viajero-screens{grid-template-columns:minmax(0,1fr)}}
+@media(max-width:480px){.viajero-v2 .viajero-screens figure{gap:12px}.v2 .screen-dialog-toolbar h2{flex-basis:100%}.v2 .screen-dialog-view{padding:12px}}
+
+.home-v2 .home-feature-media .wedding-cover{object-position:50% 80%}

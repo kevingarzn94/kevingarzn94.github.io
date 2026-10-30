@@ -36,10 +36,6 @@ if(panel){panel.addEventListener('pointermove',event=>{if(document.documentEleme
 for(const item of document.querySelectorAll('.start-steps li')){
  const button=item.querySelector('button'),description=item.querySelector('p');
  const show=value=>{button.setAttribute('aria-expanded',String(value));description.hidden=!value};
- item.addEventListener('pointerenter',event=>{if(event.pointerType==='mouse')show(true)});
- item.addEventListener('pointerleave',()=>{if(!item.contains(document.activeElement))show(false)});
  button.addEventListener('click',()=>show(button.getAttribute('aria-expanded')!=='true'));
  button.addEventListener('keydown',event=>{if(event.key==='Escape')show(false)});
- item.addEventListener('focusout',event=>{if(!item.contains(event.relatedTarget))show(false)});
- button.addEventListener('focus',()=>{if(button.matches(':focus-visible'))show(true)});
 }
