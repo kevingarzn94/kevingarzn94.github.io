@@ -31,7 +31,7 @@ for (const file of pages) {
     if(hash && idMap.has(target)) assert(idMap.get(target).has(hash),`${file}: enlace roto ${m[1]}`);
   }
 }
-assert.equal(pages.length,11,'Inicio y diez proyectos');
+assert.equal(pages.length,9,'Inicio y ocho proyectos');
 assert(!(await readdir(path.join(dist,'assets'))).some(file=>file.startsWith('prodesa-')));
 const css=await readFile(path.join(dist,'style.css'),'utf8');
 assert(!/@import/.test(css),'No cargar fuentes externas');

@@ -403,10 +403,10 @@ html[data-motion=off] .v2 .av-card,html[data-motion=off] .v2 .av-spread figure,h
 .wedding-v2 .wedding-steps li{display:flex;gap:16px;padding:16px 0;border-bottom:1px solid var(--av-line);font-size:17px}
 .wedding-v2 .wedding-steps span{color:var(--av-accent);font-variant-numeric:tabular-nums}
 .wedding-v2 .wedding-spread{grid-template-columns:1fr 1fr}
-.wedding-v2 .wedding-credits-list{display:grid;grid-template-columns:repeat(2,1fr);gap:0 var(--av-gap);margin:0}
-.wedding-v2 .wedding-credits-list div{display:grid;gap:8px;padding:26px 0;border-top:1px solid var(--av-ink)}
-.wedding-v2 .wedding-credits-list dt{font-size:12px;letter-spacing:.12em;text-transform:uppercase;opacity:.55}
-.wedding-v2 .wedding-credits-list dd{margin:0;font:400 clamp(28px,3.4vw,52px)/1.05 var(--font-editorial);letter-spacing:-.025em}
+.v2 .wedding-credits-list{display:grid;grid-template-columns:repeat(2,1fr);gap:0 var(--av-gap);margin:0}
+.v2 .wedding-credits-list div{display:grid;gap:8px;padding:26px 0;border-top:1px solid var(--av-ink)}
+.v2 .wedding-credits-list dt{font-size:12px;letter-spacing:.12em;text-transform:uppercase;opacity:.55}
+.v2 .wedding-credits-list dd{margin:0;font:400 clamp(28px,3.4vw,52px)/1.05 var(--font-editorial);letter-spacing:-.025em}
 .wedding-v2 #creditos>.av-button{justify-self:start}
 .wedding-v2 .av-next-card strong{font-family:var(--font-sans)}
 
@@ -426,7 +426,7 @@ html[data-motion=off] .v2 .av-card,html[data-motion=off] .v2 .av-spread figure,h
  .home-v2 .av-hero-top>span:not(.av-hero-role){display:none}
  .home-v2 .av-hero-role{font-size:11px;max-width:60%}
  .home-v2 footer{flex-direction:column;align-items:flex-start}
- .wedding-v2 .wedding-film,.wedding-v2 .wedding-credits-list,.wedding-v2 .wedding-spread{grid-template-columns:1fr}
+ .wedding-v2 .wedding-film,.v2 .wedding-credits-list,.wedding-v2 .wedding-spread{grid-template-columns:1fr}
  .wedding-v2 .wedding-duo figure:nth-child(2){margin-top:0}
  .wedding-v2 .av-card{--w:34vw}
 }
@@ -471,3 +471,76 @@ body.v2>header{background:#fff;color:var(--av-ink);border-bottom:1px solid var(-
  .breakers-v2 .av-sequence{grid-template-columns:repeat(3,86vw)}
 }
 .v2 .av-act>.av-button{justify-self:start}
+
+/* ---------- PARTE 4 ---------- */
+/* Ancho completo: los fondos llegan al borde; el contenido se limita con el padding lateral */
+.v2{--av-pad:max(clamp(20px,5vw,80px),calc((100vw - 1640px) / 2))}
+body.v2>header,body.v2>footer,.v2 main,.v2 main>section,.v2 main>section:not(.hero){max-width:none!important;margin-inline:0!important}
+body.v2>header{padding-inline:var(--av-pad)}
+.v2 .contact{padding-inline:var(--av-pad)!important}
+/* Nav alineada */
+body.v2>header nav{display:flex;align-items:center;gap:clamp(18px,2.4vw,32px);font-size:14px}
+body.v2>header nav a{display:inline-flex;align-items:center;gap:5px;line-height:1;padding:6px 0}
+body.v2>header nav a span{display:inline-block;line-height:1;font-size:1em;transform:translateY(-1px)}
+/* Bogotá junto al switch */
+.v2 .av-hero-tools{display:flex;align-items:center;gap:18px}
+.v2 .av-hero-tools>span{opacity:.7;letter-spacing:.08em;text-transform:uppercase;font-size:12px}
+/* Derechos */
+.v2 .av-rights{margin:0;font-size:12px;line-height:1.5;opacity:.55;text-align:center}
+/* Tarjeta Behance blanca con overlay coral */
+.home-v2 .home-behance{position:relative;overflow:hidden;isolation:isolate;background:#fff}
+.home-v2 .home-behance::before{content:"";position:absolute;inset:0;z-index:-1;background:var(--av-coral);transform:scaleY(0);transform-origin:bottom;transition:transform .6s var(--av-ease)}
+.home-v2 .home-behance:hover,.home-v2 .home-behance:focus-visible{background:#fff}
+.home-v2 .home-behance:hover::before,.home-v2 .home-behance:focus-visible::before{transform:scaleY(1)}
+/* Miniatura tipográfica (Skipper) */
+.home-v2 .home-tile-type .home-tile-media{display:grid;place-content:center;gap:6px;text-align:center;background:linear-gradient(135deg,#ec111a,#8f0b11);transition:filter .5s}
+.home-v2 .home-tile-type .home-tile-media b{font:800 clamp(34px,4vw,64px)/1 var(--font-sans);letter-spacing:-.05em;color:#fff;transition:transform .9s var(--av-ease)}
+.home-v2 .home-tile-type .home-tile-media i{font:italic 400 16px/1 var(--font-editorial);color:#ffffffcc}
+.home-v2 .home-tile-type:hover .home-tile-media b{transform:scale(1.06)}
+/* Polaroid con movimiento */
+.home-v2 .about-visual{--p:1}
+.home-v2 .analog-photo{transform:translateY(calc((1 - var(--p)) * 90px)) rotate(calc(-14deg + 9deg * var(--p)));transition:transform .2s linear;animation:none!important}
+html[data-motion=on] .home-v2 .analog-photo img{animation:av-sway 5.5s ease-in-out infinite alternate;transform-origin:50% 0}
+@keyframes av-sway{from{rotate:-1.6deg;translate:0 0}to{rotate:1.6deg;translate:0 -6px}}
+.home-v2 .about-visual:hover .analog-photo{transform:translateY(-8px) rotate(-1deg) scale(1.03);transition:transform .6s var(--av-ease)}
+html[data-motion=on] .home-v2 .portrait{animation:av-breathe 9s ease-in-out infinite alternate}
+@keyframes av-breathe{to{transform:scale(1.015)}}
+/* Contacto con la gráfica del hero */
+.v2 .contact{position:relative;isolation:isolate;text-align:center;background:var(--av-ink)!important;padding-block:clamp(96px,12vw,180px) clamp(48px,6vw,80px)!important}
+.v2 .contact::after{content:"";position:absolute;inset:-10%;z-index:-1;background:radial-gradient(55% 45% at 50% 55%,#5c1f6355,transparent 70%);pointer-events:none}
+.v2 .contact .contact-top{display:flex;justify-content:space-between;align-items:center;position:absolute;left:var(--av-pad);right:var(--av-pad);top:24px}
+.v2 .contact h2{position:relative;margin:clamp(40px,5vw,72px) auto 0;font:700 clamp(52px,9vw,160px)/.92 var(--font-sans);letter-spacing:-.055em}
+.v2 .contact h2 em{font:italic 400 1em/1 var(--font-editorial);letter-spacing:-.02em;color:var(--av-coral)}
+.v2 .contact h2 .orange{position:absolute;left:50%;top:-.95em;margin-left:-.25em;font-size:.45em;line-height:1;color:var(--av-coral)}
+html[data-motion=on] .v2 .contact h2 .orange{animation:av-spin 16s linear infinite}
+.v2 .contact .contact-bottom{display:grid;justify-items:center;gap:26px;text-align:center;border-top:0!important;margin-top:clamp(28px,4vw,48px)}
+.v2 .contact .contact-bottom p{margin:0 auto;max-width:44ch;opacity:.75}
+.v2 .contact .social-links{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:14px 22px}
+.v2 .contact .social-links .whatsapp{flex-basis:100%;display:flex;justify-content:center}
+.v2 .contact .social-links .whatsapp{width:max-content;margin-inline:auto;padding:14px 24px;border-radius:999px;background:var(--av-coral);color:var(--av-ink)!important;font-weight:600}
+/* Internas: varios */
+.v2 .av-event-film{grid-column:1/-1}
+.v2 .av-principles-2{grid-template-columns:repeat(2,1fr)}
+.v2 .av-tall img{height:auto}
+.v2 .av-credits-dark div{border-color:#ffffff40!important}
+.wedding-v2 .wedding-scope{padding-top:28px;margin-top:8px}
+.colombia-v2 .av-film{grid-template-columns:minmax(0,1fr) minmax(0,1.6fr)}
+.colombia-v2 .av-film video{aspect-ratio:16/9}
+.colombia-v2 .av-hero::before{background:radial-gradient(60% 50% at 50% 62%,#1f4fd877,transparent 70%)}
+.colombia-v2 .av-display em,.colombia-v2 h1 em{color:#ffb21f}
+.colombia-v2 .ml-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--av-gap);margin:0;padding:0;list-style:none}
+.colombia-v2 .ml-stats li{display:grid;gap:8px;padding-top:20px;border-top:1px solid #ffffff40}
+.colombia-v2 .ml-stats b{font:700 clamp(36px,4.6vw,72px)/1 var(--font-sans);letter-spacing:-.04em;color:#ffb21f}
+.colombia-v2 .ml-stats span{opacity:.7;line-height:1.4}
+.centauro-v2 .av-hero::before{background:radial-gradient(60% 50% at 50% 62%,#1b5fd877,transparent 70%)}
+.centauro-v2 .av-display em,.centauro-v2 h1 em{color:#8fd14f}
+.viajero-v2 .av-hero::before{background:radial-gradient(60% 50% at 50% 62%,#f2a20077,transparent 70%)}
+.viajero-v2 .av-display em,.viajero-v2 h1 em{color:#ffb21f}
+@media (max-width:760px){
+ .v2 .av-hero-tools>span{display:none}
+ .v2 .contact .contact-top{position:static;margin-bottom:28px}
+ .v2 .av-principles-2,.colombia-v2 .av-film{grid-template-columns:1fr}
+ .colombia-v2 .ml-stats{grid-template-columns:1fr 1fr}
+}
+.v2 .wedding-credits-list dd{font-family:var(--font-sans);font-weight:700;letter-spacing:-.035em}
+.wedding-v2 .wedding-credits-list dd{font-family:var(--font-editorial);font-weight:400;letter-spacing:-.025em}
