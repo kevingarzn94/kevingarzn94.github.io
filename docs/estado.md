@@ -70,3 +70,12 @@ Pendiente: verificación funcional y visual nueva en navegador a 1440/820/390 px
 - Portada de Wedding reemplazada por DSC_0543.jpg suministrada por Kevin. Derivados JPEG de 1000 y 2000 px de ancho con srcset, sin modificar el original de 3609 × 5414 px. Encuadre al 80% vertical para conservar pareja y anuncio.
 - Comprobado a 1440, 820 y 390 px; sin desbordamiento y separaciones iguales. Captura privada: private/qa-navigation/portadas-actualizadas.png.
 - npm run check, npm run build y git diff --check correctos. Publicación pendiente junto con ajustes anteriores.
+
+### Correcciones de las 13 capturas móviles — 20261030-13
+- Resuelto origen compartido de solapamientos: las imágenes editoriales de av-duo y wedding-wide heredaban height:100% y no dejaban espacio para figcaption. Ahora height:auto, pie de foto en flujo y 32 px entre filas de av-duo.
+- Wedding: 24 px entre lámina/créditos y CTA de Behance. Corregidas las parejas de imágenes de Historia.
+- Centauro (paletas y lenguaje), Bimbo (campaña), Breakers (identidad/evento), Viajero (proceso) y Colombia Real (canales): pies contenidos en su figura, sin invadir la siguiente imagen.
+- Añadidas dimensiones intrínsecas a imágenes de figuras con pie para estabilizar su carga diferida.
+- Colonia: rondas con texto oscuro visible, tamaño y espaciado compactos; retirada lámina de biblioteca de componentes. Fragmento conservado en private/qa-navigation/colonia-components-retirado.html; recurso original intacto.
+- Validación en navegador a 390 px de los seis proyectos con av-duo; figuras contienen sus pies y no hay overflow horizontal. Revisión visual Bimbo/Colonia a 390, Centauro a 820 y Bimbo a 1440. Pendiente confirmación en iPhone físico por Kevin.
+- npm run check, npm run build y git diff --check correctos. Sin commit/push. Captura privada: private/qa-navigation/mobile-captions.png.
