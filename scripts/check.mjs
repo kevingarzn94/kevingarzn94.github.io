@@ -25,7 +25,8 @@ for (const file of pages) {
   const html=await readFile(path.join(dist,file),'utf8');
   for(const m of html.matchAll(/(?:src|href|poster)="([^"]+)"/g)) {
     if (/^(?:https?:|data:|mailto:)/.test(m[1])) continue;
-    const [resource,hash]=m[1].split('#');
+    const [resourceQ,hash]=m[1].split('#');
+    const resource=resourceQ.split('?')[0];
     const target=resource || file;
     await access(path.join(dist,target));
     if(hash && idMap.has(target)) assert(idMap.get(target).has(hash),`${file}: enlace roto ${m[1]}`);

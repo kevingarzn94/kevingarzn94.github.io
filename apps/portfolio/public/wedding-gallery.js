@@ -6,7 +6,7 @@ let currentPhoto = 0;
 const wrap = index => (index + galleryLinks.length) % galleryLinks.length;
 const controls = document.createElement('div');
 controls.className = 'gallery-controls';
-controls.innerHTML = '<button type="button" data-slide-prev aria-label="Foto anterior"><svg class="ic ic-left" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 12H4M10.5 5.5 4 12l6.5 6.5"/></svg></button><p aria-live="polite" aria-atomic="true"></p><button type="button" data-slide-next aria-label="Foto siguiente"><svg class="ic ic-right" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 12h16M13.5 5.5 20 12l-6.5 6.5"/></svg></button>';
+controls.innerHTML = '<button type="button" data-slide-prev aria-label="Foto anterior"><svg class="ic ic-left" viewBox="0 0 24 24" width=".8em" height=".8em" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 12H4M10.5 5.5 4 12l6.5 6.5"/></svg></button><p aria-live="polite" aria-atomic="true"></p><button type="button" data-slide-next aria-label="Foto siguiente"><svg class="ic ic-right" viewBox="0 0 24 24" width=".8em" height=".8em" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 12h16M13.5 5.5 20 12l-6.5 6.5"/></svg></button>';
 gallery.after(controls);
 gallery.classList.add('is-carousel');
 gallery.setAttribute('role', 'region');
