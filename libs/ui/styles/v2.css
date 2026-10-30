@@ -646,3 +646,38 @@ body.v2>header nav a{white-space:nowrap}
 /* Colonia: velo inferior para leer los datos sobre la foto */
 .colonia-v2 .av-hero::after{content:"";position:absolute;left:0;right:0;bottom:0;height:62%;z-index:-1;pointer-events:none;background:linear-gradient(180deg,transparent 0%,#0d0d0dcc 45%,#0d0d0df5 100%)}
 .colonia-v2 .av-hero .av-facts,.colonia-v2 .av-hero .av-rights{text-shadow:0 1px 12px #000a}
+
+/* Accessible chapter navigation: invisible means unavailable to focus. */
+.v2 .av-index{visibility:hidden}
+.v2 .av-index.is-visible{visibility:visible}
+.v2 .av-index-toggle{display:none}
+.v2 .av-index ol[hidden]{display:none!important}
+.v2 .av-index :focus-visible{outline:2px solid #fff;outline-offset:-3px}
+@media(max-width:900px){
+ .v2 .av-index{left:auto;right:16px;bottom:max(16px,env(safe-area-inset-bottom));width:min(340px,calc(100vw - 32px));display:flex;flex-direction:column;align-items:stretch;gap:0;padding:6px;border-radius:22px;transform:translateY(140%);max-height:calc(100svh - 32px);overflow-y:auto}
+ .v2 .av-index.is-visible{transform:none}
+ .v2 .av-index .av-percent,.v2 .av-index .av-bar{display:none}
+ .v2 .av-index-toggle{display:flex;align-items:center;gap:10px;width:100%;min-height:48px;padding:10px 14px;border:0;border-radius:16px;color:#fff;background:transparent;font:600 14px/1.3 var(--font-sans);cursor:pointer;text-align:left}
+ .v2 .av-index-current{margin-left:auto;font-size:12px;font-weight:400;color:#ddd;max-width:150px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+ .v2 .av-index-toggle .ic{transition:transform .2s}
+ .v2 .av-index-toggle[aria-expanded=true] .ic{transform:rotate(180deg)}
+ .v2 .av-index ol{display:flex;flex-direction:column;flex:0 1 auto;gap:4px;padding:6px 0 0;border-top:1px solid #ffffff30}
+ .v2 .av-index li,.v2 .av-index li:not(:has([aria-current])),.v2 .av-index li:has([aria-current]){display:block;flex:none}
+ .v2 .av-index a{min-height:44px;align-items:center;padding:12px 14px;font-size:14px;white-space:normal;border-radius:12px;color:#ddd}
+ .v2 .av-index a[aria-current=step]:focus-visible{outline-color:#111}
+}
+/* Without JS, keep every destination available as ordinary in-page navigation. */
+html:not(.av-js) .v2 .av-index{position:relative;inset:auto;transform:none;visibility:visible;opacity:1;pointer-events:auto;margin:20px auto;width:fit-content;max-width:calc(100% - 32px)}
+html:not(.av-js) .v2 .av-index ol{display:flex;flex-wrap:wrap}
+
+/* Keep the introduction readable before the desktop three-column layout fits. */
+@media(max-width:1050px){
+ .home-v2 .working-note{grid-template-columns:minmax(0,1fr);gap:28px}
+ .home-v2 .working-note .start-symbol{position:absolute;right:28px;top:28px;font-size:46px}
+ .home-v2 .start-copy{min-width:0}
+ .home-v2 .start-copy .av-label{display:block;padding-right:64px}
+ .home-v2 .start-copy h3{max-width:22ch;padding-right:64px}
+ .home-v2 .start-steps{display:block;width:100%;min-width:0}
+ .home-v2 .start-steps p{max-width:60ch}
+ .home-v2 .start-copy .av-button{max-width:100%;box-sizing:border-box}
+}

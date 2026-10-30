@@ -29,3 +29,22 @@ Validaciones: check y build correctos; recorrido sticky verificado en navegador 
 Wedding Art ampliado a siete capítulos: historia, galería, película, dirección visual, invitación, piezas del gran día y equipo. Galería de 19 fotografías optimizadas con ampliación y teclado. Video vertical de 98.8 segundos con portada, controles y carga a demanda. Las ocho internas comparten navegación por capítulos, progreso y movimiento; las más cortas conservan la extensión correspondiente a su material.
 
 Se verificaron apertura de galería, cambio con flecha derecha, cierre con Escape y retorno de foco. La reproducción del Save the Date se comprobó en navegador. Se reinició el servidor local con el compilador actualizado y soporte de rangos HTTP para video. No se publicó ni se modificaron los originales o archivos de Figma. La revisión móvil física sigue pendiente.
+
+## Navegación accesible · 30 de octubre de 2026
+
+Corregidos los dos hallazgos prioritarios del índice compartido:
+- Índice oculto con `visibility:hidden` e `inert`, fuera de la navegación por teclado. Permanece visible mientras contiene foco.
+- Menú desplegable de Secciones (portada) o Capítulos (internas) hasta 900 px. Lista completa, aria-expanded/aria-controls, Escape con retorno al botón, cierre al salir y foco al título del destino al seleccionar. En escritorio conserva los enlaces directos. Sin JS mantiene una navegación estática con todos los destinos.
+- Versión de CSS y v2.js subida a `20261030-8` en las nueve plantillas.
+- Se mantiene el criterio de Kevin: comprensión, usabilidad y acceso al trabajo por encima del efecto decorativo.
+
+Validado: `npm run check`, `npm run build`, `git diff --check`, `node --check apps/portfolio/public/v2.js`.
+Pendiente: verificación funcional y visual nueva en navegador a 1440/820/390 px y equipos físicos. El servidor QA local no pudo iniciarse: EPERM del entorno; la revisión automática de la solicitud de permiso falló por límite de uso. El navegador de herramientas bloqueó además el protocolo file:. No se eludieron las restricciones. El harness local de revisión está en `private/qa-navigation/` y no se publica. No se hizo commit ni push.
+
+### Revisión visual local completada — 2026-10-30
+- Vista local disponible en http://127.0.0.1:8767/ durante la sesión. La limitación anterior de revisión visual quedó resuelta.
+- Revisado el bloque «Un buen comienzo» a 390, 820 y 1440 px, sin desbordamiento horizontal. Corregida la colisión entre el asterisco absoluto y las tres columnas: hasta 1050 px, introducción y pasos se apilan.
+- Menú de portada y siete capítulos de Wedding comprobados en navegador: despliegue, Escape, selección y cierre. Activación por teclado de Sesión actualiza #galeria y sitúa el foco en t-galeria. Índice oculto con visibility:hidden e inert; no aparece en el árbol accesible.
+- Corregido cierre prematuro del menú al perder foco durante pointer-down; el foco del destino se aplica después de la navegación nativa.
+- Caché de las nueve plantillas: 20261030-9. npm run check, npm run build y git diff --check correctos.
+- Capturas locales en private/qa-navigation/. Revisión en tamaños de navegador, no dispositivos físicos. Sin commit ni push.

@@ -20,6 +20,62 @@
  const steps = [...document.querySelectorAll('[data-journey-step]')];
  const frames = [...document.querySelectorAll('[data-journey-frame]')];
 
+ // Disclosure navigation: hidden navigation is never keyboard-focusable.
+ const compactIndex = matchMedia('(max-width: 900px)');
+ let indexToggle = null;
+ let indexList = null;
+ function setIndexOpen(open, restoreFocus = false) {
+  if (!indexToggle) return;
+  if (restoreFocus) indexToggle.focus({ preventScroll: true });
+  indexToggle.setAttribute('aria-expanded', String(open));
+  index.classList.toggle('is-open', open);
+  indexList.hidden = compactIndex.matches && !open;
+ }
+ if (index) {
+  indexList = index.querySelector('ol');
+  indexList.id = 'chapter-links';
+  indexToggle = document.createElement('button');
+  indexToggle.type = 'button';
+  indexToggle.className = 'av-index-toggle';
+  indexToggle.setAttribute('aria-controls', indexList.id);
+  indexToggle.setAttribute('aria-expanded', 'false');
+  const label = document.body.classList.contains('home-v2') ? 'Secciones' : 'Capítulos';
+  indexToggle.innerHTML = `<span>${label}</span><span class="av-index-current"></span><svg class="ic ic-down" viewBox="0 0 24 24" width=".8em" height=".8em" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"/></svg>`;
+  index.prepend(indexToggle);
+  index.inert = true;
+  setIndexOpen(false);
+  indexToggle.addEventListener('click', () => setIndexOpen(indexToggle.getAttribute('aria-expanded') !== 'true'));
+  index.addEventListener('keydown', event => {
+   if (event.key === 'Escape' && indexToggle.getAttribute('aria-expanded') === 'true') {
+    event.preventDefault(); setIndexOpen(false, true);
+   }
+  });
+  document.addEventListener('click', event => {
+   if (compactIndex.matches && !index.contains(event.target)) setIndexOpen(false, indexList.contains(document.activeElement));
+  });
+  index.addEventListener('focusout', event => {
+   // Safari may clear focus on pointer-down before the chapter link receives its click.
+   // Outside clicks close separately; keyboard focus moving outside closes here.
+   if (event.relatedTarget && !index.contains(event.relatedTarget)) setIndexOpen(false);
+   queue();
+  });
+  for (const link of links) link.addEventListener('click', event => {
+   if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+   const section = document.getElementById(link.hash.slice(1));
+   const target = section?.querySelector('h2') || section;
+   if (target) { if (!target.hasAttribute('tabindex')) target.tabIndex = -1; setTimeout(() => target.focus({ preventScroll: true }), 0); }
+   setIndexOpen(false);
+   // Keep native anchor navigation, hash and browser history.
+  });
+  compactIndex.addEventListener('change', () => {
+   if (index.contains(document.activeElement)) {
+    if (compactIndex.matches) indexToggle.focus({ preventScroll: true });
+    else { indexList.hidden = false; (links.find(link => link.hasAttribute('aria-current')) || links[0])?.focus({ preventScroll: true }); }
+   }
+   setIndexOpen(false); queue();
+  });
+ }
+
  // Entrances: toggled once per element, never hide content when motion is off.
  const reveals = [...document.querySelectorAll('[data-reveal]')];
  const showAll = () => reveals.forEach(el => el.classList.add('is-in'));
@@ -76,7 +132,13 @@
    }
    const heroGone = hero ? hero.getBoundingClientRect().bottom < vh * .5 : true;
    const beforeEnd = contact ? contact.getBoundingClientRect().top > vh * .6 : true;
-   index.classList.toggle('is-visible', heroGone && beforeEnd);
+   const focused = index.contains(document.activeElement);
+   const visible = (heroGone && beforeEnd) || focused;
+   index.classList.toggle('is-visible', visible);
+   index.inert = !visible;
+   if (!visible) setIndexOpen(false);
+   const currentLabel = indexToggle.querySelector('.av-index-current');
+   currentLabel.textContent = links.find(link => link.hasAttribute('aria-current'))?.textContent.trim() || 'Explorar';
   }
 
   // Sticky Figma archive follows the step being read.
