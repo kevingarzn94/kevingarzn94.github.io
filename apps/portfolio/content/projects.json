@@ -1,0 +1,58 @@
+[
+  {
+    "slug": "ahead",
+    "title": "We Are Ahead",
+    "category": "Rebranding · UX/UI · Desarrollo",
+    "cover": "ahead.webp",
+    "description": "Una marca, dos recorridos y un proceso que empieza con las preguntas."
+  },
+  {
+    "slug": "wedding-art",
+    "title": "Wedding Art",
+    "category": "Fotografía · Video · Dirección de arte",
+    "cover": "wedding-portada.jpg",
+    "description": "Del Save the Date al gran día."
+  },
+  {
+    "slug": "centauro",
+    "title": "Centauro México",
+    "category": "Identidad visual · Brand guidelines",
+    "cover": "centauro.jpg",
+    "description": "Un sistema visual que conecta los distintos mensajes de una marca."
+  },
+  {
+    "slug": "viajero",
+    "title": "Viajero Co",
+    "category": "Diseño de experiencia · Interfaz móvil",
+    "cover": "viajero.jpg",
+    "description": "Una exploración de experiencia e interfaz para una aplicación de viajes."
+  },
+  {
+    "slug": "colonia",
+    "title": "Colonia 722",
+    "category": "Landing page · En desarrollo",
+    "cover": "colonia.jpg",
+    "description": "Una presencia digital para un lugar con historia."
+  },
+  {
+    "slug": "colombia-real",
+    "title": "La Colombia Real",
+    "category": "Dirección de arte · Motion graphics · Edición",
+    "cover": "ml-portada.jpg",
+    "description": "Diseño y movimiento en un proyecto de comunicación política."
+  },
+  {
+    "slug": "sweet-or-spicy",
+    "title": "Sweet or Spicy",
+    "category": "Exploración creativa · Dirección de arte",
+    "cover": "exploracion-listerine.jpg",
+    "description": "Una propuesta conceptual para Listerine que explora el contraste entre dos universos visuales."
+  },
+  {
+    "slug": "mansion-chilling",
+    "title": "La Mansión del Chilling",
+    "category": "Exploración creativa · Composición",
+    "cover": "exploracion-smirnoff.jpg",
+    "description": "Una propuesta visual para Smirnoff Spicy Tamarind."
+  }
+]

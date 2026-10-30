@@ -1,0 +1,11 @@
+{
+  "usage": "Exportaciones documentales del proceso de diseño; no son interfaces activas ni se modificaron los archivos de Figma.",
+  "ahead": {
+    "file": "https://www.figma.com/design/C5uZwJVkOmHSTDK3ryDpod/Ahead-Website-2026",
+    "nodes": {"ahead-figma-v1.webp":"3:2","ahead-figma-colors.webp":"41:172","ahead-figma-search.webp":"50:151","ahead-figma-cards.webp":"47:2","ahead-figma-flow.webp":"53:172"}
+  },
+  "colonia": {
+    "file": "https://www.figma.com/design/guI36JT7nAGkJ5r65AA4Wq/Colonia-722",
+    "nodes": {"colonia-figma-hero.webp":"16:412","colonia-figma-components.webp":"15:385"}
+  }
+}

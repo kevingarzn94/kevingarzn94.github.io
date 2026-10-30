@@ -1,0 +1,473 @@
+{
+  "title": "Wedding Art · Michelle & Felipe",
+  "photos": [
+    {
+      "asset": "wedding-photo-01.webp",
+      "source": "Archivo personal · DSC_0013.jpg"
+    },
+    {
+      "asset": "wedding-photo-02.webp",
+      "source": "Archivo personal · DSC_0071.jpg"
+    },
+    {
+      "asset": "wedding-photo-03.webp",
+      "source": "Archivo personal · DSC_0122.jpg"
+    },
+    {
+      "asset": "wedding-photo-04.webp",
+      "source": "Archivo personal · DSC_0176.jpg"
+    },
+    {
+      "asset": "wedding-photo-05.webp",
+      "source": "Archivo personal · DSC_0229.jpg"
+    },
+    {
+      "asset": "wedding-photo-06.webp",
+      "source": "Archivo personal · DSC_0250.jpg"
+    },
+    {
+      "asset": "wedding-photo-07.webp",
+      "source": "Archivo personal · DSC_0276.jpg"
+    },
+    {
+      "asset": "wedding-photo-08.webp",
+      "source": "Archivo personal · DSC_0312.jpg"
+    },
+    {
+      "asset": "wedding-photo-09.webp",
+      "source": "Archivo personal · DSC_0334.jpg"
+    },
+    {
+      "asset": "wedding-photo-10.webp",
+      "source": "Archivo personal · DSC_0370.jpg"
+    },
+    {
+      "asset": "wedding-photo-11.webp",
+      "source": "Archivo personal · DSC_0422.jpg"
+    },
+    {
+      "asset": "wedding-photo-12.webp",
+      "source": "Archivo personal · DSC_0468.jpg"
+    },
+    {
+      "asset": "wedding-photo-13.webp",
+      "source": "Archivo personal · DSC_0506.jpg"
+    },
+    {
+      "asset": "wedding-photo-14.webp",
+      "source": "Archivo personal · DSC_0534.jpg"
+    },
+    {
+      "asset": "wedding-photo-15.webp",
+      "source": "Archivo personal · DSC_0559.jpg"
+    },
+    {
+      "asset": "wedding-photo-16.webp",
+      "source": "Archivo personal · DSC_0588.jpg"
+    },
+    {
+      "asset": "wedding-photo-17.webp",
+      "source": "Archivo personal · DSC_0634.jpg"
+    },
+    {
+      "asset": "wedding-photo-18.webp",
+      "source": "Archivo personal · DSC_0655.jpg"
+    },
+    {
+      "asset": "wedding-photo-19.webp",
+      "source": "Archivo personal · DSC_0664.jpg"
+    },
+    {
+      "asset": "wedding-board-5.webp",
+      "source": "Archivo personal · Behance_Card_5.jpg"
+    },
+    {
+      "asset": "wedding-board-7.webp",
+      "source": "Archivo personal · Behance_Card_7.jpg"
+    },
+    {
+      "asset": "wedding-board-8.webp",
+      "source": "Archivo personal · Behance_Card_8.jpg"
+    },
+    {
+      "asset": "wedding-board-9.webp",
+      "source": "Archivo personal · Behance_Card_9.jpg"
+    }
+  ],
+  "video": {
+    "source": "Archivo personal · SaveTheDate.mp4",
+    "asset": "wedding-save-the-date.mp4",
+    "treatment": "Copia web vertical 720 × 1280, 98.8 segundos; montaje y audio originales conservados. Reproducción manual y carga bajo demanda."
+  },
+  "credits": {
+    "art_direction": [
+      "Paula Marín",
+      "Kevin Garzón"
+    ],
+    "photo_video": "Kevin Garzón",
+    "visual_design": "Paula Marín",
+    "web_development": "Felipe Pardo"
+  },
+  "figma": "https://www.figma.com/design/FERQtKwG0AOHle4w0tqhkm/WeedingM-F?node-id=0-1",
+  "figma_status": "Vista pública consultada; exportación por conector denegada por permisos.",
+  "gallery": [
+    {
+      "asset": "wedding-session-dsc_0013.webp",
+      "source": "Archivo personal · DSC_0013.jpg",
+      "alt": "Retrato de la pareja junto a una fachada de color",
+      "width": 1200,
+      "height": 1800
+    },
+    {
+      "asset": "wedding-session-dsc_0015.webp",
+      "source": "Archivo personal · DSC_0015.jpg",
+      "alt": "Michelle y Felipe · Save the Date · Fotograma 02",
+      "width": 1200,
+      "height": 1800
+    },
+    {
+      "asset": "wedding-session-dsc_0021.webp",
+      "source": "Archivo personal · DSC_0021.jpg",
+      "alt": "Michelle y Felipe · Save the Date · Fotograma 03",
+      "width": 1200,
+      "height": 1800
+    },
+    {
+      "asset": "wedding-session-dsc_0071.webp",
+      "source": "Archivo personal · DSC_0071.jpg",
+      "alt": "Un abrazo en una calle del centro",
+      "width": 1200,
+      "height": 1800
+    },
+    {
+      "asset": "wedding-session-dsc_0097.webp",
+      "source": "Archivo personal · DSC_0097.jpg",
+      "alt": "Michelle y Felipe · Save the Date · Fotograma 05",
+      "width": 1200,
+      "height": 1800
+    },
+    {
+      "asset": "wedding-session-dsc_0108.webp",
+      "source": "Archivo personal · DSC_0108.jpg",
+      "alt": "Michelle y Felipe · Save the Date · Fotograma 06",
+      "width": 1200,
+      "height": 1800
+    },
+    {
+      "asset": "wedding-session-dsc_0122.webp",
+      "source": "Archivo personal · DSC_0122.jpg",
+      "alt": "La pareja comparte su anuncio impreso",
+      "width": 1200,
+      "height": 1800
+    },
+    {
+      "asset": "wedding-session-dsc_0124.webp",
+      "source": "Archivo personal · DSC_0124.jpg",
+      "alt": "Michelle y Felipe · Save the Date · Fotograma 08",
+      "width": 1200,
+      "height": 1800
+    },
+    {
+      "asset": "wedding-session-dsc_0136.webp",
+      "source": "Archivo personal · DSC_0136.jpg",
+      "alt": "Michelle y Felipe · Save the Date · Fotograma 09",
+      "width": 1200,
+      "height": 1800
+    },
+    {
+      "asset": "wedding-session-dsc_0176.webp",
+      "source": "Archivo personal · DSC_0176.jpg",
+      "alt": "Salto frente a la arquitectura del centro",
+      "width": 1200,
+      "height": 1800
+    },
+    {
+      "asset": "wedding-session-dsc_0187.webp",
+      "source": "Archivo personal · DSC_0187.jpg",
+      "alt": "Michelle y Felipe · Save the Date · Fotograma 11",
+      "width": 1200,
+      "height": 1800
+    },
+    {
+      "asset": "wedding-session-dsc_0229.webp",
+      "source": "Archivo personal · DSC_0229.jpg",
+      "alt": "Retrato abrazados frente a los arcos",
+      "width": 1200,
+      "height": 1800
+    },
+    {
+      "asset": "wedding-session-dsc_0242.webp",
+      "source": "Archivo personal · DSC_0242.jpg",
+      "alt": "Michelle y Felipe · Save the Date · Fotograma 13",
+      "width": 1200,
+      "height": 1800
+    },
+    {
+      "asset": "wedding-session-dsc_0245.webp",
+      "source": "Archivo personal · DSC_0245.jpg",
+      "alt": "Michelle y Felipe · Save the Date · Fotograma 14",
+      "width": 1200,
+      "height": 1800
+    },
+    {
+      "asset": "wedding-session-dsc_0246.webp",
+      "source": "Archivo personal · DSC_0246.jpg",
+      "alt": "Michelle y Felipe · Save the Date · Fotograma 15",
+      "width": 1200,
+      "height": 1800
+    },
+    {
+      "asset": "wedding-session-dsc_0247.webp",
+      "source": "Archivo personal · DSC_0247.jpg",
+      "alt": "Michelle y Felipe · Save the Date · Fotograma 16",
+      "width": 1200,
+      "height": 1800
+    },
+    {
+      "asset": "wedding-session-dsc_0250.webp",
+      "source": "Archivo personal · DSC_0250.jpg",
+      "alt": "La pareja bajo la fachada histórica",
+      "width": 1200,
+      "height": 1800
+    },
+    {
+      "asset": "wedding-session-dsc_0252.webp",
+      "source": "Archivo personal · DSC_0252.jpg",
+      "alt": "Michelle y Felipe · Save the Date · Fotograma 18",
+      "width": 1200,
+      "height": 1800
+    },
+    {
+      "asset": "wedding-session-dsc_0258.webp",
+      "source": "Archivo personal · DSC_0258.jpg",
+      "alt": "Michelle y Felipe · Save the Date · Fotograma 19",
+      "width": 1200,
+      "height": 1800
+    },
+    {
+      "asset": "wedding-session-dsc_0276.webp",
+      "source": "Archivo personal · DSC_0276.jpg",
+      "alt": "Michelle y Felipe en una plaza de Bogotá",
+      "width": 1200,
+      "height": 1800
+    },
+    {
+      "asset": "wedding-session-dsc_0312.webp",
+      "source": "Archivo personal · DSC_0312.jpg",
+      "alt": "Complicidad en una calle de la ciudad",
+      "width": 1200,
+      "height": 1800
+    },
+    {
+      "asset": "wedding-session-dsc_0334.webp",
+      "source": "Archivo personal · DSC_0334.jpg",
+      "alt": "La pareja y el paisaje urbano",
+      "width": 1200,
+      "height": 1800
+    },
+    {
+      "asset": "wedding-session-dsc_0355.webp",
+      "source": "Archivo personal · DSC_0355.jpg",
+      "alt": "Michelle y Felipe · Save the Date · Fotograma 23",
+      "width": 1200,
+      "height": 1800
+    },
+    {
+      "asset": "wedding-session-dsc_0370.webp",
+      "source": "Archivo personal · DSC_0370.jpg",
+      "alt": "Retrato junto al edificio de El Tiempo",
+      "width": 1200,
+      "height": 1800
+    },
+    {
+      "asset": "wedding-session-dsc_0395.webp",
+      "source": "Archivo personal · DSC_0395.jpg",
+      "alt": "Michelle y Felipe · Save the Date · Fotograma 25",
+      "width": 1200,
+      "height": 1800
+    },
+    {
+      "asset": "wedding-session-dsc_0400.webp",
+      "source": "Archivo personal · DSC_0400.jpg",
+      "alt": "Michelle y Felipe · Save the Date · Fotograma 26",
+      "width": 1200,
+      "height": 1800
+    },
+    {
+      "asset": "wedding-session-dsc_0422.webp",
+      "source": "Archivo personal · DSC_0422.jpg",
+      "alt": "Michelle y Felipe frente a la ciudad",
+      "width": 1200,
+      "height": 1800
+    },
+    {
+      "asset": "wedding-session-dsc_0436.webp",
+      "source": "Archivo personal · DSC_0436.jpg",
+      "alt": "Michelle y Felipe · Save the Date · Fotograma 28",
+      "width": 1200,
+      "height": 1800
+    },
+    {
+      "asset": "wedding-session-dsc_0468.webp",
+      "source": "Archivo personal · DSC_0468.jpg",
+      "alt": "Un momento compartido en la terraza",
+      "width": 1200,
+      "height": 1800
+    },
+    {
+      "asset": "wedding-session-dsc_0491.webp",
+      "source": "Archivo personal · DSC_0491.jpg",
+      "alt": "Michelle y Felipe · Save the Date · Fotograma 30",
+      "width": 1200,
+      "height": 1800
+    },
+    {
+      "asset": "wedding-session-dsc_0500.webp",
+      "source": "Archivo personal · DSC_0500.jpg",
+      "alt": "Michelle y Felipe · Save the Date · Fotograma 31",
+      "width": 1200,
+      "height": 1800
+    },
+    {
+      "asset": "wedding-session-dsc_0506.webp",
+      "source": "Archivo personal · DSC_0506.jpg",
+      "alt": "La pareja leyendo el Save the Date",
+      "width": 1200,
+      "height": 1800
+    },
+    {
+      "asset": "wedding-session-dsc_0508.webp",
+      "source": "Archivo personal · DSC_0508.jpg",
+      "alt": "Michelle y Felipe · Save the Date · Fotograma 33",
+      "width": 1200,
+      "height": 1800
+    },
+    {
+      "asset": "wedding-session-dsc_0516.webp",
+      "source": "Archivo personal · DSC_0516.jpg",
+      "alt": "Michelle y Felipe · Save the Date · Fotograma 34",
+      "width": 1200,
+      "height": 1800
+    },
+    {
+      "asset": "wedding-session-dsc_0534.webp",
+      "source": "Archivo personal · DSC_0534.jpg",
+      "alt": "La pareja y la moto frente al horizonte",
+      "width": 1200,
+      "height": 1800
+    },
+    {
+      "asset": "wedding-session-dsc_0543.webp",
+      "source": "Archivo personal · DSC_0543.jpg",
+      "alt": "Michelle y Felipe · Save the Date · Fotograma 36",
+      "width": 1200,
+      "height": 1800
+    },
+    {
+      "asset": "wedding-session-dsc_0549.webp",
+      "source": "Archivo personal · DSC_0549.jpg",
+      "alt": "Michelle y Felipe · Save the Date · Fotograma 37",
+      "width": 1200,
+      "height": 1800
+    },
+    {
+      "asset": "wedding-session-dsc_0555.webp",
+      "source": "Archivo personal · DSC_0555.jpg",
+      "alt": "Michelle y Felipe · Save the Date · Fotograma 38",
+      "width": 1200,
+      "height": 1800
+    },
+    {
+      "asset": "wedding-session-dsc_0559.webp",
+      "source": "Archivo personal · DSC_0559.jpg",
+      "alt": "Retrato de la pareja con la ciudad al fondo",
+      "width": 1600,
+      "height": 1067
+    },
+    {
+      "asset": "wedding-session-dsc_0563.webp",
+      "source": "Archivo personal · DSC_0563.jpg",
+      "alt": "Michelle y Felipe · Save the Date · Fotograma 40",
+      "width": 1200,
+      "height": 1800
+    },
+    {
+      "asset": "wedding-session-dsc_0588.webp",
+      "source": "Archivo personal · DSC_0588.jpg",
+      "alt": "Michelle junto a la moto",
+      "width": 1200,
+      "height": 1800
+    },
+    {
+      "asset": "wedding-session-dsc_0606.webp",
+      "source": "Archivo personal · DSC_0606.jpg",
+      "alt": "Michelle y Felipe · Save the Date · Fotograma 42",
+      "width": 1200,
+      "height": 1800
+    },
+    {
+      "asset": "wedding-session-dsc_0611.webp",
+      "source": "Archivo personal · DSC_0611.jpg",
+      "alt": "Michelle y Felipe · Save the Date · Fotograma 43",
+      "width": 1200,
+      "height": 1800
+    },
+    {
+      "asset": "wedding-session-dsc_0628.webp",
+      "source": "Archivo personal · DSC_0628.jpg",
+      "alt": "Michelle y Felipe · Save the Date · Fotograma 44",
+      "width": 1200,
+      "height": 1800
+    },
+    {
+      "asset": "wedding-session-dsc_0634.webp",
+      "source": "Archivo personal · DSC_0634.jpg",
+      "alt": "Un beso durante la sesión",
+      "width": 1200,
+      "height": 1800
+    },
+    {
+      "asset": "wedding-session-dsc_0641.webp",
+      "source": "Archivo personal · DSC_0641.jpg",
+      "alt": "Michelle y Felipe · Save the Date · Fotograma 46",
+      "width": 1200,
+      "height": 1800
+    },
+    {
+      "asset": "wedding-session-dsc_0646.webp",
+      "source": "Archivo personal · DSC_0646.jpg",
+      "alt": "Michelle y Felipe · Save the Date · Fotograma 47",
+      "width": 1200,
+      "height": 1800
+    },
+    {
+      "asset": "wedding-session-dsc_0651.webp",
+      "source": "Archivo personal · DSC_0651.jpg",
+      "alt": "Michelle y Felipe · Save the Date · Fotograma 48",
+      "width": 1200,
+      "height": 1800
+    },
+    {
+      "asset": "wedding-session-dsc_0655.webp",
+      "source": "Archivo personal · DSC_0655.jpg",
+      "alt": "Retrato espontáneo de Michelle y Felipe",
+      "width": 1200,
+      "height": 1800
+    },
+    {
+      "asset": "wedding-session-dsc_0664.webp",
+      "source": "Archivo personal · DSC_0664.jpg",
+      "alt": "Detalle del anillo durante la sesión",
+      "width": 1200,
+      "height": 1800
+    },
+    {
+      "asset": "wedding-session-dsc_0665.webp",
+      "source": "Archivo personal · DSC_0665.jpg",
+      "alt": "Michelle y Felipe · Save the Date · Fotograma 51",
+      "width": 1200,
+      "height": 1800
+    }
+  ],
+  "gallery_note": "Todas las 51 fotografías DSC de la carpeta Save the date. IG contiene adaptaciones para redes; PSD son archivos de edición. Originales conservados."
+}

@@ -1,0 +1,25 @@
+{
+  "source": "Archivo personal · Portafolio",
+  "assets": {
+    "ML/1_Portada.jpg": "ml-portada.jpg",
+    "ML/4_RRSS.jpg": "ml-redes.jpg",
+    "ML/5_Web.jpg": "ml-web.jpg",
+    "ML/6_Video.png": "ml-video-poster.jpg",
+    "ML/recursos/6_Video/Video2.mp4": "ml-motion.mp4",
+    "Prodesa/recursos/Assets/Gran Salon 2024/Post_GSI2024.jpg": "prodesa-salon.jpg",
+    "Prodesa/recursos/Assets/Aguila/Post_Lanzamiento_Aguila.jpg": "prodesa-aguila.jpg"
+  },
+  "mlCredits": {
+    "artDirectionDesignMotionEditing": "Kevin Garzón",
+    "copywritingProjectManagement": [
+      "María Paula Ruiz",
+      "Daniela Escalante",
+      "Nathalia Cely"
+    ],
+    "videoProductionPhotography": [
+      "Iván Ramírez",
+      "Sergio Sánchez"
+    ]
+  },
+  "prodesa": "Selección de piezas proporcionadas por Kevin. No se afirma autoría de fotografía, renders ni resultados comerciales."
+}

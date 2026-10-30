@@ -1,0 +1,29 @@
+{
+  "collection": "Fotos_Site",
+  "slides": [
+    {
+      "file": "assets/photo-slide-1.webp",
+      "source": "Archivo personal · DSC_0292.jpg"
+    },
+    {
+      "file": "assets/photo-slide-2.webp",
+      "source": "Archivo personal · DSC_2597.jpg"
+    },
+    {
+      "file": "assets/photo-slide-3.webp",
+      "source": "Archivo personal · PentaxME_Italia-16.jpg"
+    },
+    {
+      "file": "assets/photo-slide-4.webp",
+      "source": "Archivo personal · DSC_0136.jpg"
+    },
+    {
+      "file": "assets/photo-slide-5.webp",
+      "source": "Archivo personal · DSC_0668.jpg"
+    },
+    {
+      "file": "assets/photo-slide-6.webp",
+      "source": "Archivo personal · DSC_2613.jpg"
+    }
+  ]
+}

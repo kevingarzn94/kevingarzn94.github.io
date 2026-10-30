@@ -1,6 +1,43 @@
-<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="{{description}}"><meta name="theme-color" content="#f4f3ef"><title>{{title}}</title><link rel="stylesheet" href="style.css"></head><body>
-<a class="skip" href="#trabajo">Saltar al trabajo</a><header><a class="wordmark" href="#inicio" aria-label="{{name}}, inicio">kevin garzón<span>✳</span></a><nav aria-label="Principal"><a href="#trabajo">Trabajo</a><a href="#sobre-mi">Sobre mí</a><a href="#contacto">Hablemos <span>↗</span></a></nav></header>
-<main>{{> hero}}
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="{{description}}">
+<meta name="robots" content="noindex, nofollow">
+<meta name="referrer" content="no-referrer">
+<meta name="theme-color" content="#0d0d0d">
+<title>{{title}}</title>
+<link rel="stylesheet" href="style.css">
+<link rel="icon" type="image/jpeg" href="assets/kevin-analoga.jpg">
+</head>
+<body class="v2 home-v2">
+<a class="skip" href="#trabajo">Saltar al trabajo</a>
+<header>
+ <a class="wordmark" href="#inicio" aria-label="{{name}}, inicio">kevin garzón<span>✳</span></a>
+ <nav aria-label="Principal"><a href="#trabajo">Trabajo</a><a href="#servicios">Servicios</a><a href="#sobre-mi">Sobre mí</a><a href="{{whatsapp}}" target="_blank" rel="noopener noreferrer">Hablemos <span>↗</span></a></nav>
+</header>
+<main>
+{{> hero}}
+<nav class="av-index" aria-label="Secciones">
+ <ol>
+  <li><a href="#trabajo"><span>01</span> Trabajo</a></li>
+  <li><a href="#servicios"><span>02</span> Servicios</a></li>
+  <li><a href="#sobre-mi"><span>03</span> Sobre mí</a></li>
+  <li><a href="#contacto"><span>04</span> Contacto</a></li>
+ </ol>
+ <span class="av-percent" aria-hidden="true">00%</span>
+ <span class="av-bar" aria-hidden="true"></span>
+</nav>
+<div class="av-story">
 {{> work}}
+{{> services}}
 {{> about}}
-{{> contact}}</main><footer><a class="wordmark" href="#inicio">kevin garzón<span>✳</span></a><span>Diseño con intención. © 2026</span><a href="#inicio">Volver arriba ↑</a></footer><script src="app.js"></script></body></html>
+</div>
+{{> contact}}
+</main>
+<footer><a class="wordmark" href="#inicio">kevin garzón<span>✳</span></a><span>Diseño con intención. © 2026</span><a href="#inicio">Volver arriba ↑</a></footer>
+<script src="app.js"></script>
+<script src="v2.js" defer></script>
+</body>
+</html>

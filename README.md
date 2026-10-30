@@ -1,42 +1,43 @@
-# Kevin Garzón — Portafolio
+# Kevin Garzón · Portafolio
 
-Primera versión del portafolio de diseño, fotografía y experiencias digitales. Hero animado, trabajo seleccionado, caso Ahead, perfil y contacto profesional.
+Portafolio privado en desarrollo: diseño digital, UX/UI, dirección de arte y fotografía. Incluye una portada y ocho páginas de proyecto; Ahead presenta un recorrido de estrategia, identidad, lanzamiento, experiencia digital y contenido.
 
-## Desarrollo
+## Desarrollo local
 
-Requiere Node.js 22 o posterior. No necesita instalar dependencias.
+Requiere Node.js 22 o superior. No necesita instalar dependencias.
 
-```bash
-npm start          # http://127.0.0.1:8766
-npm run check      # valida compilación, recursos y navegación interna
-npm run build      # genera dist/ para cualquier hosting estático
+```sh
+npm start
 ```
 
-El servidor recompila los cambios de contenido y estilos; recargar el navegador para verlos. `PORT=9000 npm start` permite cambiar el puerto. `dist/` es generado: editar las fuentes, no la salida.
+Abrir http://127.0.0.1:8766/. El servidor escucha únicamente en loopback y recompila al guardar. Usar esta dirección en lugar de abrir `dist/index.html` como archivo: los módulos del hero necesitan HTTP.
+
+```sh
+npm run check
+npm run build
+```
+
+`check` construye y verifica páginas, enlaces locales, recursos, estructura y contenido retirado. `build` genera `dist/`; no editar esa carpeta.
 
 ## Estructura
 
-```text
-apps/portfolio/
-  content/site.json   Nombre, presentación, metadatos y enlaces
-  src/index.html      Estructura general
-  src/sections/       Hero, proyectos/caso, perfil y contacto
-  public/assets/      Imágenes de proyectos
-libs/ui/
-  styles/tokens.css   Colores y roles visuales
-  styles/site.css     Diseño responsive
-  motion/hero.js      Interacción del hero
-scripts/             Compilación, servidor local y verificación
- docs/               Arquitectura, fuentes y pendientes editoriales
-.openai/hosting.json  Identidad propia de Sites
-```
+- `apps/portfolio/src/sections/`: secciones compartidas de la portada y contacto.
+- `apps/portfolio/src/pages/`: internas de los ocho proyectos.
+- `apps/portfolio/content/`: datos de contacto, inventario editorial y procedencia de materiales.
+- `apps/portfolio/public/`: imágenes optimizadas, vídeo, scripts y Three.js local con su licencia.
+- `libs/ui/styles/`: tokens, estilos generales, componentes y estilos de Ahead.
+- `libs/ui/motion/`: interacción general del sitio.
+- `scripts/`: compilación, servidor local y comprobaciones.
+- `docs/`: arquitectura, sistema de diseño, contenido y estado.
+- `private/`: material de trabajo excluido de Git y del servidor.
 
-La organización toma como referencia la separación de apps, contenido, sistema visual y documentación de Ahead. Es una implementación independiente, sin dependencias del repositorio de Ahead.
+## Documentación
 
-## Publicación
+- [Arquitectura](docs/arquitectura.md)
+- [Sistema de diseño](docs/design-system.md)
+- [Contenido y fuentes](docs/contenido-y-fuentes.md)
+- [Estado y validación](docs/estado.md)
 
-`dist/` funciona como sitio estático. La configuración de Sites tiene un ID exclusivo para este portafolio; no reutiliza dominios, cuentas, pipelines o credenciales de Ahead. El estado de publicación se registra en `docs/estado.md`.
+## Privacidad
 
-## Próxima edición
-
-Seleccionar fotografías originales, confirmar correo público y revisar los textos de los casos. La versión actual usa LinkedIn y Behance como vías de contacto; no incluye un formulario sin backend.
+`noindex` evita solicitar indexación, pero no sustituye autenticación. Publicado en GitHub Pages desde la cuenta personal de Kevin (decisión del 29 de octubre de 2026); `noindex` se mantiene mientras se define un dominio propio. El sitio utiliza copias seleccionadas y optimizadas de los archivos originales. No se incluyen las metas financieras personales.
