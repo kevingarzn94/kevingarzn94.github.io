@@ -25,8 +25,13 @@
  const showAll = () => reveals.forEach(el => el.classList.add('is-in'));
  const io = new IntersectionObserver(entries => {
   for (const entry of entries) if (entry.isIntersecting) { entry.target.classList.add('is-in'); io.unobserve(entry.target); }
- }, { threshold: .12, rootMargin: '0px 0px -6% 0px' });
+ }, { threshold: 0, rootMargin: '0px 0px -6% 0px' });
  reveals.forEach(el => { if (el.getBoundingClientRect().top < innerHeight * .9) el.classList.add('is-in'); else io.observe(el); });
+ // Respaldo: si el observador se salta algo (scroll rápido, imágenes que cambian la altura), revelar lo que ya pasó por pantalla.
+ let sweep = 0;
+ const sweepReveal = () => { sweep = 0; for (const el of reveals) if (!el.classList.contains('is-in') && el.getBoundingClientRect().top < innerHeight * .94) { el.classList.add('is-in'); io.unobserve(el); } };
+ addEventListener('scroll', () => { if (!sweep) sweep = setTimeout(sweepReveal, 160); }, { passive: true });
+ addEventListener('load', sweepReveal);
 
  let queued = false;
  function paint() {

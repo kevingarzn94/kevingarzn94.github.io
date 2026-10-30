@@ -559,8 +559,6 @@ html[data-motion=on] .v2 .contact h2 .orange{animation:av-spin 16s linear infini
 .viajero-v2 .viajero-screens figure{display:grid;grid-template-columns:1fr 1fr;gap:8px;align-content:start}
 .viajero-v2 .viajero-screens img{display:block;width:100%;aspect-ratio:834/1402;object-fit:cover;border-radius:14px}
 .viajero-v2 .viajero-screens figcaption{grid-column:1/-1}
-.colonia-v2 .av-hero{grid-template-rows:auto 1fr auto auto auto}
-.colonia-v2 .av-hero-title{align-self:center}
 @media (max-width:1100px){.viajero-v2 .viajero-screens{grid-template-columns:1fr 1fr}}
 @media (max-width:760px){.viajero-v2 .viajero-screens{grid-template-columns:1fr}}
 
@@ -595,3 +593,56 @@ body.v2>header nav a{white-space:nowrap}
  .v2 .contact .social-links .whatsapp{font-size:15px;padding:14px 22px}
 }
 .v2 .av-hero h1{padding:0!important}
+
+/* ---------- PARTE 7 · Behance, Wedding, Colonia ---------- */
+/* Behance: tarjeta blanca; el coral entra de izquierda a derecha sin mover la tarjeta */
+.home-v2 .home-behance,.home-v2 .home-behance:hover,.home-v2 .home-behance:focus-visible{transform:none!important;background:#fff!important}
+.home-v2 .home-behance::before{transform:none!important;clip-path:inset(0 100% 0 0 round calc(var(--av-radius) + 6px));transition:clip-path .7s var(--av-ease)!important}
+.home-v2 .home-behance:hover::before,.home-v2 .home-behance:focus-visible::before{clip-path:inset(0 0 0 0 round calc(var(--av-radius) + 6px))}
+.home-v2 .home-behance[data-reveal]{transition:opacity .9s var(--av-ease),transform 1.1s var(--av-ease)}
+.home-v2 .home-behance strong .ic{transition:transform .5s var(--av-ease)}
+.home-v2 .home-behance:hover strong .ic{transform:translate(6px,-6px)}
+/* Wedding: foto activa más grande */
+@media (min-width:701px){
+ .wedding-v2 .wedding-gallery.is-carousel{height:clamp(520px,58vw,760px)}
+ .wedding-v2 .is-carousel .gallery-item{width:clamp(240px,30vw,430px)}
+ .wedding-v2 .is-carousel .gallery-item.is-selected{width:clamp(320px,40vw,580px);transform:translateX(-50%) translateZ(0)}
+}
+@media (max-width:700px){
+ .wedding-v2 .wedding-gallery.is-carousel{height:500px}
+ .wedding-v2 .is-carousel .gallery-item.is-selected{width:82%;transform:translateX(-50%)}
+}
+/* Colonia: maquetas */
+.v2 .av-phone{border-radius:34px;padding:9px;background:#0e0e0e;box-shadow:0 40px 80px -40px #0008,inset 0 0 0 1px #ffffff1a}
+.v2 .av-phone img{display:block;width:100%;height:auto;aspect-ratio:750/1624;object-fit:cover;object-position:top;border-radius:26px}
+.colonia-v2 .colonia-stage{position:relative;display:grid;grid-template-columns:1fr minmax(160px,22%);gap:clamp(16px,3vw,40px);align-items:end;margin-top:clamp(28px,4vw,56px)}
+.colonia-v2 .colonia-stage figcaption{grid-column:1/-1}
+.colonia-v2 .colonia-stage .av-browser img{aspect-ratio:8/5}
+.colonia-v2 .colonia-gallery{display:grid;grid-template-columns:1fr 1fr minmax(150px,.55fr);gap:var(--av-gap);align-items:start;margin-top:clamp(28px,4vw,56px)}
+.colonia-v2 .colonia-gallery .av-phone{grid-column:3;grid-row:1/3}
+.colonia-v2 .colonia-gallery .av-browser img{aspect-ratio:8/5}
+.colonia-v2 .colonia-gallery .av-browser:last-child img{aspect-ratio:2/1}
+.colonia-v2 .av-ink .av-browser span{color:var(--av-ink)}
+@media (max-width:900px){
+ .colonia-v2 .colonia-gallery{grid-template-columns:1fr 1fr}
+ .colonia-v2 .colonia-gallery .av-phone{grid-column:auto;grid-row:auto}
+}
+@media (max-width:600px){
+ .colonia-v2 .colonia-stage{grid-template-columns:1fr}
+ .colonia-v2 .colonia-stage .av-phone{width:58%;margin:-90px 0 0 auto;position:relative}
+ .colonia-v2 .colonia-gallery{grid-template-columns:1fr}
+ .colonia-v2 .colonia-gallery .av-phone{width:70%;justify-self:center}
+}
+.colonia-v2 .colonia-hero-devices{position:relative;width:min(100%,980px,calc((100svh - 300px)*1.6 + 120px));margin:clamp(8px,2vw,24px) auto 0;padding-right:clamp(40px,9vw,120px)}
+.colonia-v2 .colonia-hero-devices .av-browser img{aspect-ratio:8/5}
+.colonia-v2 .colonia-hero-devices .av-browser span{color:var(--av-ink)}
+.colonia-v2 .colonia-hero-devices .av-phone{position:absolute;right:0;bottom:-6%;width:clamp(110px,21%,210px)}
+.colonia-v2 .av-hero-bg{opacity:.28}
+@media (min-width:761px) and (max-width:1100px) and (orientation:portrait){
+ .v2 .av-hero{min-height:0;grid-template-rows:auto auto auto auto auto;padding-bottom:48px}
+ .v2 .av-hero .av-fan{margin-block:24px}
+}
+@media (max-width:900px){.colonia-v2 .colonia-gallery .av-phone{width:min(100%,280px);justify-self:center}}
+/* Colonia: velo inferior para leer los datos sobre la foto */
+.colonia-v2 .av-hero::after{content:"";position:absolute;left:0;right:0;bottom:0;height:62%;z-index:-1;pointer-events:none;background:linear-gradient(180deg,transparent 0%,#0d0d0dcc 45%,#0d0d0df5 100%)}
+.colonia-v2 .av-hero .av-facts,.colonia-v2 .av-hero .av-rights{text-shadow:0 1px 12px #000a}
