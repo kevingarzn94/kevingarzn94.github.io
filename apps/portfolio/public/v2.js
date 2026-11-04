@@ -176,15 +176,105 @@
   });
  });
 
- // Fan cards respond to the pointer with a gentle tilt.
+ // Navigate the original fan without replacing its scroll choreography.
  if (fan) {
+  const cards = [...fan.querySelectorAll('.av-card')];
+  let active = Math.max(0, cards.findIndex(card => Number(card.style.getPropertyValue('--i')) === 0));
+  let gesture = null;
+  let suppressClickUntil = 0;
+  fan.classList.add('is-navigable');
+  fan.id ||= 'hero-fan';
+  fan.setAttribute('role', 'region');
+  if (!fan.hasAttribute('aria-label')) fan.setAttribute('aria-label', 'Imágenes del proyecto');
+  const controls = document.createElement('div');
+  controls.className = 'av-fan-controls';
+  controls.innerHTML = `<button type="button" aria-label="Tarjeta anterior" aria-controls="${fan.id}">←</button><div><span class="av-fan-count" aria-live="polite" aria-atomic="true"></span></div><button type="button" aria-label="Tarjeta siguiente" aria-controls="${fan.id}">→</button>`;
+  fan.after(controls);
+  const count = controls.querySelector('.av-fan-count');
+  function selectCard(next) {
+   active = (next + cards.length) % cards.length;
+   cards.forEach((card, i) => {
+    const offset = (i - active + cards.length + Math.floor(cards.length / 2)) % cards.length - Math.floor(cards.length / 2);
+    card.style.setProperty('--i', offset);
+    card.style.setProperty('--a', Math.abs(offset));
+    card.classList.toggle('is-current', i === active);
+   });
+   const title = cards[active].querySelector('span')?.textContent || cards[active].querySelector('img').alt;
+   count.textContent = title;
+  }
+  const buttons = controls.querySelectorAll('button');
+  buttons[0].addEventListener('click', () => selectCard(active - 1));
+  buttons[1].addEventListener('click', () => selectCard(active + 1));
+  const keyboard = event => {
+   const next = { ArrowLeft: active - 1, ArrowRight: active + 1, Home: 0, End: cards.length - 1 };
+   if (!(event.key in next)) return;
+   event.preventDefault(); selectCard(next[event.key]);
+   if (fan.contains(document.activeElement)) cards[active].focus({ preventScroll: true });
+  };
+  fan.addEventListener('keydown', keyboard);
+  controls.addEventListener('keydown', keyboard);
+  cards.forEach((card, i) => {
+   card.querySelector('img').draggable = false;
+   card.draggable = false;
+   if (card.tagName !== 'A') {
+    card.tabIndex = 0;
+    card.setAttribute('role', 'button');
+    card.setAttribute('aria-label', `Centrar imagen: ${card.querySelector('img').alt}`);
+    card.addEventListener('click', () => selectCard(i));
+    card.addEventListener('keydown', event => {
+     if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); selectCard(i); }
+    });
+   }
+   card.addEventListener('focus', () => { if (card.matches(':focus-visible')) selectCard(i); });
+  });
+  fan.addEventListener('pointerdown', event => {
+   if (!event.isPrimary || event.button !== 0) return;
+   gesture = { id: event.pointerId, x: event.clientX, y: event.clientY, dragging: false };
+  });
   fan.addEventListener('pointermove', event => {
+   if (gesture && gesture.id === event.pointerId) {
+    const dx = event.clientX - gesture.x, dy = event.clientY - gesture.y;
+    if (!gesture.dragging && Math.abs(dy) > 10 && Math.abs(dy) > Math.abs(dx)) { gesture = null; return; }
+    if (!gesture.dragging && Math.abs(dx) > 10 && Math.abs(dx) > Math.abs(dy)) {
+     gesture.dragging = true;
+     fan.setPointerCapture(event.pointerId);
+     fan.classList.add('is-dragging');
+    }
+    if (gesture.dragging) {
+     fan.style.setProperty('--drag', motion() ? `${clamp(dx, -90, 90)}px` : '0px');
+     return;
+    }
+   }
    if (!motion() || event.pointerType !== 'mouse') return;
    const b = fan.getBoundingClientRect();
    fan.style.setProperty('--mx', ((event.clientX - b.left) / b.width - .5).toFixed(3));
    fan.style.setProperty('--my', ((event.clientY - b.top) / b.height - .5).toFixed(3));
   });
-  fan.addEventListener('pointerleave', () => { fan.style.setProperty('--mx', '0'); fan.style.setProperty('--my', '0'); });
+  function finishGesture(event) {
+   // Touch transfers implicit capture from the card to the fan while dragging.
+   if (event.type === 'lostpointercapture' && event.target !== fan) return;
+   if (!gesture || gesture.id !== event.pointerId) return;
+   const dx = event.clientX - gesture.x;
+   if (gesture.dragging) {
+    suppressClickUntil = performance.now() + 400;
+    if (event.type === 'pointerup' && Math.abs(dx) > 35) selectCard(active + (dx < 0 ? 1 : -1));
+   }
+   gesture = null;
+   fan.classList.remove('is-dragging');
+   fan.style.setProperty('--drag', '0px');
+   if (fan.hasPointerCapture(event.pointerId)) fan.releasePointerCapture(event.pointerId);
+  }
+  fan.addEventListener('pointerup', finishGesture);
+  fan.addEventListener('pointercancel', finishGesture);
+  fan.addEventListener('lostpointercapture', finishGesture);
+  fan.addEventListener('click', event => {
+   if (event.detail && performance.now() < suppressClickUntil) { event.preventDefault(); event.stopImmediatePropagation(); }
+  }, true);
+  fan.addEventListener('pointerleave', () => {
+   fan.style.setProperty('--mx', '0'); fan.style.setProperty('--my', '0');
+   if (gesture && !gesture.dragging) gesture = null;
+  });
+  selectCard(active);
  }
 
  // Project index: a floating preview follows the cursor (mouse only; rows keep their own thumbnails on touch).

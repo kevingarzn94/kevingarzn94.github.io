@@ -79,3 +79,34 @@ Pendiente: verificación funcional y visual nueva en navegador a 1440/820/390 px
 - Colonia: rondas con texto oscuro visible, tamaño y espaciado compactos; retirada lámina de biblioteca de componentes. Fragmento conservado en private/qa-navigation/colonia-components-retirado.html; recurso original intacto.
 - Validación en navegador a 390 px de los seis proyectos con av-duo; figuras contienen sus pies y no hay overflow horizontal. Revisión visual Bimbo/Colonia a 390, Centauro a 820 y Bimbo a 1440. Pendiente confirmación en iPhone físico por Kevin.
 - npm run check, npm run build y git diff --check correctos. Sin commit/push. Captura privada: private/qa-navigation/mobile-captions.png.
+
+### Abanicos navegables — 2026-11-03, versión 20261103-1
+- Portada y siete proyectos con `data-fan`: flechas anterior/siguiente, contador con descripción, navegación circular, arrastre horizontal y teclado (flechas, Inicio/Fin). Colonia conserva su composición sin abanico.
+- Se conserva la apertura ligada al scroll, la inclinación con mouse y las tarjetas cuadradas. En portada los enlaces siguen abriendo proyectos; arrastrar no activa enlaces. Nombre de la tarjeta central visible.
+- Gestos táctiles mantienen scroll vertical y zoom. Corregida la transferencia de captura implícita del puntero entre tarjeta y contenedor. Movimiento reducido y control global siguen permitiendo navegar sin animación.
+- Validación: ocho abanicos en Chrome a 390, 820 y 1440 px; controles, teclado, retorno circular, arrastre con mouse, movimiento reducido y sin desbordamiento horizontal ni errores JavaScript. Simulación táctil de Chrome: swipe horizontal, scroll vertical y toque en enlace correctos. No probado en dispositivo físico.
+- npm run check, npm run build, revisión de sintaxis y git diff --check correctos. Capturas en private/qa-navigation/fan-navigation-desktop.png y fan-navigation-mobile.png. Cambios locales, sin publicación.
+
+### Controles del abanico más discretos — 2026-11-03, versión 20261103-2
+- Flechas de 18 px sin borde ni fondo permanente; mantienen área táctil de 44 × 44 px y foco visible. Controles agrupados en un ancho máximo de 360 px.
+- Se muestra solo el nombre/descripción de la tarjeta, sin numeración. Retirada la instrucción visible «Arrastra o usa las flechas».
+- Check de nueve páginas, build, sintaxis JavaScript y git diff --check correctos. Sin publicación.
+
+### Asterisco propio e IA en Sobre mí — 2026-11-03, versión 20261103-3
+- Asterisco compartido de seis brazos rectos, extremos planos y uniones angulares. Negro sobre claro y blanco sobre oscuro; conserva las interacciones y el respeto por movimiento reducido.
+- Sobre mí incorpora el uso de IA en ideación, imagen/video, prototipos y apoyo al desarrollo web, bajo la dirección creativa y estructura de Kevin. Proyectos mencionados según su confirmación: Ahead, La Colombia Real para Mauricio Lizcano, Colonia y Amor a mordiscos. Procedencia registrada en content/profile.json.
+- Check y build correctos. Revisión en Chrome a 1440 y 390 px sin desbordamiento; comprobados colores blanco/negro y extremos planos en los símbolos de portada. Capturas privadas identity-ai-1440.png e identity-ai-390.png. Sin publicación.
+
+### Legibilidad base — 2026-11-03, versión 20261103-4
+- Tamaños secundarios compartidos de 14 px; ampliados etiquetas, navegación, créditos, pies y controles de galería. Texto de contacto y acordeón a 16 px. Interruptor de movimiento con altura mínima de 44 px.
+- Mayor opacidad en textos secundarios y pasos no activos del recorrido de Ahead. Corregido el asterisco del footer (negro sobre fondo blanco). Se mantiene el diseño discreto del abanico.
+- Cabeceras adaptables con salto de fila cuando falta espacio. Nueve páginas revisadas en Chrome a 320, 390, 820 y 1440 px sin desbordamiento horizontal ni errores JavaScript.
+- Muestreo de contraste por estilos calculados en etiquetas, pies, notas, metadatos y nuevo bloque IA: sin resultados inferiores a 4,5:1 sobre fondos sólidos. El cálculo excluye gradientes/imágenes y no es una auditoría WCAG completa. Referencia: https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html
+- Check, build y git diff --check correctos. Captura privada readability-mobile.png. Sin publicación.
+
+### Asterisco del cierre de Ahead — 2026-11-03, versión 20261103-5
+- Símbolo animado del epílogo en gris neutro #929292, visible sobre blanco y negro, conservando su animación. Token compartido --asterisk-gray; aplicación limitada al símbolo del cierre.
+- Check, build y git diff --check correctos. Sin publicación.
+
+### Auditoría de accesibilidad — 2026-11-03
+Portada y ocho casos revisados en escritorio y móvil. [Informe, correcciones y pendientes](auditoria-accesibilidad-2026-11-03.md).
