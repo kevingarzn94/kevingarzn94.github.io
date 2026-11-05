@@ -33,6 +33,7 @@ npm run build
 
 ## Documentación
 
+- [Continuidad para Codex o Claude · 5 de noviembre de 2026](docs/continuidad-2026-11-05.md)
 - [Arquitectura](docs/arquitectura.md)
 - [Sistema de diseño](docs/design-system.md)
 - [Contenido y fuentes](docs/contenido-y-fuentes.md)
