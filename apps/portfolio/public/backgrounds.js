@@ -1,19 +1,12 @@
 const preference=matchMedia('(prefers-reduced-motion: reduce)');
-const toggles=document.querySelectorAll('.animation-switch');
-let enabled=!preference.matches;
-try{if(localStorage.getItem('portfolio-motion')==='off')enabled=false}catch{}
+// Motion follows the device preference; the retired local switch no longer overrides it.
 const animations=new Set(),updates=[];
 function applyMotion(){
- document.documentElement.dataset.motion=enabled&&!preference.matches?'on':'off';
- for(const toggle of toggles){toggle.setAttribute('aria-checked',String(enabled&&!preference.matches));
- toggle.disabled=preference.matches;
- toggle.title=preference.matches?'Movimiento reducido activado en tu dispositivo':'Activar o desactivar todas las animaciones';
- }
- if(!enabled||preference.matches){for(const animation of animations)animation.cancel();animations.clear()}
+ document.documentElement.dataset.motion=preference.matches?'off':'on';
+ if(preference.matches){for(const animation of animations)animation.cancel();animations.clear()}
  updates.forEach(update=>update());
 }
-toggles.forEach(toggle=>toggle.addEventListener('click',()=>{enabled=!enabled;try{localStorage.setItem('portfolio-motion',enabled?'on':'off')}catch{}applyMotion()}));
-preference.addEventListener('change',()=>{enabled=!preference.matches;applyMotion()});
+preference.addEventListener('change',applyMotion);
 applyMotion();
 for(const backdrop of document.querySelectorAll('.photo-backdrop')){
  const section=backdrop.closest('section');let visible=false;

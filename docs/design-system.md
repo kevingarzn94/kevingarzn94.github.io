@@ -14,12 +14,12 @@ La escala de espacios usa 4, 8, 12, 16, 24, 32, 48, 64 y 96 px. Los tokens inclu
 - Cards: imagen protagonista, categoría y nombre; enlaces nativos hacia la interna.
 - Etiquetas: jerarquía secundaria, sin competir con titulares.
 - Contacto: iconos de marca sólidos y CTA directo a WhatsApp.
-- Movimiento: controles compactos dentro del hero y contacto. Ambos comparten estado persistente; no son elementos fijos de pantalla.
+- Movimiento: animaciones activas por defecto; se respeta la preferencia de movimiento reducido del dispositivo. Los switches manuales se retiraron el 10 de noviembre de 2026.
 - Fotografías: fondos monocromáticos con velo oscuro y ciclos de seis imágenes; retratos con movimiento suave y marco negro de película.
 
 ## Movimiento y accesibilidad
 
-La preferencia del sistema `prefers-reduced-motion` tiene prioridad. Con movimiento apagado el contenido sigue visible. Las entradas usan desplazamiento y opacidad; los fondos alternan escala, giro y fundido. Evitar animar contenido esencial de lectura o añadir interacciones que solo funcionen con mouse.
+La preferencia del sistema `prefers-reduced-motion` tiene prioridad. Con movimiento reducido el contenido sigue visible. Las entradas usan desplazamiento y opacidad; los fondos alternan escala, giro y fundido. Evitar animar contenido esencial de lectura o añadir interacciones que solo funcionen con mouse.
 
 ## Caso Ahead
 

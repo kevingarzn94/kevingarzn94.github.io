@@ -1,5 +1,5 @@
 // Sistema v2: coreografía ligada al scroll nativo (Ahead, Wedding Art, portada).
-// Content stays visible without JS; motion respects prefers-reduced-motion and the global switch.
+// Content stays visible without JS; motion respects prefers-reduced-motion.
 (() => {
  const root = document.documentElement;
  const reduce = matchMedia('(prefers-reduced-motion: reduce)');

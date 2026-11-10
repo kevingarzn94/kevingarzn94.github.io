@@ -110,3 +110,13 @@ Pendiente: verificación funcional y visual nueva en navegador a 1440/820/390 px
 
 ### Auditoría de accesibilidad — 2026-11-03
 Portada y ocho casos revisados en escritorio y móvil. [Informe, correcciones y pendientes](auditoria-accesibilidad-2026-11-03.md).
+
+### Colonia publicada y cierre — 10 de noviembre de 2026
+- Colonia 722 actualizado a publicado, con enlace oficial a https://www.coloniasuites.com/ y acceso desde el hero del caso.
+- Siete capturas reales nuevas (escritorio y móvil) en mockups HTML/CSS; galería de cuatro secciones ampliables. La propuesta v2 queda identificada como archivo del proceso. Procedencia en `content/colonia-case.json`.
+- Créditos: trabajo realizado en Opitech para Ahead y Colonia 722; marcas, fotografías y materiales pertenecientes a sus respectivos titulares.
+- Colonia sustituye a Viajero Co únicamente en el abanico principal. Viajero permanece en el listado y conserva su interna.
+- Retirados los switches de movimiento en portada, proyectos y contacto. Se ignora la preferencia del switch antiguo; se conserva `prefers-reduced-motion`, incluidos cambios de preferencia durante la visita.
+- Contacto: «Trabajemos juntos» sustituye «El siguiente proyecto».
+- Check, build, sintaxis JS y diff correctos. Mockups revisados en navegador a 1440, 820 y 390 px; sin desbordamiento horizontal en esas vistas. Verificados flecha del abanico y acceso por clic a Colonia. Preferencia de movimiento comprobada con un harness aislado, sin cambiar ajustes del sistema.
+- Cambios locales; sin commit, push ni publicación. No se modificó Ahead ni el manifiesto de hosting.

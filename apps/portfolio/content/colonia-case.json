@@ -1,0 +1,45 @@
+{
+  "title": "Colonia 722",
+  "status": "Publicado",
+  "url": "https://www.coloniasuites.com/",
+  "role": "Diseño UX/UI de la landing y la plantilla",
+  "credits": "Trabajo realizado en Opitech para Ahead y Colonia 722. Marcas, fotografías y materiales pertenecientes a sus respectivos titulares.",
+  "verifiedOn": "2026-11-10",
+  "sources": [
+    {
+      "url": "https://coloniasuites.com/",
+      "use": "Capturas de la landing publicada y verificación del recorrido visible. No se enviaron formularios ni se realizaron reservas."
+    },
+    {
+      "source": "Confirmación de Kevin Garzón",
+      "use": "Finalización del proyecto y atribución a Opitech, Ahead y Colonia."
+    }
+  ],
+  "screenshots": {
+    "desktop": {
+      "viewport": [
+        1440,
+        1000
+      ],
+      "files": [
+        "colonia-live-desktop.jpg",
+        "colonia-live-casa.jpg",
+        "colonia-live-aparta.jpg",
+        "colonia-live-zonas.jpg",
+        "colonia-live-gastro.jpg"
+      ]
+    },
+    "mobile": {
+      "viewport": [
+        390,
+        844
+      ],
+      "files": [
+        "colonia-live-mobile.jpg",
+        "colonia-live-mobile-zonas.jpg"
+      ]
+    }
+  },
+  "presentation": "Mockups HTML/CSS con capturas reales. La propuesta v2 de Figma se conserva identificada como archivo del proceso.",
+  "reservationPlatform": "La landing enlaza al motor de reservas de Ahead sobre Stays; no se atribuye a Kevin la tecnología del motor."
+}

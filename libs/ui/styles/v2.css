@@ -640,34 +640,36 @@ body.v2>header nav a{white-space:nowrap}
 /* Colonia: maquetas */
 .v2 .av-phone{border-radius:34px;padding:9px;background:#0e0e0e;box-shadow:0 40px 80px -40px #0008,inset 0 0 0 1px #ffffff1a}
 .v2 .av-phone img{display:block;width:100%;height:auto;aspect-ratio:750/1624;object-fit:cover;object-position:top;border-radius:26px}
-.colonia-v2 .colonia-stage{position:relative;display:grid;grid-template-columns:1fr minmax(160px,22%);gap:clamp(16px,3vw,40px);align-items:end;margin-top:clamp(28px,4vw,56px)}
-.colonia-v2 .colonia-stage figcaption{grid-column:1/-1}
-.colonia-v2 .colonia-stage .av-browser img{aspect-ratio:8/5}
-.colonia-v2 .colonia-gallery{display:grid;grid-template-columns:1fr 1fr minmax(150px,.55fr);gap:var(--av-gap);align-items:start;margin-top:clamp(28px,4vw,56px)}
-.colonia-v2 .colonia-gallery .av-phone{grid-column:3;grid-row:1/3}
-.colonia-v2 .colonia-gallery .av-browser img{aspect-ratio:8/5}
-.colonia-v2 .colonia-gallery .av-browser:last-child img{aspect-ratio:2/1}
+.colonia-v2 .colonia-stage{position:relative;display:grid;grid-template-columns:1fr minmax(160px,22%);gap:var(--space-8);align-items:center;margin-top:var(--space-12);padding:var(--space-8);background:var(--av-soft);border-radius:var(--radius-card)}
+.colonia-v2 .colonia-stage figcaption{grid-column:1/-1;color:var(--ink)}
+.colonia-v2 .av-browser img{aspect-ratio:1440/1000;height:auto;object-fit:contain}
+.colonia-v2 .av-phone img{aspect-ratio:390/844}
+.colonia-v2 .colonia-gallery{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--space-16) var(--space-8);align-items:start;margin-top:var(--space-12)}
+.colonia-v2 .colonia-gallery figure{min-width:0}
+.colonia-v2 .colonia-screen-link{display:block;border-radius:var(--radius-card)}
+.colonia-v2 .colonia-gallery figcaption{display:grid;gap:var(--space-3);margin-top:var(--space-6);opacity:1}
+.colonia-v2 .colonia-gallery figcaption strong{font-size:var(--text-lead);font-weight:600;line-height:1.25;letter-spacing:-.02em}
+.colonia-v2 .colonia-gallery figcaption>span{color:var(--panel-soft);max-width:var(--measure)}
+.colonia-v2 .colonia-gallery figcaption .av-link{width:fit-content}
 .colonia-v2 .av-ink .av-browser span{color:var(--av-ink)}
-@media (max-width:900px){
- .colonia-v2 .colonia-gallery{grid-template-columns:1fr 1fr}
- .colonia-v2 .colonia-gallery .av-phone{grid-column:auto;grid-row:auto}
-}
-@media (max-width:600px){
- .colonia-v2 .colonia-stage{grid-template-columns:1fr}
- .colonia-v2 .colonia-stage .av-phone{width:58%;margin:-90px 0 0 auto;position:relative}
- .colonia-v2 .colonia-gallery{grid-template-columns:1fr}
- .colonia-v2 .colonia-gallery .av-phone{width:70%;justify-self:center}
-}
-.colonia-v2 .colonia-hero-devices{position:relative;width:min(100%,980px,calc((100svh - 300px)*1.6 + 120px));margin:clamp(8px,2vw,24px) auto 0;padding-right:clamp(40px,9vw,120px)}
-.colonia-v2 .colonia-hero-devices .av-browser img{aspect-ratio:8/5}
+.colonia-v2 .colonia-hero-devices{position:relative;width:min(100%,960px);margin:var(--space-6) auto var(--space-8);padding-right:clamp(48px,9vw,120px)}
 .colonia-v2 .colonia-hero-devices .av-browser span{color:var(--av-ink)}
-.colonia-v2 .colonia-hero-devices .av-phone{position:absolute;right:0;bottom:-6%;width:clamp(110px,21%,210px)}
+.colonia-v2 .colonia-hero-devices .av-phone{position:absolute;right:0;bottom:-4%;width:clamp(100px,23%,220px)}
+.colonia-v2 .av-hero-title .av-actions{justify-content:center;flex-wrap:wrap}
+@media (max-width:700px){
+ .colonia-v2 .colonia-stage{grid-template-columns:1fr;padding:var(--space-4);gap:var(--space-6)}
+ .colonia-v2 .colonia-stage .av-phone{width:min(65%,240px);justify-self:center}
+ .colonia-v2 .colonia-gallery{grid-template-columns:1fr;gap:var(--space-12)}
+ .colonia-v2 .colonia-hero-devices{padding-right:48px;margin-bottom:var(--space-8)}
+ .colonia-v2 .av-browser span{max-width:70%;left:auto;right:8px;transform:none;font-size:11px}
+ .colonia-v2 .av-phone{border-radius:20px;padding:5px}
+ .colonia-v2 .av-phone img{border-radius:15px}
+}
 .colonia-v2 .av-hero-bg{opacity:.28}
 @media (min-width:761px) and (max-width:1100px) and (orientation:portrait){
  .v2 .av-hero{min-height:0;grid-template-rows:auto auto auto auto auto;padding-bottom:48px}
  .v2 .av-hero .av-fan{margin-block:24px}
 }
-@media (max-width:900px){.colonia-v2 .colonia-gallery .av-phone{width:min(100%,280px);justify-self:center}}
 /* Colonia: velo inferior para leer los datos sobre la foto */
 .colonia-v2 .av-hero::after{content:"";position:absolute;left:0;right:0;bottom:0;height:62%;z-index:-1;pointer-events:none;background:linear-gradient(180deg,transparent 0%,#0d0d0dcc 45%,#0d0d0df5 100%)}
 .colonia-v2 .av-hero .av-facts,.colonia-v2 .av-hero .av-rights{text-shadow:0 1px 12px #000a}
