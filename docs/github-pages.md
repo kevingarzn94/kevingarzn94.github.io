@@ -5,7 +5,7 @@ Actualizado el 29 de octubre de 2026. Kevin decidió publicar el portafolio desd
 - Repositorio recomendado: `kevingarzn94/kevingarzn94.github.io` (público). URL: https://kevingarzn94.github.io/
 - Workflow: `.github/workflows/pages.yml`. En cada push a `main` ejecuta `npm run check`, `npm run build` y publica `dist/`.
 - Cuenta: solo la cuenta personal. No usar cuentas, organizaciones ni credenciales de Opitech.
-- `noindex` sigue activo: el sitio es público para quien tenga el enlace, pero no se solicita su indexación. Quitarlo cuando exista el dominio propio.
+- Actualización 12/11/2026: indexación habilitada en código para https://kevingarzon.com/. Completar HTTPS y Search Console según [la guía SEO](seo-https.md).
 - `private/` y `dist/` están en `.gitignore` y no se suben.
 - Los inventarios de `apps/portfolio/content/` ya no incluyen rutas locales ni de OneDrive; indican el origen de forma genérica.
 - Kevin confirmó publicar la interna de Ahead completa, incluido el brandbook en PDF.
@@ -26,7 +26,7 @@ Actualizado el 29 de octubre de 2026. Kevin decidió publicar el portafolio desd
 
 ## Dominio propio (después)
 
-Settings → Pages → Custom domain, más los registros DNS que indique GitHub. Entonces quitar `noindex` de las plantillas.
+El dominio ya responde en https://kevingarzon.com/. En Settings → Pages activar Enforce HTTPS; la comprobación del 12/11/2026 encontró que HTTP aún no redirigía a HTTPS.
 
 ## Cloudflare (descartado el 29/10/2026)
 

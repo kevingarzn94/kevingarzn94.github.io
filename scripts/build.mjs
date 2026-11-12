@@ -21,7 +21,8 @@ async function copyAssets(source, destination) {
 export async function build() {
   const content = JSON.parse(await read('apps/portfolio/content/site.json'));
   const sections = await readdir(path.join(root, 'apps/portfolio/src/sections'));
-  const render = async (source) => {
+  const urls = [];
+  const render = async (source, file) => {
     let html = source;
     for (const file of sections) {
       if (file.endsWith('.html')) html = html.replaceAll(`{{> ${file.slice(0,-5)}}}`, await read(`apps/portfolio/src/sections/${file}`));
@@ -31,14 +32,43 @@ export async function build() {
       return escape(content[key]);
     });
     if (html.includes('{{')) throw new Error('Plantilla sin resolver');
-    return html;
+    const canonical = new URL(file === 'index.html' ? '' : file, content.url).href;
+    urls.push(canonical);
+    const title = html.match(/<title>([^<]+)<\/title>/)[1];
+    const description = html.match(/<meta name="description" content="([^"]+)"/)[1];
+    const metadata = [
+      `<link rel="canonical" href="${escape(canonical)}">`,
+      `<meta property="og:type" content="website">`,
+      `<meta property="og:site_name" content="${escape(content.name)}">`,
+      `<meta property="og:locale" content="es_CO">`,
+      `<meta property="og:title" content="${title}">`,
+      `<meta property="og:description" content="${description}">`,
+      `<meta property="og:url" content="${escape(canonical)}">`
+    ];
+    if (file === 'index.html') {
+      const schema = {
+        '@context': 'https://schema.org',
+        '@graph': [
+          { '@type': 'Person', '@id': `${content.url}#persona`, name: content.name,
+            alternateName: 'Kevin Garzon', url: content.url,
+            jobTitle: 'Diseñador y director de arte',
+            sameAs: [content.behance, content.linkedin, content.instagram, content.photoInstagram] },
+          { '@type': 'WebSite', '@id': `${content.url}#website`, url: content.url,
+            name: content.name, inLanguage: 'es', publisher: { '@id': `${content.url}#persona` } }
+        ]
+      };
+      metadata.push(`<script type="application/ld+json">${JSON.stringify(schema).replace(/</g, '\\u003c')}</script>`);
+    }
+    return html.replace('</head>', metadata.join('\n') + '\n</head>');
   };
   await mkdir(path.join(root, 'dist'), { recursive: true });
   await copyAssets(path.join(root, 'apps/portfolio/public'), path.join(root, 'dist'));
-  await atomicWrite(path.join(root, 'dist/index.html'), await render(await read('apps/portfolio/src/index.html')));
+  await atomicWrite(path.join(root, 'dist/index.html'), await render(await read('apps/portfolio/src/index.html'), 'index.html'));
   for (const file of await readdir(path.join(root, 'apps/portfolio/src/pages'))) {
-    if (file.endsWith('.html')) await atomicWrite(path.join(root, 'dist', file), await render(await read(`apps/portfolio/src/pages/${file}`)));
+    if (file.endsWith('.html')) await atomicWrite(path.join(root, 'dist', file), await render(await read(`apps/portfolio/src/pages/${file}`), file));
   }
+  await atomicWrite(path.join(root, 'dist/robots.txt'), `User-agent: *\nAllow: /\n\nSitemap: ${new URL('sitemap.xml', content.url).href}\n`);
+  await atomicWrite(path.join(root, 'dist/sitemap.xml'), `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.map(url => `  <url><loc>${escape(url)}</loc></url>`).join('\n')}\n</urlset>\n`);
   // CSS imports must precede all rules.
   const styles = await read('libs/ui/styles/site.css');
   const imports = styles.match(/@import\s+url\([^)]*\);/g) || [];

@@ -147,3 +147,9 @@ Portada y ocho casos revisados en escritorio y móvil. [Informe, correcciones y 
 - Pestañas de Ahead adaptables sin dividir palabras; altura mínima de 44 px.
 - Nueve páginas en cuatro anchos (320, 390, 820, 1440 px) sin desbordamiento horizontal detectado; comprobados acordeón, índice, pestañas y visores con retorno de foco.
 - [Informe y límites de la revisión](revision-prepublicacion-2026-11-12.md). Cambios locales, sin publicar.
+
+### SEO y HTTPS — 12 de noviembre de 2026
+- Confirmados noindex en producción y ausencia de redirección HTTP → HTTPS; las variantes HTTPS responden correctamente en la comprobación TLS.
+- Retirado noindex en las nueve plantillas. Añadidos canonical, Open Graph, sitemap, robots.txt y Person/WebSite con perfiles públicos existentes; título de portada más específico.
+- Check/build/diff correctos. Pendientes externos: Enforce HTTPS en GitHub Pages y verificación/envío a Search Console después del despliegue. [Guía](seo-https.md).
+- Cambios locales, sin push ni publicación; no se afirma una posición garantizada ni una mejora medida de velocidad.

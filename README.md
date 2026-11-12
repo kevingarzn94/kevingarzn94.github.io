@@ -41,4 +41,4 @@ npm run build
 
 ## Privacidad
 
-`noindex` evita solicitar indexación, pero no sustituye autenticación. Publicado en GitHub Pages desde la cuenta personal de Kevin (decisión del 29 de octubre de 2026); `noindex` se mantiene mientras se define un dominio propio. El sitio utiliza copias seleccionadas y optimizadas de los archivos originales. No se incluyen las metas financieras personales.
+Publicado en GitHub Pages desde la cuenta personal de Kevin. El 12 de noviembre de 2026 se habilitó la indexación en el código para el dominio https://kevingarzon.com/. El build genera canonical, sitemap, robots.txt y datos estructurados; ver docs/seo-https.md para completar la configuración externa. El sitio utiliza copias seleccionadas y optimizadas de los archivos originales. No se incluyen las metas financieras personales.

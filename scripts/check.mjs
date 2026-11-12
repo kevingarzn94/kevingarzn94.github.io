@@ -13,7 +13,12 @@ for (const file of pages) {
   assert.equal(new Set(ids).size,ids.length,`${file}: IDs duplicados`);
   assert.equal((html.match(/<h1(?:\s[^>]*)?>/g)||[]).length,1,`${file}: h1 único`);
   assert(html.includes('lang="es"'));
-  assert(html.includes('name="robots" content="noindex, nofollow"'));
+  assert(html.includes('name="robots" content="index, follow, max-image-preview:large"'));
+  assert(!/noindex|nofollow/.test(html.match(/<head>[\s\S]*?<\/head>/)[0]), `${file}: indexación bloqueada`);
+  const canonical = `https://kevingarzon.com/${file === 'index.html' ? '' : file}`;
+  assert(html.includes(`<link rel="canonical" href="${canonical}">`), `${file}: canonical`);
+  assert(html.includes(`<meta property="og:url" content="${canonical}">`));
+  assert((await readFile(path.join(dist, 'sitemap.xml'), 'utf8')).includes(`<loc>${canonical}</loc>`));
   assert(!/{{/.test(html),`${file}: plantilla pendiente`);
   assert(!/Prodesa|prodesa-|\bdownload(?:=|\s|>)/i.test(html),`${file}: contenido retirado`);
   assert(!/Grecia|30\s*millones|4[.,]29/.test(html),`${file}: plan privado`);
@@ -39,3 +44,14 @@ assert(!/@import/.test(css),'No cargar fuentes externas');
 console.log(`OK: ${pages.length} páginas, enlaces entre proyectos, recursos, privacidad, iconos y contenido retirado.`);
 
 for (const asset of ['hero-3d.js','vendor/three/three.module.js','vendor/three/three.core.js','vendor/three/LICENSE']) await access(path.join(dist,asset));
+
+const robots = await readFile(path.join(dist, 'robots.txt'), 'utf8');
+assert(robots.includes('Allow: /') && !robots.includes('Disallow: /'));
+assert(robots.includes('Sitemap: https://kevingarzon.com/sitemap.xml'));
+const sitemap = await readFile(path.join(dist, 'sitemap.xml'), 'utf8');
+assert.equal((sitemap.match(/<loc>/g) || []).length, pages.length);
+const home = await readFile(path.join(dist, 'index.html'), 'utf8');
+const schema = JSON.parse(home.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/)[1]);
+assert.equal(schema['@graph'][0].name, 'Kevin Garzón');
+assert.equal(schema['@graph'][0].url, 'https://kevingarzon.com/');
+console.log('OK: indexación, canonical, sitemap y datos estructurados.');
