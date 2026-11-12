@@ -120,3 +120,30 @@ Portada y ocho casos revisados en escritorio y móvil. [Informe, correcciones y 
 - Contacto: «Trabajemos juntos» sustituye «El siguiente proyecto».
 - Check, build, sintaxis JS y diff correctos. Mockups revisados en navegador a 1440, 820 y 390 px; sin desbordamiento horizontal en esas vistas. Verificados flecha del abanico y acceso por clic a Colonia. Preferencia de movimiento comprobada con un harness aislado, sin cambiar ajustes del sistema.
 - Cambios locales; sin commit, push ni publicación. No se modificó Ahead ni el manifiesto de hosting.
+
+### Galería editorial de proyectos — 11 de noviembre de 2026
+- Propuesta local: dos columnas en escritorio/tablet, una en móvil; tarjetas con superficie, borde discreto y contenido agrupado.
+- Separación entre columnas de 24–48 px y filas de 40–72 px; padding interior de 24–36 px. Valores centralizados en tokens.
+- Portadas con proporción 4:3 y acciones siempre visibles: «Ver proyecto» o «Ver en Behance». Cada tarjeta conserva un único enlace, foco visible y el contenido editorial existente.
+- Ahead y Wedding mantienen la primera fila. El resto de casos conserva su orden y enlaces. No se modifica el abanico.
+- Verificación de 11 tarjetas, teclado y anchos de 1440, 820 y 390 px, sin desbordamiento horizontal. Check y build correctos.
+- Cambios locales, sin publicación. Consolidación general del sistema de componentes aplazada a la siguiente etapa por decisión de Kevin.
+
+### Jerarquía de destacados y márgenes — 11 de noviembre de 2026
+- Ahead recupera una columna 1,35 veces más ancha, título mayor y acción coral; Wedding conserva su portada vertical 4:5 en escritorio. En móvil se mantiene una columna con imágenes 4:3.
+- Acciones de las tarjetas con apariencia de botón y flecha horizontal: «Ver proyecto →» y «Abrir en Behance →». La tarjeta sigue siendo un único enlace accesible.
+- Margen global mediante el token gutter: 24 px como mínimo, 6vw hasta 96 px; ancho de contenido máximo de 1440 px en pantallas grandes.
+- Revisados portada y accesos por teclado, con comprobación móvil de Ahead y Colonia. Check/build correctos; cambios locales sin publicación.
+
+### Cuadrícula adaptable y orden final — 11 de noviembre de 2026
+- Galería unificada: una columna hasta 760 px; dos de 761 a 1199 px; tres desde 1200 px. Ahead ocupa dos columnas únicamente en la vista de tres, con Wedding a su lado.
+- Orden de lectura y teclado: Ahead, Wedding, Centauro/Brand Guidelines, Colonia, La Colombia Real, Bimbo/Amor a Mordiscos, Breakers, Viajero y los tres enlaces de Behance.
+- Tipografía uniforme, portadas de altura compartida en escritorio amplio y botones alineados por fila; se mantienen contenedores y márgenes. Ahead se destaca por anchura y CTA, no por un título sobredimensionado.
+- Check/build correctos; comprobados 1440, 820 y 390 px sin desbordamiento. Propuesta local, sin publicar.
+
+### Márgenes y revisión previa a publicación — 12 de noviembre de 2026
+- Contenido máximo de 1280 px; márgenes de 8vw hasta 128 px y 24 px en móvil. Se conserva la cuadrícula 1/2/3 y Ahead destacado solo en tres columnas.
+- Balance de títulos, composición de párrafos y correcciones puntuales de palabras aisladas. Hero móvil sin salto fijo y con tamaño ajustado.
+- Pestañas de Ahead adaptables sin dividir palabras; altura mínima de 44 px.
+- Nueve páginas en cuatro anchos (320, 390, 820, 1440 px) sin desbordamiento horizontal detectado; comprobados acordeón, índice, pestañas y visores con retorno de foco.
+- [Informe y límites de la revisión](revision-prepublicacion-2026-11-12.md). Cambios locales, sin publicar.

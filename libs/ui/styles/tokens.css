@@ -9,8 +9,10 @@
  --radius-sm:8px;--radius-card:20px;--radius-pill:999px;
  --text-eyebrow:13px;--hero-title-space:clamp(32px,5vh,64px);
  --text-xs:14px;--text-sm:14px;--text-body:16px;--text-lead:clamp(18px,2vw,24px);--text-title:clamp(36px,5vw,72px);
- --content-width:1440px;--measure:65ch;--gutter:clamp(24px,5vw,80px);
+ --content-width:1280px;--measure:65ch;--gutter:clamp(24px,8vw,128px);
  --duration-fast:180ms;--duration-ui:320ms;--duration-enter:1000ms;--ease-out:cubic-bezier(.16,1,.3,1);
+ --project-surface:#191919;--project-border:#383838;--project-border-active:#a6a6a6;
+ --project-column-gap:clamp(24px,3vw,48px);--project-row-gap:clamp(40px,5vw,72px);--project-inset:clamp(24px,2.5vw,36px);
  --shadow-card:0 20px 55px #17151b18;
 }
 .ahead-case{--case-purple:#5c1f63;--case-dark:#26082f;--case-lilac:#efebfd;--case-cream:#f4f0e8;--case-orange:#f76f26;--case-terra:#d8451d;--case-line:#ffffff25}
