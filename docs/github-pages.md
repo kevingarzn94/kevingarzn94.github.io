@@ -1,33 +1,29 @@
 # Publicación en GitHub Pages
 
-Actualizado el 29 de octubre de 2026. Kevin decidió publicar el portafolio desde su cuenta personal de GitHub (`kevingarzn94`) mientras define un dominio propio. Reemplaza la decisión del 28 de octubre de mantenerlo solo en local.
+Estado al 12/11/2026. Sitio ya configurado y publicado en **https://kevingarzon.com/**. No recrear repositorio, remoto ni dominio en cada sesión.
 
-- Repositorio recomendado: `kevingarzn94/kevingarzn94.github.io` (público). URL: https://kevingarzn94.github.io/
-- Workflow: `.github/workflows/pages.yml`. En cada push a `main` ejecuta `npm run check`, `npm run build` y publica `dist/`.
-- Cuenta: solo la cuenta personal. No usar cuentas, organizaciones ni credenciales de Opitech.
-- Actualización 12/11/2026: indexación habilitada en código para https://kevingarzon.com/. Completar HTTPS y Search Console según [la guía SEO](seo-https.md).
-- `private/` y `dist/` están en `.gitignore` y no se suben.
-- Los inventarios de `apps/portfolio/content/` ya no incluyen rutas locales ni de OneDrive; indican el origen de forma genérica.
-- Kevin confirmó publicar la interna de Ahead completa, incluido el brandbook en PDF.
+- Repositorio personal: https://github.com/kevingarzn94/kevingarzn94.github.io
+- Rama de publicación: `main`; fuente Pages: GitHub Actions.
+- Workflow: `.github/workflows/pages.yml`, Node 22, check/build y artefacto `dist/`.
+- Cualquier push a main, incluso documental, dispara el despliegue. También permite workflow_dispatch.
+- Dominio: Porkbun; en Pages `kevingarzon.com`, Enforce HTTPS activado y confirmado en la sesión del 12/11. Revalidar si hay incidencias futuras.
+- No usar cuentas, credenciales ni destinos de Ahead/Opitech. Preservar `.openai/hosting.json`, aunque el flujo actual de producción sea GitHub Pages.
+- `private/` y `dist/` ignorados por Git. No agregar originales privados, capturas con datos de cuenta ni secretos.
 
-## Primera publicación
+## Actualización habitual desde Visual Studio Code
 
-1. En github.com, con la sesión de `kevingarzn94`, crear el repositorio público `kevingarzn94.github.io` sin README ni licencia.
-2. En el repositorio: Settings → Pages → Source: **GitHub Actions**.
-3. En la carpeta del proyecto:
-   ```sh
-   git add -A
-   git commit -m "Portafolio v2"
-   git branch -M main
-   git remote add origin https://github.com/kevingarzn94/kevingarzn94.github.io.git
-   git push -u origin main
-   ```
-4. Revisar la pestaña Actions: al terminar, el sitio queda en https://kevingarzn94.github.io/. Si el primer workflow falló porque Pages aún no estaba activo, volver a ejecutarlo desde Actions.
+1. Revisar `git status` y `git diff` para seleccionar solo los cambios previstos.
+2. Para cambios funcionales, ejecutar `npm run check` y `npm run build`; revisar las vistas afectadas.
+3. Añadir los archivos concretos con `git add`, crear un commit descriptivo y ejecutar `git push origin main` cuando Kevin autorice publicar. Evitar `git add -A` sin revisar todo el árbol.
+4. Abrir [Actions](https://github.com/kevingarzn94/kevingarzn94.github.io/actions) y confirmar que el commit enviado termine en verde, incluyendo deploy.
+5. Comprobar la web pública y registrar commit, validación y evidencia de despliegue en la continuidad. Un push exitoso solo confirma recepción del código.
 
-## Dominio propio (después)
+## DNS y cuentas: referencia, no instrucciones para rehacer
 
-El dominio ya responde en https://kevingarzon.com/. En Settings → Pages activar Enforce HTTPS; la comprobación del 12/11/2026 encontró que HTTP aún no redirigía a HTTPS.
+Configuración mostrada en Porkbun: ALIAS raíz → `kevingarzn94.github.io`; CNAME www → mismo destino; TTL 600. Se conservaron MX y TXT del correo. Se añadió TXT raíz de Google para Search Console y se verificó correctamente; mantenerlo. Consultar valores actuales en el proveedor antes de modificar DNS.
 
-## Cloudflare (descartado el 29/10/2026)
+Search Console pertenece a la cuenta personal de Kevin. El sitemap ya se envió y la prueba publicada permite indexar; detalles en [SEO/HTTPS](seo-https.md). No registrar credenciales ni tokens en Git.
 
-Cloudflare entregó `kevingarzon.kevingarzon09.workers.dev` (Workers, no Pages) y Kevin prefirió quedarse con GitHub Pages: **https://kevingarzn94.github.io/**. Si se creó el proyecto en Cloudflare, puede borrarse desde su panel (Workers & Pages → proyecto → Settings → Delete) para no tener una copia pública duplicada. Un nombre en la URL se logra mejor con dominio propio (sección anterior) o renombrando la cuenta de GitHub.
+## Historia del hosting
+
+Se evaluó Cloudflare Workers y se descartó a favor de GitHub Pages el 29/10/2026. No hay confirmación aquí de eliminación de aquel destino. No migrar ni eliminar servicios externos basándose solo en esta nota. El dominio Porkbun se conectó en noviembre; HTTPS y SEO se completaron el 12/11. Historial en [continuidad](continuidad.md) y [estado](estado.md).

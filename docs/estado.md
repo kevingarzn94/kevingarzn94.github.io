@@ -1,3 +1,17 @@
+# Estado vigente · 12 de noviembre de 2026
+
+**Publicado hasta `c4af12d`**, con push compartido y despliegue confirmado por Kevin. HTTPS forzado, Search Console verificado, sitemap correcto con nueve páginas descubiertas y prueba en vivo apta para indexación. Indexación efectiva y rendimiento orgánico aún sin confirmar. Guía actual: [continuidad](continuidad.md).
+
+## Cierre documental de la sesión
+
+README convertido en punto de inicio permanente; continuidad consolidada desde la base v2 hasta SEO orgánico; instrucciones de publicación actualizadas y documentos antiguos señalados como históricos. Sin cambios funcionales ni publicación de esta documentación por el agente. No se guardan credenciales ni tokens de verificación. Validación de este cierre documental: enlaces relativos correctos, `git diff --check`, `npm run check` (nueve páginas y SEO) y `npm run build` correctos. No fue necesaria una nueva revisión visual: no se alteró la interfaz.
+
+---
+
+## Bitácora histórica (no representa por sí sola el estado actual)
+
+Las notas “sin publicar”, “noindex”, switches y pendientes HTTPS siguientes corresponden a sus fechas. Quedan superadas por las entradas posteriores y la continuidad vigente; se conservan para trazabilidad.
+
 # Estado · 29 de octubre de 2026
 
 Implementación local lista para revisión: portada y ocho internas. Ahead incluye ocho capítulos, navegación de progreso, identidad original, exploraciones, aplicaciones, lanzamiento, stand, contenido y tres vistas del ecosistema digital.

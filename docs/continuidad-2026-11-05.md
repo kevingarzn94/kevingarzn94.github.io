@@ -1,3 +1,5 @@
+> ARCHIVO HISTÓRICO. Para iniciar una sesión usar [continuidad vigente](continuidad.md) y README. Los pendientes de HTTPS, noindex y publicación de este documento fueron resueltos posteriormente. No ejecutar su instrucción sugerida sin contrastar el estado actual.
+
 # Continuidad de sesión · 5 de noviembre de 2026
 
 Resumen para retomar el trabajo desde Codex o Claude después de borrar el chat. Resume decisiones y resultados de la conversación, contrastados con el repositorio local el 5 de noviembre. No es una transcripción. Las comprobaciones de servicios externos que figuran aquí son históricas del 4 de noviembre, salvo indicación contraria.

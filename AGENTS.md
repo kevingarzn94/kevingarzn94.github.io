@@ -1,3 +1,8 @@
+## Inicio y cierre de cada sesión
+
+- Leer primero `README.md` y `docs/continuidad.md`; contrastar con Git. Las notas fechadas anteriores son históricas y no sustituyen el estado vigente.
+- Al cerrar trabajo relevante, actualizar la continuidad y añadir una entrada en `docs/estado.md` con cambios, pruebas, pendientes y estado de publicación real. No guardar credenciales ni tokens de cuentas en documentos públicos.
+
 # Portafolio de Kevin Garzón
 
 - Trabajar únicamente en este repositorio. La carpeta de Ahead es una referencia de solo lectura: nunca editarla, borrar archivos, ejecutar sus scripts, publicar ni cambiar su Git.

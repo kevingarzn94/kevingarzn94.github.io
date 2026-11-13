@@ -1,3 +1,5 @@
+> Estado actualizado al cierre del 12/11/2026: cambios publicados hasta `c4af12d`, HTTPS forzado, dominio verificado en Search Console, sitemap correcto (9 descubiertas), indexación solicitada y prueba en vivo apta. Kevin confirmó el despliegue. Indexación efectiva y ranking no confirmados. Las secciones de diagnóstico y pasos siguientes conservan el procedimiento histórico; no repetir la configuración ya completada. Ver [continuidad vigente](continuidad.md).
+
 # HTTPS e indexación · 12 de noviembre de 2026
 
 ## Diagnóstico público
@@ -65,4 +67,4 @@ PageSpeed Insights API devolvió 429 por cuota agotada; no se obtuvo puntuación
 
 Verificación: check, build y diff correctos; presentación revisada en navegador a 390 px sin desbordamiento horizontal. Captura privada en private/qa-seo-20261112/about-mobile.jpg.
 
-Acción externa recomendada: usar el enlace https://kevingarzon.com/ y una identidad profesional coherente en los perfiles propios de Instagram, Behance y LinkedIn. No se modificaron perfiles ni se crearon anuncios. Cambios de esta revisión aún sin publicar.
+Acción externa recomendada: usar el enlace https://kevingarzon.com/ y una identidad profesional coherente en los perfiles propios de Instagram, Behance y LinkedIn. No se modificaron perfiles ni se crearon anuncios. Estos ajustes fueron publicados en `c4af12d`; despliegue confirmado por Kevin al cierre de la sesión.

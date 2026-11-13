@@ -1,3 +1,5 @@
+> Decisiones vigentes al 12/11/2026: ver [continuidad](continuidad.md). Galería 1/2/3 columnas (760/1200 px), Ahead ocupa dos solo en tres columnas; contenido máximo 1280 px y gutter 24–128 px. No hay switches manuales. Las menciones posteriores al interruptor corresponden al historial. `v2.css` se concatena después de `wedding.css` y cierra la cascada: revisar esa capa antes de cambiar un componente.
+
 # Sistema de diseño
 
 ## Fundamentos
