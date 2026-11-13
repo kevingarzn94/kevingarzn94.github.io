@@ -47,3 +47,22 @@ Referencias:
 - https://developers.google.com/search/help/site-position-in-search-faq
 
 La prioridad es SEO orgánico. SEM implica anuncios pagados y no corrige la exclusión por noindex ni compra una mejor posición orgánica. No se han creado campañas ni realizado gastos.
+
+## Revisión orgánica de contenido y carga — 12/11/2026
+
+Estado confirmado posteriormente en producción y capturas del usuario: HTTPS forzado; propiedad de dominio verificada en Search Console; sitemap correcto con nueve páginas descubiertas; solicitud de indexación enviada y prueba publicada apta para indexación. Esto no confirma aún indexación ni posición.
+
+Ajustes locales posteriores:
+- Nombre completo, profesión y Bogotá, Colombia en el párrafo de presentación.
+- Servicio web identificado como UX/UI y servicio audiovisual explicado como fotografía, video y dirección de arte.
+- Descripción de portada y metadatos de Ahead, Wedding, Bimbo y Breakers más concretos, sin alterar sus créditos ni el hero creativo.
+- Dimensiones intrínsecas añadidas a imágenes de las secciones compartidas para reservar proporciones antes de cargar; se respetan las dimensiones definidas por CSS.
+- Logo de la tarjeta de Ahead con carga diferida, coherente con su imagen de portada.
+
+Inventario local de recursos: portada con aproximadamente 1318 KiB en imágenes sin lazy antes del ajuste del logo (26 KiB pasan a carga diferida). Es suma de tamaños de archivos, no transferencia medida ni ahorro garantizado al iniciar: el navegador decide cuándo cargar imágenes cercanas al viewport. Los cuatro videos de los casos ya usan preload=none. No se descargó ni recomprimió el material visual.
+
+PageSpeed Insights API devolvió 429 por cuota agotada; no se obtuvo puntuación móvil, LCP, INP ni CLS. Queda pendiente una medición de laboratorio en PageSpeed/Lighthouse y, cuando haya tráfico suficiente, los datos de campo. No se atribuye una mejora de Core Web Vitals a estos cambios sin medirla.
+
+Verificación: check, build y diff correctos; presentación revisada en navegador a 390 px sin desbordamiento horizontal. Captura privada en private/qa-seo-20261112/about-mobile.jpg.
+
+Acción externa recomendada: usar el enlace https://kevingarzon.com/ y una identidad profesional coherente en los perfiles propios de Instagram, Behance y LinkedIn. No se modificaron perfiles ni se crearon anuncios. Cambios de esta revisión aún sin publicar.

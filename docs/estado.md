@@ -153,3 +153,9 @@ Portada y ocho casos revisados en escritorio y móvil. [Informe, correcciones y 
 - Retirado noindex en las nueve plantillas. Añadidos canonical, Open Graph, sitemap, robots.txt y Person/WebSite con perfiles públicos existentes; título de portada más específico.
 - Check/build/diff correctos. Pendientes externos: Enforce HTTPS en GitHub Pages y verificación/envío a Search Console después del despliegue. [Guía](seo-https.md).
 - Cambios locales, sin push ni publicación; no se afirma una posición garantizada ni una mejora medida de velocidad.
+
+### Contenido SEO orgánico — 12 de noviembre de 2026
+- Presentación con nombre completo y ubicación; servicios UX/UI, fotografía y video más explícitos; metadatos de cuatro casos afinados.
+- Dimensiones de imágenes de las secciones y carga diferida del logo de tarjeta Ahead. Diseño y hero conservados.
+- Check/build/diff y revisión móvil correctos. PageSpeed bloqueado por cuota 429, por lo que la medición de Core Web Vitals queda pendiente. Detalles en docs/seo-https.md.
+- Ajustes locales sin publicar. Search Console ya verificado por Kevin y sitemap correcto con nueve páginas descubiertas.
