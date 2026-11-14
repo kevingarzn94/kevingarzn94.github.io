@@ -9,7 +9,7 @@ Documento de inicio para futuras sesiones sin acceso al chat original. Complemen
 - Último commit funcional: `c4af12d`, “Refuerza SEO organico y estabilidad visual”. Kevin compartió push exitoso y confirmó que el despliegue terminó.
 - Hosting GitHub Pages vía Actions; DNS en Porkbun. HTTPS forzado confirmado durante esta sesión. No requiere contratar hosting adicional.
 - Nueve páginas: portada y Ahead, Wedding Art, Centauro, Colonia, La Colombia Real, Bimbo, Breakers Fest y Viajero. Tres tarjetas adicionales enlazan a Behance, no son internas.
-- `032d981` consolidó la documentación. **14/11: revisión integral preparada en local, sin commit ni publicación** (ver «Revisión integral del 14 de noviembre» y `docs/estado.md`). Publicar solo con autorización de Kevin.
+- `032d981` consolidó la documentación. **14/11: revisión integral publicada** en el commit `3288b0a` (workflow en verde, comprobada en producción). Ver «Revisión integral del 14 de noviembre» y `docs/estado.md`.
 
 ## Forma de trabajar con Kevin
 
@@ -85,7 +85,7 @@ Estado demostrado durante la sesión del 12/11:
 
 Último ajuste orgánico: descripción de portada, nombre completo en Sobre mí, servicios UX/UI/foto/video explícitos y metadatos de Ahead/Wedding/Bimbo/Breakers. Dimensiones intrínsecas en imágenes compartidas y lazy del logo Ahead. Los cuatro videos ya tenían preload=none. No se modificaron perfiles sociales.
 
-## Revisión integral del 14 de noviembre (local, sin publicar)
+## Revisión integral del 14 de noviembre (publicada, `3288b0a`)
 
 - Limpieza: 51 recursos sin referencia (~7 MB, incluidos `ml-resultados.mp4` y la serie `wedding-photo-02…19`), Three.js y cuatro scripts muertos (`hero-3d.js`, `case-study.js`, `scroll-scenes.js`, `libs/ui/motion/hero.js`), unos 50 KB de CSS sin selectores vivos y la vista previa flotante sin uso de `v2.js`. Las capturas antes/después de las nueve páginas a 390 y 1440 px salieron idénticas, salvo ruido de suavizado. Git conserva el historial de lo borrado.
 - Rendimiento: variantes de 600/800 px para el abanico y las portadas, portada Wedding recomprimida (800/1400 px), fotos 2–6 de los fondos diferidas. Carga inicial móvil medida localmente: 2,06 MB → 1,05 MB (sin gzip). Dimensiones intrínsecas en las imágenes de los casos. Versiones de caché automáticas por contenido.

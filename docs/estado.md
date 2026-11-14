@@ -183,5 +183,5 @@ Portada y ocho casos revisados en escritorio y móvil. [Informe, correcciones y 
 - Validación: `npm run check` y `npm run build` correctos. Capturas completas de nueve páginas a 390 y 1440 px con movimiento reducido, comparadas píxel a píxel con la línea base: la poda de CSS/JS no cambió el render. Pruebas funcionales en Chrome sin interfaz: abanico, acordeón, visor de Colonia con retorno de foco, galería Wedding, carga diferida de fondos y ausencia de cargas extra con movimiento reducido. Sin desbordamiento horizontal.
 - No validado: Lighthouse/PageSpeed (bloqueado en la sesión), lectores de pantalla, dispositivos físicos. Pendientes: comprimir video Save the Date y PDF de Ahead con herramientas adecuadas; subtítulos.
 - Hallazgo descartado: el naranja de Breakers sobre blanco ya estaba corregido (`#a54b00` en `.av-paper`).
-- Estado: preparado y validado en local. **Sin commit, sin push, sin publicar.** Reiniciar `npm start` porque cambió `scripts/build.mjs`.
+- Estado: **publicado.** Commit `3288b0a` enviado a `main` por autorización de Kevin el 14/11; workflow de GitHub Pages n.º 17 terminado en verde. Comprobado en https://kevingarzon.com/: `og:image`, versión de CSS por hash, hero en español, 404 propia, navegación anterior/siguiente y Three.js retirado (404). Reiniciar `npm start` en local porque cambió `scripts/build.mjs`.
 
