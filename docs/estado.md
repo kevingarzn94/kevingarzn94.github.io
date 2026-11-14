@@ -173,3 +173,15 @@ Portada y ocho casos revisados en escritorio y móvil. [Informe, correcciones y 
 - Dimensiones de imágenes de las secciones y carga diferida del logo de tarjeta Ahead. Diseño y hero conservados.
 - Check/build/diff y revisión móvil correctos. PageSpeed bloqueado por cuota 429, por lo que la medición de Core Web Vitals queda pendiente. Detalles en docs/seo-https.md.
 - Ajustes locales sin publicar. Search Console ya verificado por Kevin y sitemap correcto con nueve páginas descubiertas.
+
+### Revisión integral: limpieza, rendimiento, navegación y accesibilidad — 14 de noviembre de 2026
+- Retirados recursos y código sin uso: 51 archivos de `public/assets` (~7 MB), Three.js, `hero-3d.js`, `case-study.js`, `scroll-scenes.js`, `libs/ui/motion/hero.js` (redirecciones antiguas trasladadas a `v2.js`, con `#proceso-ahead` → `#entender`), ~50 KB de CSS sin selectores vivos y el bloque de vista previa flotante de `v2.js`. Inventarios JSON depurados para no listar archivos inexistentes. El build ahora borra de `dist/` lo obsoleto.
+- Navegación: `content/cases.json` genera «Siguiente», «Anterior» y «Todos los proyectos» en el orden de la galería; pie compartido con «Volver arriba»; página 404 propia.
+- Compartir/SEO: imágenes `og` 1200 × 630 para las nueve páginas, `twitter:card`, Person ampliado, referrer menos restrictivo, versiones de caché por hash.
+- Rendimiento: abanico de 735 KB → 253 KB, variantes de 800 px para portadas JPG pesadas, portada Wedding de 2,4 MB (1000+2000 px) → 0,9 MB (800+1400 px), fondos diferidos. Carga inicial móvil local 2,06 MB → 1,05 MB.
+- Accesibilidad y textos: foco con contraste en fondos claros, alt descriptivos en 32 fotos Wedding, visor modal en Colonia, ajustes de movimiento reducido, video Ahead a 320 px, franja del fondo fotográfico, aviso de PDF, nombres y textos unificados.
+- Validación: `npm run check` y `npm run build` correctos. Capturas completas de nueve páginas a 390 y 1440 px con movimiento reducido, comparadas píxel a píxel con la línea base: la poda de CSS/JS no cambió el render. Pruebas funcionales en Chrome sin interfaz: abanico, acordeón, visor de Colonia con retorno de foco, galería Wedding, carga diferida de fondos y ausencia de cargas extra con movimiento reducido. Sin desbordamiento horizontal.
+- No validado: Lighthouse/PageSpeed (bloqueado en la sesión), lectores de pantalla, dispositivos físicos. Pendientes: comprimir video Save the Date y PDF de Ahead con herramientas adecuadas; subtítulos.
+- Hallazgo descartado: el naranja de Breakers sobre blanco ya estaba corregido (`#a54b00` en `.av-paper`).
+- Estado: preparado y validado en local. **Sin commit, sin push, sin publicar.** Reiniciar `npm start` porque cambió `scripts/build.mjs`.
+

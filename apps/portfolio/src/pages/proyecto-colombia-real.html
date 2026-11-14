@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="index, follow, max-image-preview:large">
-<meta name="referrer" content="no-referrer">
+<meta name="referrer" content="strict-origin-when-cross-origin">
 <title>La Colombia Real · Diseño, narrativa y creatividad · Kevin Garzón</title>
 <meta name="description" content="La Colombia Real: dirección de arte, diseño, motion graphics y edición para la candidatura presidencial de Mauricio Lizcano.">
 <link rel="stylesheet" href="style.css?v=20261112-1">
@@ -28,11 +28,11 @@
   <h1 id="ml-title">Construyendo La Colombia <em>Real.</em></h1>
  </div>
  <div class="av-fan" data-fan>
-  <figure class="av-card" style="--i:-2;--a:2"><img src="assets/ml-redes.jpg" alt="Sistema para redes sociales"></figure>
-  <figure class="av-card" style="--i:-1;--a:1"><img src="assets/ml-reto.webp" alt="El reto de la campaña"></figure>
-  <figure class="av-card" style="--i:0;--a:0"><img src="assets/ml-portada.jpg" alt="Portada: Construyendo La Colombia Real"></figure>
-  <figure class="av-card" style="--i:1;--a:1"><img src="assets/ml-concepto.webp" alt="Concepto: hacer tangible La Colombia Real"></figure>
-  <figure class="av-card" style="--i:2;--a:2"><img src="assets/ml-web.jpg" alt="Plataforma digital de la campaña"></figure>
+  <figure class="av-card" style="--i:-2;--a:2"><img src="assets/ml-redes.jpg" alt="Sistema para redes sociales" width="1920" height="800"></figure>
+  <figure class="av-card" style="--i:-1;--a:1"><img src="assets/ml-reto.webp" alt="El reto de la campaña" width="1800" height="750"></figure>
+  <figure class="av-card" style="--i:0;--a:0"><img src="assets/ml-portada.jpg" alt="Portada: Construyendo La Colombia Real" width="1920" height="1080"></figure>
+  <figure class="av-card" style="--i:1;--a:1"><img src="assets/ml-concepto.webp" alt="Concepto: hacer tangible La Colombia Real" width="1800" height="1012"></figure>
+  <figure class="av-card" style="--i:2;--a:2"><img src="assets/ml-web.jpg" alt="Plataforma digital de la campaña" width="1920" height="1080"></figure>
  </div>
  <dl class="av-facts">
   <div><dt>Cliente</dt><dd>Mauricio Lizcano · candidato presidencial</dd></div>
@@ -81,7 +81,7 @@
   <p class="av-big">Conectar la candidatura con la realidad cotidiana de los colombianos.</p>
   <p>No desde la política tradicional, sino desde las personas: las familias, los trabajadores, los estudiantes y las comunidades que viven los desafíos del país todos los días.</p>
  </div>
- <figure class="wedding-wide" data-reveal><img src="assets/ml-concepto.webp" alt="Lámina del concepto La Colombia Real" loading="lazy"></figure>
+ <figure class="wedding-wide" data-reveal><img src="assets/ml-concepto.webp" alt="Lámina del concepto La Colombia Real" loading="lazy" width="1800" height="1012"></figure>
 </section>
 
 <section class="av-act av-paper" id="canales" data-act aria-labelledby="t-canales">
@@ -112,7 +112,7 @@
   <h2 class="av-display" id="t-resultados">Una conversación que <em>creció.</em></h2>
  </div>
  <p class="av-note">Cifras del archivo del proyecto.</p>
- <figure class="wedding-wide" data-reveal><img src="assets/ml-resultados.webp" alt="Lámina de resultados de la campaña" loading="lazy"></figure>
+ <figure class="wedding-wide" data-reveal><img src="assets/ml-resultados.webp" alt="Lámina de resultados de la campaña" loading="lazy" width="1800" height="1012"></figure>
  <dl class="wedding-credits-list av-credits-dark">
   <div data-reveal><dt>Dirección de arte y diseño</dt><dd>Kevin Garzón</dd></div>
   <div data-reveal><dt>Motion graphics y edición</dt><dd>Kevin Garzón</dd></div>
@@ -123,18 +123,11 @@
 </section>
 </div>
 
-<nav class="av-next" aria-label="Más proyectos">
- <a class="av-next-card" href="proyecto-ahead.html">
-  <span class="av-label">Siguiente proyecto</span>
-  <strong>We Are Ahead <span aria-hidden="true"><svg class="ic ic-right" viewBox="0 0 24 24" width=".8em" height=".8em" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 12h16M13.5 5.5 20 12l-6.5 6.5"/></svg></span></strong>
-  <img src="assets/ahead-facade.webp" alt="" loading="lazy">
- </a>
- <a class="av-next-all" href="index.html#trabajo"><svg class="ic ic-left" viewBox="0 0 24 24" width=".8em" height=".8em" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 12H4M10.5 5.5 4 12l6.5 6.5"/></svg> Todos los proyectos</a>
-</nav>
+{{> project-nav}}
 
 {{> contact}}
 </main>
-<footer><a href="index.html">Kevin Garzón · Portafolio</a><span>Diseño con intención. © 2026</span></footer>
+{{> case-footer}}
 <script src="v2.js?v=20261110-1" defer></script>
 </body>
 </html>

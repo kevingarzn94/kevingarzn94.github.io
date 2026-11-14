@@ -13,6 +13,7 @@ La escala de espacios usa 4, 8, 12, 16, 24, 32, 48, 64 y 96 px. Los tokens inclu
 ## Componentes
 
 - Botones: acción principal coral, alternativa con borde; foco visible y texto explícito.
+- Foco: contorno `--accent` (#bc431e, 5,3:1) sobre superficies claras y blanco sobre oscuras (`.av-ink`, `.av-purple`, hero, contacto, navegación de casos). El coral sobre blanco no alcanza 3:1 y no se usa para el foco.
 - Cards: imagen protagonista, categoría y nombre; enlaces nativos hacia la interna.
 - Etiquetas: jerarquía secundaria, sin competir con titulares.
 - Contacto: iconos de marca sólidos y CTA directo a WhatsApp.
@@ -25,14 +26,15 @@ La preferencia del sistema `prefers-reduced-motion` tiene prioridad. Con movimie
 
 ## Caso Ahead
 
-`case-study.css` está limitado por `.ahead-case`: púrpura profundo, crema, naranja y lila propios de la marca. Ocho capítulos, navegación anclada con progreso, imágenes de proceso, vídeo con controles y pestañas de experiencia digital. Las pestañas soportan flechas, Inicio y Fin.
+Los estilos del caso viven en `v2.css`, limitados por `.ahead-v2`: púrpura profundo, crema, naranja y lila propios de la marca. Ocho capítulos, índice con progreso, imágenes de proceso, vídeo con controles y pestañas de experiencia digital (flechas, Inicio y Fin, en `v2.js`).
 
 ## Orden de estilos
 
 1. `tokens.css`: fundamentos.
 2. `site.css`: estructura general y estilos existentes.
 3. `components.css`: componentes compartidos y ajustes de movimiento.
-4. `case-study.css`: composición específica del caso.
+4. `wedding.css`: tono y piezas de Wedding Art.
+5. `v2.css`: sistema vigente de portada e internas; cierra la cascada.
 
 Para cambios futuros, editar el archivo responsable y reutilizar tokens; evitar agregar otra capa global de excepciones. Revisar foco, contraste, contenido largo, movimiento reducido y ancho móvil antes de entregar.
 
@@ -40,7 +42,7 @@ El recorrido de construcción web de Ahead usa una imagen sticky que cambia entr
 
 ## Sistema compartido de internas
 
-`case-study.css` y `case-study.js` centralizan capítulos, progreso, tipografía editorial, entradas y lectura con scroll nativo. Ahead y Wedding Art usan el recorrido extenso; las seis internas más cortas usan `compact-case` y conservan su contenido. La extensión depende del material disponible.
+`v2.css` y `v2.js` centralizan capítulos (`data-act`), índice y progreso, entradas (`data-reveal`), abanicos (`data-fan`), tipografía editorial y lectura con scroll nativo. Cada interna se limita con una clase de `body` (`ahead-v2`, `wedding-v2`, `bimbo-v2`…). Ahead y Wedding Art usan el recorrido extenso; las demás son más cortas según el material disponible. El cierre de cada caso (siguiente, anterior, todos los proyectos) se genera desde `content/cases.json`.
 
 `wedding.css` define el tono crema/carbón, títulos serif, galería, cine e invitación de Wedding Art. `wedding-gallery.js` usa un diálogo nativo: flechas para navegar, Escape para cerrar y devolución del foco a la fotografía de origen. Sin JavaScript, los enlaces abren las imágenes individuales.
 

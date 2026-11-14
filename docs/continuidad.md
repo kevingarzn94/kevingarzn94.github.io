@@ -1,4 +1,4 @@
-# Continuidad vigente · 12 de noviembre de 2026
+# Continuidad vigente · 14 de noviembre de 2026
 
 Documento de inicio para futuras sesiones sin acceso al chat original. Complementa AGENTS.md. Resume la historia del repositorio y las confirmaciones de Kevin; no es una nueva auditoría en vivo de servicios externos. El código y Git deben contrastarse al retomar.
 
@@ -9,7 +9,7 @@ Documento de inicio para futuras sesiones sin acceso al chat original. Complemen
 - Último commit funcional: `c4af12d`, “Refuerza SEO organico y estabilidad visual”. Kevin compartió push exitoso y confirmó que el despliegue terminó.
 - Hosting GitHub Pages vía Actions; DNS en Porkbun. HTTPS forzado confirmado durante esta sesión. No requiere contratar hosting adicional.
 - Nueve páginas: portada y Ahead, Wedding Art, Centauro, Colonia, La Colombia Real, Bimbo, Breakers Fest y Viajero. Tres tarjetas adicionales enlazan a Behance, no son internas.
-- Esta entrega posterior solo actualiza documentación. No modifica diseño, DNS ni cuentas; su commit/push aún debe registrarse cuando ocurra.
+- `032d981` consolidó la documentación. **14/11: revisión integral preparada en local, sin commit ni publicación** (ver «Revisión integral del 14 de noviembre» y `docs/estado.md`). Publicar solo con autorización de Kevin.
 
 ## Forma de trabajar con Kevin
 
@@ -31,6 +31,9 @@ La carpeta externa de Ahead es referencia de solo lectura. La interna `proyecto-
 - Galería: una columna hasta 760 px, dos de 761 a 1199 px y tres desde 1200 px. Ahead ocupa dos columnas solo en vista de tres y Wedding queda a su lado. Las demás mantienen tamaño uniforme. Se descartaron el título gigante de Ahead y la jerarquía adicional de Wedding en esta galería.
 - Orden: Ahead → Wedding Art → Centauro / Brand Guidelines → Colonia → La Colombia Real → Bimbo / Amor a Mordiscos → Breakers Fest → Viajero Co → tres Behance existentes.
 - Contenido máximo 1280 px, gutter `clamp(24px,8vw,128px)`, 24 px en móvil. Balance de títulos y párrafos; no introducir saltos rígidos que generen palabras aisladas.
+- Navegación entre casos (14/11): «Siguiente proyecto» sigue el orden de la galería y se añadió «Anterior» y «Todos los proyectos». Se genera desde `content/cases.json`; el pie de los casos es compartido (`case-footer`) con «Volver arriba».
+- Línea superior del hero en español: «Diseñador sénior · UX/UI · Fotografía» (antes «Sr Designer · UX/UI · Photography»). Kevin puede revertirlo si prefiere el inglés.
+- WhatsApp abre con un mensaje inicial («Hola Kevin, vi tu portafolio y quiero contarte sobre un proyecto.»), definido en `site.json`.
 - Material/Angular se mencionó como referencia de componentes y reglas UX/UI, **no se aprobó migrar a Angular**. Consolidación mayor del sistema de componentes sigue aplazada; reutilizar tokens actuales.
 
 ## Casos, autoría y contenido
@@ -82,6 +85,16 @@ Estado demostrado durante la sesión del 12/11:
 
 Último ajuste orgánico: descripción de portada, nombre completo en Sobre mí, servicios UX/UI/foto/video explícitos y metadatos de Ahead/Wedding/Bimbo/Breakers. Dimensiones intrínsecas en imágenes compartidas y lazy del logo Ahead. Los cuatro videos ya tenían preload=none. No se modificaron perfiles sociales.
 
+## Revisión integral del 14 de noviembre (local, sin publicar)
+
+- Limpieza: 51 recursos sin referencia (~7 MB, incluidos `ml-resultados.mp4` y la serie `wedding-photo-02…19`), Three.js y cuatro scripts muertos (`hero-3d.js`, `case-study.js`, `scroll-scenes.js`, `libs/ui/motion/hero.js`), unos 50 KB de CSS sin selectores vivos y la vista previa flotante sin uso de `v2.js`. Las capturas antes/después de las nueve páginas a 390 y 1440 px salieron idénticas, salvo ruido de suavizado. Git conserva el historial de lo borrado.
+- Rendimiento: variantes de 600/800 px para el abanico y las portadas, portada Wedding recomprimida (800/1400 px), fotos 2–6 de los fondos diferidas. Carga inicial móvil medida localmente: 2,06 MB → 1,05 MB (sin gzip). Dimensiones intrínsecas en las imágenes de los casos. Versiones de caché automáticas por contenido.
+- SEO/compartir: `og:image` 1200 × 630 por página (`assets/og/`, generadas con `scripts/og-images.mjs`), `twitter:card`, `og:type` article en casos, foto, ciudad y áreas en Person, Flickr en `sameAs`, referrer `strict-origin-when-cross-origin` (antes `no-referrer`, que ocultaba las visitas desde este sitio a Behance/LinkedIn), página 404 propia.
+- Accesibilidad/UX: foco visible con contraste suficiente en fondos claros, 32 textos alternativos descritos en la galería Wedding (antes «Fotograma NN»), un solo punto de foco por captura de Colonia con visor modal, transición del enlace Behance respetando movimiento reducido, video del stand Ahead en una columna bajo 480 px, franja oscura del borde derecho de los fondos fotográficos corregida, aviso «PDF · 9 MB» en el manual de Ahead, encuadre de la portada de Skippers.
+- Textos: «Amor a Mordiscos», «Skippers · Scotiabank Colpatria», «Combino dirección visual…», «Explora un caso web», «tarjetas», «Investigación UX», separadores «·» en títulos, `&nbsp;` literal retirado de Viajero.
+- No hecho por falta de herramientas o datos: recomprimir el video Save the Date (21 MB; `avconvert` solo ofrece 204 × 360 o un archivo mayor; usar HandBrake/ffmpeg H.264 720p), comprimir el PDF de Ahead (9 MB), subtítulos de los cuatro videos (requiere transcripción), medición Lighthouse/PageSpeed.
+- Observado fuera del código: la pieza de Skippers dice «CONVIÉRTETETE» (errata dentro de la imagen de la campaña).
+
 ## Validación y pendientes reales
 
 Completado históricamente: check/build y diff de los cambios funcionales; revisión de nueve páginas a 320, 390, 820 y 1440 px del ajuste de márgenes; interacciones y foco según informe de prepublicación. Último ajuste orgánico revisado en móvil a 390 px sin overflow. Auditoría automática de noviembre sin infracciones en su cobertura, **no certificación WCAG**.
@@ -89,7 +102,7 @@ Completado históricamente: check/build y diff de los cambios funcionales; revis
 Pendientes:
 1. Consultar Search Console cuando haya datos: indexación de las nueve URLs, exclusiones, consultas, impresiones y clics. No confundir falta inicial de datos con error.
 2. Kevin debe confirmar enlaces a la web e identidad coherente en sus perfiles propios de Instagram, Behance y LinkedIn. No asumir que los perfiles homónimos de búsqueda son suyos.
-3. Medir rendimiento móvil real: API PageSpeed devolvió 429 por cuota; no hay puntuación ni LCP/INP/CLS verificados. Inventarios de peso son solo tamaños de archivos, no mediciones de carga. Usar Lighthouse/PageSpeed cuando esté disponible y datos de campo cuando existan.
+3. Medir rendimiento móvil real después de publicar la revisión del 14/11. La API PageSpeed devolvió 429 por cuota; no hay puntuación ni LCP/INP/CLS verificados. Inventarios de peso son solo tamaños de archivos, no mediciones de carga. Usar Lighthouse/PageSpeed cuando esté disponible y datos de campo cuando existan.
 4. Accesibilidad: audio/subtítulos y alternativas de cuatro videos; VoiceOver/TalkBack y dispositivos físicos; alt editorial, contraste sobre fotos, zoom y PDFs externos. Consultar auditoría para alcance exacto.
 5. Consolidar reglas de componentes a futuro solo en el alcance que Kevin solicite; no rehacer diseño ni migrar framework automáticamente.
 

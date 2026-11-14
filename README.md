@@ -21,14 +21,14 @@ Node.js 22 o superior; no necesita instalar dependencias.
 npm start
 ```
 
-Abrir http://127.0.0.1:8766/. El servidor recompila al guardar y solo escucha en loopback. No abrir el HTML generado como archivo: los módulos necesitan HTTP.
+Abrir http://127.0.0.1:8766/. El servidor recompila al guardar y solo escucha en loopback. Si cambia `scripts/build.mjs`, detenerlo y volver a ejecutar `npm start`. No abrir el HTML generado como archivo: los módulos necesitan HTTP.
 
 ```sh
 npm run check
 npm run build
 ```
 
-`check` construye y comprueba las nueve páginas, recursos, enlaces locales, estructura y SEO. No sustituye pruebas visuales, de accesibilidad ni disponibilidad de enlaces externos. `build` genera `dist/`; nunca editarlo directamente.
+`check` construye y comprueba las nueve páginas, la 404, recursos, enlaces locales, imágenes para compartir, navegación entre casos, estructura y SEO. No sustituye pruebas visuales, de accesibilidad ni disponibilidad de enlaces externos. `build` genera `dist/`; nunca editarlo directamente.
 
 ## Dónde trabajar
 
@@ -36,11 +36,10 @@ npm run build
 | --- | --- |
 | `apps/portfolio/src/index.html` y `src/sections/` | Portada y secciones compartidas |
 | `apps/portfolio/src/pages/` | Ocho casos en HTML |
-| `apps/portfolio/content/` | Identidad, enlaces e inventarios de procedencia |
+| `apps/portfolio/content/` | Identidad, enlaces e inventarios de procedencia; `cases.json` ordena los casos y genera anterior/siguiente |
 | `apps/portfolio/public/` | Recursos optimizados y JavaScript del sitio |
 | `libs/ui/styles/` | Tokens, estilos compartidos y particulares; `v2.css` cierra la cascada |
-| `libs/ui/motion/` | Movimiento del hero heredado; comprobar qué carga la plantilla actual |
-| `scripts/` | Compilación, servidor y validación |
+| `scripts/` | Compilación, servidor y validación; `og-images.mjs` regenera las imágenes para compartir (local, opcional) |
 | `docs/` | Decisiones, informes y continuidad versionada |
 | `private/`, `dist/` | Material privado local y salida generada, excluidos de Git |
 

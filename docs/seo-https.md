@@ -8,7 +8,7 @@
 - `http://www.kevingarzon.com` redirige a la variante sin www, pero conserva HTTP.
 - Las dos variantes HTTPS responden sin error de validación TLS en curl; www redirige a https://kevingarzon.com/.
 - El HTML público de inicio contiene `noindex, nofollow`, confirmado por descarga directa. Es un bloqueo explícito de indexación, heredado de la etapa previa al dominio.
-- No se encontraron cargas HTTP en las plantillas; las referencias HTTP del proveedor Three son comentarios o namespaces, no evidencia de contenido mixto.
+- No se encontraron cargas HTTP en las plantillas. (Three.js se retiró del repositorio en noviembre de 2026.)
 
 Esto explica una causa concreta del aviso de seguridad, aunque no demuestra qué conexión exacta usó cada captura del teléfono.
 

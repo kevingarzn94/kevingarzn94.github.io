@@ -6,76 +6,12 @@
       "source": "Archivo personal · DSC_0013.jpg"
     },
     {
-      "asset": "wedding-photo-02.webp",
-      "source": "Archivo personal · DSC_0071.jpg"
-    },
-    {
-      "asset": "wedding-photo-03.webp",
-      "source": "Archivo personal · DSC_0122.jpg"
-    },
-    {
-      "asset": "wedding-photo-04.webp",
-      "source": "Archivo personal · DSC_0176.jpg"
-    },
-    {
-      "asset": "wedding-photo-05.webp",
-      "source": "Archivo personal · DSC_0229.jpg"
-    },
-    {
-      "asset": "wedding-photo-06.webp",
-      "source": "Archivo personal · DSC_0250.jpg"
-    },
-    {
-      "asset": "wedding-photo-07.webp",
-      "source": "Archivo personal · DSC_0276.jpg"
-    },
-    {
-      "asset": "wedding-photo-08.webp",
-      "source": "Archivo personal · DSC_0312.jpg"
-    },
-    {
-      "asset": "wedding-photo-09.webp",
-      "source": "Archivo personal · DSC_0334.jpg"
-    },
-    {
-      "asset": "wedding-photo-10.webp",
-      "source": "Archivo personal · DSC_0370.jpg"
-    },
-    {
-      "asset": "wedding-photo-11.webp",
-      "source": "Archivo personal · DSC_0422.jpg"
-    },
-    {
-      "asset": "wedding-photo-12.webp",
-      "source": "Archivo personal · DSC_0468.jpg"
-    },
-    {
       "asset": "wedding-photo-13.webp",
       "source": "Archivo personal · DSC_0506.jpg"
     },
     {
-      "asset": "wedding-photo-14.webp",
-      "source": "Archivo personal · DSC_0534.jpg"
-    },
-    {
       "asset": "wedding-photo-15.webp",
       "source": "Archivo personal · DSC_0559.jpg"
-    },
-    {
-      "asset": "wedding-photo-16.webp",
-      "source": "Archivo personal · DSC_0588.jpg"
-    },
-    {
-      "asset": "wedding-photo-17.webp",
-      "source": "Archivo personal · DSC_0634.jpg"
-    },
-    {
-      "asset": "wedding-photo-18.webp",
-      "source": "Archivo personal · DSC_0655.jpg"
-    },
-    {
-      "asset": "wedding-photo-19.webp",
-      "source": "Archivo personal · DSC_0664.jpg"
     },
     {
       "asset": "wedding-board-5.webp",
@@ -84,10 +20,6 @@
     {
       "asset": "wedding-board-7.webp",
       "source": "Archivo personal · Behance_Card_7.jpg"
-    },
-    {
-      "asset": "wedding-board-8.webp",
-      "source": "Archivo personal · Behance_Card_8.jpg"
     },
     {
       "asset": "wedding-board-9.webp",
@@ -121,14 +53,14 @@
     {
       "asset": "wedding-session-dsc_0015.webp",
       "source": "Archivo personal · DSC_0015.jpg",
-      "alt": "Michelle y Felipe · Save the Date · Fotograma 02",
+      "alt": "La pareja posa con su perro en una calle colorida del centro",
       "width": 1200,
       "height": 1800
     },
     {
       "asset": "wedding-session-dsc_0021.webp",
       "source": "Archivo personal · DSC_0021.jpg",
-      "alt": "Michelle y Felipe · Save the Date · Fotograma 03",
+      "alt": "La pareja se asoma entre columnas en una calle con murales",
       "width": 1200,
       "height": 1800
     },
@@ -142,14 +74,14 @@
     {
       "asset": "wedding-session-dsc_0097.webp",
       "source": "Archivo personal · DSC_0097.jpg",
-      "alt": "Michelle y Felipe · Save the Date · Fotograma 05",
+      "alt": "La pareja cruza la calle con una iglesia colonial al fondo",
       "width": 1200,
       "height": 1800
     },
     {
       "asset": "wedding-session-dsc_0108.webp",
       "source": "Archivo personal · DSC_0108.jpg",
-      "alt": "Michelle y Felipe · Save the Date · Fotograma 06",
+      "alt": "De espaldas frente a una escultura iluminada; ella lleva un moño blanco",
       "width": 1200,
       "height": 1800
     },
@@ -163,14 +95,14 @@
     {
       "asset": "wedding-session-dsc_0124.webp",
       "source": "Archivo personal · DSC_0124.jpg",
-      "alt": "Michelle y Felipe · Save the Date · Fotograma 08",
+      "alt": "Sentados en un muro, ambos leen el periódico del Save the Date",
       "width": 1200,
       "height": 1800
     },
     {
       "asset": "wedding-session-dsc_0136.webp",
       "source": "Archivo personal · DSC_0136.jpg",
-      "alt": "Michelle y Felipe · Save the Date · Fotograma 09",
+      "alt": "Michelle sobre los hombros de Felipe, que abre los brazos",
       "width": 1200,
       "height": 1800
     },
@@ -184,7 +116,7 @@
     {
       "asset": "wedding-session-dsc_0187.webp",
       "source": "Archivo personal · DSC_0187.jpg",
-      "alt": "Michelle y Felipe · Save the Date · Fotograma 11",
+      "alt": "Felipe, de pie sobre un muro, toma la mano de Michelle frente a una fachada de arcos",
       "width": 1200,
       "height": 1800
     },
@@ -198,28 +130,28 @@
     {
       "asset": "wedding-session-dsc_0242.webp",
       "source": "Archivo personal · DSC_0242.jpg",
-      "alt": "Michelle y Felipe · Save the Date · Fotograma 13",
+      "alt": "Un beso frente a los ventanales en arco",
       "width": 1200,
       "height": 1800
     },
     {
       "asset": "wedding-session-dsc_0245.webp",
       "source": "Archivo personal · DSC_0245.jpg",
-      "alt": "Michelle y Felipe · Save the Date · Fotograma 14",
+      "alt": "Bailan frente a la fachada de arcos",
       "width": 1200,
       "height": 1800
     },
     {
       "asset": "wedding-session-dsc_0246.webp",
       "source": "Archivo personal · DSC_0246.jpg",
-      "alt": "Michelle y Felipe · Save the Date · Fotograma 15",
+      "alt": "Un paso de baile frente a la fachada de arcos",
       "width": 1200,
       "height": 1800
     },
     {
       "asset": "wedding-session-dsc_0247.webp",
       "source": "Archivo personal · DSC_0247.jpg",
-      "alt": "Michelle y Felipe · Save the Date · Fotograma 16",
+      "alt": "Abrazados y sonrientes frente a la fachada de arcos",
       "width": 1200,
       "height": 1800
     },
@@ -233,14 +165,14 @@
     {
       "asset": "wedding-session-dsc_0252.webp",
       "source": "Archivo personal · DSC_0252.jpg",
-      "alt": "Michelle y Felipe · Save the Date · Fotograma 18",
+      "alt": "Sentados ante una reja, leen el anuncio frente a una fachada de ladrillo",
       "width": 1200,
       "height": 1800
     },
     {
       "asset": "wedding-session-dsc_0258.webp",
       "source": "Archivo personal · DSC_0258.jpg",
-      "alt": "Michelle y Felipe · Save the Date · Fotograma 19",
+      "alt": "Muestran el periódico del Save the Date frente a la reja",
       "width": 1200,
       "height": 1800
     },
@@ -268,7 +200,7 @@
     {
       "asset": "wedding-session-dsc_0355.webp",
       "source": "Archivo personal · DSC_0355.jpg",
-      "alt": "Michelle y Felipe · Save the Date · Fotograma 23",
+      "alt": "Ríen con un helado junto a un bus rojo y el edificio de El Tiempo",
       "width": 1200,
       "height": 1800
     },
@@ -282,14 +214,14 @@
     {
       "asset": "wedding-session-dsc_0395.webp",
       "source": "Archivo personal · DSC_0395.jpg",
-      "alt": "Michelle y Felipe · Save the Date · Fotograma 25",
+      "alt": "Se miran de cerca entre edificios de colores",
       "width": 1200,
       "height": 1800
     },
     {
       "asset": "wedding-session-dsc_0400.webp",
       "source": "Archivo personal · DSC_0400.jpg",
-      "alt": "Michelle y Felipe · Save the Date · Fotograma 26",
+      "alt": "Retrato con gafas de sol junto a un bus rojo",
       "width": 1200,
       "height": 1800
     },
@@ -303,7 +235,7 @@
     {
       "asset": "wedding-session-dsc_0436.webp",
       "source": "Archivo personal · DSC_0436.jpg",
-      "alt": "Michelle y Felipe · Save the Date · Fotograma 28",
+      "alt": "Posan con chaquetas de cuero junto al bus rojo, con los cerros al fondo",
       "width": 1200,
       "height": 1800
     },
@@ -317,14 +249,14 @@
     {
       "asset": "wedding-session-dsc_0491.webp",
       "source": "Archivo personal · DSC_0491.jpg",
-      "alt": "Michelle y Felipe · Save the Date · Fotograma 30",
+      "alt": "Leen juntos el anuncio en una terraza con rascacielos al fondo",
       "width": 1200,
       "height": 1800
     },
     {
       "asset": "wedding-session-dsc_0500.webp",
       "source": "Archivo personal · DSC_0500.jpg",
-      "alt": "Michelle y Felipe · Save the Date · Fotograma 31",
+      "alt": "Sonríen sosteniendo el periódico del Save the Date en la terraza",
       "width": 1200,
       "height": 1800
     },
@@ -338,14 +270,14 @@
     {
       "asset": "wedding-session-dsc_0508.webp",
       "source": "Archivo personal · DSC_0508.jpg",
-      "alt": "Michelle y Felipe · Save the Date · Fotograma 33",
+      "alt": "Michelle sostiene la invitación con la fecha mientras Felipe lee el periódico",
       "width": 1200,
       "height": 1800
     },
     {
       "asset": "wedding-session-dsc_0516.webp",
       "source": "Archivo personal · DSC_0516.jpg",
-      "alt": "Michelle y Felipe · Save the Date · Fotograma 34",
+      "alt": "Recostados en el muro de la terraza, leen el anuncio",
       "width": 1200,
       "height": 1800
     },
@@ -359,21 +291,21 @@
     {
       "asset": "wedding-session-dsc_0543.webp",
       "source": "Archivo personal · DSC_0543.jpg",
-      "alt": "Michelle y Felipe · Save the Date · Fotograma 36",
+      "alt": "Junto a la moto, con el anuncio frente al horizonte de la ciudad",
       "width": 1200,
       "height": 1800
     },
     {
       "asset": "wedding-session-dsc_0549.webp",
       "source": "Archivo personal · DSC_0549.jpg",
-      "alt": "Michelle y Felipe · Save the Date · Fotograma 37",
+      "alt": "Felipe sobre la moto y Michelle con el periódico ante los rascacielos",
       "width": 1200,
       "height": 1800
     },
     {
       "asset": "wedding-session-dsc_0555.webp",
       "source": "Archivo personal · DSC_0555.jpg",
-      "alt": "Michelle y Felipe · Save the Date · Fotograma 38",
+      "alt": "De pie junto a la moto, con los rascacielos de Bogotá al fondo",
       "width": 1200,
       "height": 1800
     },
@@ -387,7 +319,7 @@
     {
       "asset": "wedding-session-dsc_0563.webp",
       "source": "Archivo personal · DSC_0563.jpg",
-      "alt": "Michelle y Felipe · Save the Date · Fotograma 40",
+      "alt": "Abrazados junto a la moto frente a la ciudad",
       "width": 1200,
       "height": 1800
     },
@@ -401,21 +333,21 @@
     {
       "asset": "wedding-session-dsc_0606.webp",
       "source": "Archivo personal · DSC_0606.jpg",
-      "alt": "Michelle y Felipe · Save the Date · Fotograma 42",
+      "alt": "Michelle abraza a Felipe por la espalda, ambos sobre la moto",
       "width": 1200,
       "height": 1800
     },
     {
       "asset": "wedding-session-dsc_0611.webp",
       "source": "Archivo personal · DSC_0611.jpg",
-      "alt": "Michelle y Felipe · Save the Date · Fotograma 43",
+      "alt": "Juntos sobre la moto, de frente a la cámara, con la ciudad detrás",
       "width": 1200,
       "height": 1800
     },
     {
       "asset": "wedding-session-dsc_0628.webp",
       "source": "Archivo personal · DSC_0628.jpg",
-      "alt": "Michelle y Felipe · Save the Date · Fotograma 44",
+      "alt": "Se miran junto a la moto en el mirador",
       "width": 1200,
       "height": 1800
     },
@@ -429,21 +361,21 @@
     {
       "asset": "wedding-session-dsc_0641.webp",
       "source": "Archivo personal · DSC_0641.jpg",
-      "alt": "Michelle y Felipe · Save the Date · Fotograma 46",
+      "alt": "Felipe, en la moto, toma la mano de Michelle con el horizonte detrás",
       "width": 1200,
       "height": 1800
     },
     {
       "asset": "wedding-session-dsc_0646.webp",
       "source": "Archivo personal · DSC_0646.jpg",
-      "alt": "Michelle y Felipe · Save the Date · Fotograma 47",
+      "alt": "Un beso sobre la moto frente a los rascacielos",
       "width": 1200,
       "height": 1800
     },
     {
       "asset": "wedding-session-dsc_0651.webp",
       "source": "Archivo personal · DSC_0651.jpg",
-      "alt": "Michelle y Felipe · Save the Date · Fotograma 48",
+      "alt": "Sonrientes sobre la moto en el mirador",
       "width": 1200,
       "height": 1800
     },
@@ -464,7 +396,7 @@
     {
       "asset": "wedding-session-dsc_0665.webp",
       "source": "Archivo personal · DSC_0665.jpg",
-      "alt": "Michelle y Felipe · Save the Date · Fotograma 51",
+      "alt": "Sus manos unidas, con el anillo, ante la ciudad desenfocada",
       "width": 1200,
       "height": 1800
     }

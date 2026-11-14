@@ -24,7 +24,7 @@
     "slug": "viajero",
     "title": "Viajero Co",
     "category": "Diseño de experiencia · Interfaz móvil",
-    "cover": "viajero.jpg",
+    "cover": "viajero-portada.webp",
     "description": "Una exploración de experiencia e interfaz para una aplicación de viajes."
   },
   {
@@ -47,12 +47,5 @@
     "category": "Exploración creativa · Dirección de arte",
     "cover": "exploracion-listerine.jpg",
     "description": "Una propuesta conceptual para Listerine que explora el contraste entre dos universos visuales."
-  },
-  {
-    "slug": "mansion-chilling",
-    "title": "La Mansión del Chilling",
-    "category": "Exploración creativa · Composición",
-    "cover": "exploracion-smirnoff.jpg",
-    "description": "Una propuesta visual para Smirnoff Spicy Tamarind."
   }
 ]

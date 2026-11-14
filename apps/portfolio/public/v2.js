@@ -1,3 +1,10 @@
+// Enlaces antiguos de la portada que ahora viven en páginas propias.
+if (document.body.classList.contains('home-v2')) {
+ const legacyRoutes = { '#caso-ahead': 'proyecto-ahead.html#caso-ahead', '#proceso-ahead': 'proyecto-ahead.html#entender', '#caso-ml': 'proyecto-colombia-real.html#caso-ml', '#caso-prodesa': 'index.html#trabajo' };
+ const redirectLegacy = () => { const target = legacyRoutes[location.hash]; if (target) location.replace(target); };
+ redirectLegacy();
+ addEventListener('hashchange', redirectLegacy);
+}
 // Sistema v2: coreografía ligada al scroll nativo (Ahead, Wedding Art, portada).
 // Content stays visible without JS; motion respects prefers-reduced-motion.
 (() => {
@@ -276,33 +283,6 @@
   });
   selectCard(active);
  }
-
- // Project index: a floating preview follows the cursor (mouse only; rows keep their own thumbnails on touch).
- const list = document.querySelector('[data-preview-list]');
- if (list && matchMedia('(pointer: fine)').matches) {
-  const preview = document.createElement('div');
-  preview.className = 'av-preview';
-  preview.setAttribute('aria-hidden', 'true');
-  preview.innerHTML = '<img alt="">';
-  document.body.append(preview);
-  const img = preview.querySelector('img');
-  let x = 0, y = 0, px = 0, py = 0, raf = 0;
-  const follow = () => {
-   px += (x - px) * (motion() ? .18 : 1); py += (y - py) * (motion() ? .18 : 1);
-   preview.style.transform = `translate(${px}px, ${py}px) translate(-50%, -50%)`;
-   raf = Math.abs(x - px) + Math.abs(y - py) > .5 ? requestAnimationFrame(follow) : 0;
-  };
-  for (const row of list.querySelectorAll('[data-preview]')) {
-   row.addEventListener('pointerenter', event => {
-    img.src = row.dataset.preview;
-    if (!preview.classList.contains('is-visible')) { px = x = event.clientX; py = y = event.clientY; }
-    preview.classList.add('is-visible');
-   });
-   row.addEventListener('pointerleave', () => preview.classList.remove('is-visible'));
-  }
-  list.addEventListener('pointermove', event => { x = event.clientX; y = event.clientY; if (!raf) raf = requestAnimationFrame(follow); });
-  addEventListener('scroll', () => preview.classList.remove('is-visible'), { passive: true });
- }
 })();
 
 // Screen detail viewer: native modal, Escape and focus restoration.
@@ -318,8 +298,9 @@
   link.addEventListener('click', event => {
    if (event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
    event.preventDefault(); trigger = link;
-   image.src = link.href; image.alt = link.querySelector('img').alt;
-   title.textContent = image.alt;
+   const source = link.querySelector('img') || link.closest('figure')?.querySelector('img');
+   image.src = link.href; image.alt = source?.alt || '';
+   title.textContent = image.alt || title.textContent;
    dialog.classList.remove('is-zoomed'); zoom.setAttribute('aria-pressed', 'false');
    zoom.textContent = 'Ampliar detalle';
    dialog.showModal();
