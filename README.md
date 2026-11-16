@@ -1,6 +1,6 @@
 # Kevin Garzón · Portafolio
 
-Sitio público de diseño gráfico, dirección de arte, UX/UI, fotografía y video. Portada y ocho casos de proyecto. **Estado actualizado al 12 de noviembre de 2026: publicado en https://kevingarzon.com/**. Último cambio funcional publicado: `c4af12d`; despliegue confirmado por Kevin en la conversación. Esta actualización de documentación se prepara después de ese commit.
+Sitio público de diseño gráfico, dirección de arte, UX/UI, fotografía y video. Portada y ocho casos de proyecto. **Estado actualizado al 16 de noviembre de 2026: publicado en https://kevingarzon.com/**. Último cambio funcional publicado: `3288b0a` (revisión integral del 14/11, workflow en verde y comprobada en producción).
 
 ## Empezar aquí en cada sesión (ChatGPT, Claude o cualquier colaborador)
 
@@ -36,6 +36,7 @@ npm run build
 | --- | --- |
 | `apps/portfolio/src/index.html` y `src/sections/` | Portada y secciones compartidas |
 | `apps/portfolio/src/pages/` | Ocho casos en HTML |
+| `apps/portfolio/src/en/` | Versión en inglés (`/en/`): misma estructura; validar con `scripts/i18n-structure.py` |
 | `apps/portfolio/content/` | Identidad, enlaces e inventarios de procedencia; `cases.json` ordena los casos y genera anterior/siguiente |
 | `apps/portfolio/public/` | Recursos optimizados y JavaScript del sitio |
 | `libs/ui/styles/` | Tokens, estilos compartidos y particulares; `v2.css` cierra la cascada |

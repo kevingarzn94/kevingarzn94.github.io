@@ -1,3 +1,4 @@
+const v2En = document.documentElement.lang === 'en';
 // Enlaces antiguos de la portada que ahora viven en páginas propias.
 if (document.body.classList.contains('home-v2')) {
  const legacyRoutes = { '#caso-ahead': 'proyecto-ahead.html#caso-ahead', '#proceso-ahead': 'proyecto-ahead.html#entender', '#caso-ml': 'proyecto-colombia-real.html#caso-ml', '#caso-prodesa': 'index.html#trabajo' };
@@ -46,7 +47,7 @@ if (document.body.classList.contains('home-v2')) {
   indexToggle.className = 'av-index-toggle';
   indexToggle.setAttribute('aria-controls', indexList.id);
   indexToggle.setAttribute('aria-expanded', 'false');
-  const label = document.body.classList.contains('home-v2') ? 'Secciones' : 'Capítulos';
+  const label = document.body.classList.contains('home-v2') ? (v2En ? 'Sections' : 'Secciones') : (v2En ? 'Chapters' : 'Capítulos');
   indexToggle.innerHTML = `<span>${label}</span><span class="av-index-current"></span><svg class="ic ic-down" viewBox="0 0 24 24" width=".8em" height=".8em" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"/></svg>`;
   index.prepend(indexToggle);
   index.inert = true;
@@ -145,7 +146,7 @@ if (document.body.classList.contains('home-v2')) {
    index.inert = !visible;
    if (!visible) setIndexOpen(false);
    const currentLabel = indexToggle.querySelector('.av-index-current');
-   currentLabel.textContent = links.find(link => link.hasAttribute('aria-current'))?.textContent.trim() || 'Explorar';
+   currentLabel.textContent = links.find(link => link.hasAttribute('aria-current'))?.textContent.trim() || (v2En ? 'Explore' : 'Explorar');
   }
 
   // Sticky Figma archive follows the step being read.
@@ -192,10 +193,10 @@ if (document.body.classList.contains('home-v2')) {
   fan.classList.add('is-navigable');
   fan.id ||= 'hero-fan';
   fan.setAttribute('role', 'region');
-  if (!fan.hasAttribute('aria-label')) fan.setAttribute('aria-label', 'Imágenes del proyecto');
+  if (!fan.hasAttribute('aria-label')) fan.setAttribute('aria-label', v2En ? 'Project images' : 'Imágenes del proyecto');
   const controls = document.createElement('div');
   controls.className = 'av-fan-controls';
-  controls.innerHTML = `<button type="button" aria-label="Tarjeta anterior" aria-controls="${fan.id}">←</button><div><span class="av-fan-count" aria-live="polite" aria-atomic="true"></span></div><button type="button" aria-label="Tarjeta siguiente" aria-controls="${fan.id}">→</button>`;
+  controls.innerHTML = `<button type="button" aria-label="${v2En ? 'Previous card' : 'Tarjeta anterior'}" aria-controls="${fan.id}">←</button><div><span class="av-fan-count" aria-live="polite" aria-atomic="true"></span></div><button type="button" aria-label="${v2En ? 'Next card' : 'Tarjeta siguiente'}" aria-controls="${fan.id}">→</button>`;
   fan.after(controls);
   const count = controls.querySelector('.av-fan-count');
   function selectCard(next) {
@@ -226,7 +227,7 @@ if (document.body.classList.contains('home-v2')) {
    if (card.tagName !== 'A') {
     card.tabIndex = 0;
     card.setAttribute('role', 'button');
-    card.setAttribute('aria-label', `Centrar imagen: ${card.querySelector('img').alt}`);
+    card.setAttribute('aria-label', `${v2En ? 'Center image' : 'Centrar imagen'}: ${card.querySelector('img').alt}`);
     card.addEventListener('click', () => selectCard(i));
     card.addEventListener('keydown', event => {
      if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); selectCard(i); }
@@ -302,7 +303,7 @@ if (document.body.classList.contains('home-v2')) {
    image.src = link.href; image.alt = source?.alt || '';
    title.textContent = image.alt || title.textContent;
    dialog.classList.remove('is-zoomed'); zoom.setAttribute('aria-pressed', 'false');
-   zoom.textContent = 'Ampliar detalle';
+   zoom.textContent = v2En ? 'Zoom in' : 'Ampliar detalle';
    dialog.showModal();
    dialog.querySelector('.screen-dialog-view').scrollTop = 0;
   });
@@ -310,9 +311,24 @@ if (document.body.classList.contains('home-v2')) {
  zoom.addEventListener('click', () => {
   const expanded = dialog.classList.toggle('is-zoomed');
   zoom.setAttribute('aria-pressed', String(expanded));
-  zoom.textContent = expanded ? 'Ver completa' : 'Ampliar detalle';
+  zoom.textContent = expanded ? (v2En ? 'View full' : 'Ver completa') : (v2En ? 'Zoom in' : 'Ampliar detalle');
  });
  dialog.querySelector('[data-screen-close]').addEventListener('click', () => dialog.close());
  dialog.addEventListener('click', event => { if (event.target === dialog) dialog.close(); });
  dialog.addEventListener('close', () => trigger?.focus({preventScroll:true}));
 })();
+
+// Al cambiar de idioma se conserva la sección en la que estaba la persona.
+for (const link of document.querySelectorAll('.lang-switch')) {
+ link.addEventListener('click', event => {
+  const visible = [...document.querySelectorAll('main section[id]')].filter(section => section.getBoundingClientRect().top < innerHeight / 3).pop();
+  if (visible && scrollY > 40) link.hash = visible.id;
+  // La pastilla cruza al otro idioma antes de cambiar de página (sin espera con movimiento reducido).
+  if (event.metaKey || event.ctrlKey || event.shiftKey || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  event.preventDefault();
+  link.closest('.lang-toggle')?.classList.add('is-switching');
+  setTimeout(() => { location.href = link.href; }, 280);
+ });
+}
+// Al volver con el botón Atrás, la página puede venir de caché con la pastilla ya cruzada.
+addEventListener('pageshow', () => document.querySelectorAll('.lang-toggle.is-switching').forEach(toggle => toggle.classList.remove('is-switching')));

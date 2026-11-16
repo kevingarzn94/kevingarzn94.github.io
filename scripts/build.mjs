@@ -40,29 +40,42 @@ async function prune(folder) {
 }
 
 // Previous / next navigation follows the order of the home gallery (content/cases.json).
-function projectNav(cases, file) {
+const navText = {
+  es: { more: 'Más proyectos', next: 'Siguiente proyecto', previous: 'Anterior', all: 'Todos los proyectos' },
+  en: { more: 'More projects', next: 'Next project', previous: 'Previous', all: 'All projects' }
+};
+function projectNav(cases, file, lang) {
   const i = cases.findIndex(item => item.file === file);
   if (i < 0) throw new Error(`${file} no está en content/cases.json`);
   const next = cases[(i + 1) % cases.length], previous = cases[(i - 1 + cases.length) % cases.length];
-  return `<nav class="av-next" aria-label="Más proyectos">
+  const t = navText[lang], title = item => lang === 'en' ? item.titleEn || item.title : item.title;
+  const category = item => lang === 'en' ? item.categoryEn || item.category : item.category;
+  return `<nav class="av-next" aria-label="${t.more}">
  <a class="av-next-card" href="${next.file}">
-  <span class="av-label">Siguiente proyecto</span>
-  <strong>${escape(next.title)} <span aria-hidden="true">${arrowRight}</span></strong>
-  <span class="av-next-meta">${escape(next.category)}</span>
+  <span class="av-label">${t.next}</span>
+  <strong>${escape(title(next))} <span aria-hidden="true">${arrowRight}</span></strong>
+  <span class="av-next-meta">${escape(category(next))}</span>
   <img src="${next.image}" alt="" loading="lazy" decoding="async">
  </a>
  <div class="av-next-row">
-  <a class="av-next-prev" href="${previous.file}">${arrowLeft}<span class="av-label">Anterior</span> ${escape(previous.title)}</a>
-  <a class="av-next-all" href="index.html#trabajo">${grid} Todos los proyectos</a>
+  <a class="av-next-prev" href="${previous.file}">${arrowLeft}<span class="av-label">${t.previous}</span> ${escape(title(previous))}</a>
+  <a class="av-next-all" href="index.html#trabajo">${grid} ${t.all}</a>
  </div>
 </nav>`;
 }
 
+// English lives in /en/ with the same file names; shared files sit one level up.
+const toParent = html => html.replace(/(["'(\s,])((?:assets\/|style\.css|v2\.js|backgrounds\.js|wedding-gallery\.js))/g, '$1../$2');
+const pagePath = file => file === 'index.html' ? '' : file;
+
 export async function build() {
   written = new Set();
   const content = JSON.parse(await read('apps/portfolio/content/site.json'));
+  const contentEn = { ...content, ...JSON.parse(await read('apps/portfolio/content/site.en.json')) };
+  delete contentEn.note;
   const { cases } = JSON.parse(await read('apps/portfolio/content/cases.json'));
   const sections = await readdir(path.join(root, 'apps/portfolio/src/sections'));
+  const sectionDir = { es: 'apps/portfolio/src/sections', en: 'apps/portfolio/src/en/sections' };
   const urls = [];
 
   await mkdir(path.join(root, 'dist'), { recursive: true });
@@ -79,32 +92,50 @@ export async function build() {
   for (const script of ['v2.js', 'backgrounds.js', 'wedding-gallery.js']) versions[script] = hash(await read(`apps/portfolio/public/${script}`));
   const versioned = html => html.replace(/(href|src)="(\/?)(style\.css|v2\.js|backgrounds\.js|wedding-gallery\.js)(?:\?v=[^"]*)?"/g, (_, attr, slash, name) => `${attr}="${slash}${name}?v=${versions[name]}"`);
 
-  const render = async (source, file, { indexable = true } = {}) => {
+  const render = async (source, file, { indexable = true, lang = 'es' } = {}) => {
+    const strings = lang === 'en' ? contentEn : content;
     let html = source;
     for (const section of sections) {
-      if (section.endsWith('.html')) html = html.replaceAll(`{{> ${section.slice(0, -5)}}}`, await read(`apps/portfolio/src/sections/${section}`));
+      if (section.endsWith('.html')) html = html.replaceAll(`{{> ${section.slice(0, -5)}}}`, await read(`${sectionDir[lang]}/${section}`));
     }
-    if (html.includes('{{> project-nav}}')) html = html.replace('{{> project-nav}}', projectNav(cases, file));
+    if (html.includes('{{> project-nav}}')) html = html.replace('{{> project-nav}}', projectNav(cases, file, lang));
     html = html.replace(/{{(\w+)}}/g, (_, key) => {
-      if (!(key in content)) throw new Error(`Contenido pendiente: ${key}`);
-      return escape(content[key]);
+      if (!(key in strings)) throw new Error(`Contenido pendiente: ${key}`);
+      return escape(strings[key]);
     });
     if (html.includes('{{')) throw new Error('Plantilla sin resolver');
     html = versioned(html);
     if (!indexable) return html;
 
-    const canonical = new URL(file === 'index.html' ? '' : file, content.url).href;
+    // Language switch at the end of the main navigation, pointing to the same page in the other language.
+    // Selector segmentado: el idioma actual queda marcado y el otro es un enlace.
+    const other = lang === 'es' ? { href: `en/${pagePath(file)}`, code: 'en', label: 'EN', name: 'Read in English' } : { href: `../${pagePath(file)}`, code: 'es', label: 'ES', name: 'Leer en español' };
+    const current = lang === 'es' ? { label: 'ES', name: 'Español' } : { label: 'EN', name: 'English' };
+    const options = [`<span class="lang-current" aria-current="true"><span class="visually-hidden">${current.name}: </span>${current.label}</span>`, `<a class="lang-switch" href="${other.href}" hreflang="${other.code}" lang="${other.code}" aria-label="${other.name}">${other.label}</a>`];
+    if (lang === 'en') options.reverse();
+    html = html.replace(/(<nav aria-label="(?:Principal|Main)">[\s\S]*?)(<\/nav>)/, `$1<span class="lang-toggle" data-lang="${lang}" role="group" aria-label="${lang === 'es' ? 'Idioma' : 'Language'}">${options.join('')}</span>$2`);
+    if (lang === 'en') html = toParent(html);
+
+    const esUrl = new URL(pagePath(file), content.url).href, enUrl = new URL(`en/${pagePath(file)}`, content.url).href;
+    const canonical = lang === 'en' ? enUrl : esUrl;
     urls.push(canonical);
     const title = html.match(/<title>([^<]+)<\/title>/)[1];
     const description = html.match(/<meta name="description" content="([^"]+)"/)[1];
     const item = cases.find(entry => entry.file === file);
-    const image = new URL(item ? item.og : 'assets/og/inicio.jpg', content.url).href;
-    const imageAlt = item ? `${item.title} · ${item.category} · Kevin Garzón` : `${content.name}, diseñador y director de arte`;
+    const ogFile = item ? item.og : 'assets/og/inicio.jpg';
+    const image = new URL(lang === 'en' ? ogFile.replace('assets/og/', 'assets/og/en/') : ogFile, content.url).href;
+    const imageAlt = lang === 'en'
+      ? (item ? `${item.titleEn || item.title} · ${item.categoryEn || item.category} · Kevin Garzón` : `${content.name}, designer and art director`)
+      : (item ? `${item.title} · ${item.category} · Kevin Garzón` : `${content.name}, diseñador y director de arte`);
     const metadata = [
       `<link rel="canonical" href="${escape(canonical)}">`,
+      `<link rel="alternate" hreflang="es" href="${escape(esUrl)}">`,
+      `<link rel="alternate" hreflang="en" href="${escape(enUrl)}">`,
+      `<link rel="alternate" hreflang="x-default" href="${escape(esUrl)}">`,
       `<meta property="og:type" content="${item ? 'article' : 'website'}">`,
       `<meta property="og:site_name" content="${escape(content.name)}">`,
-      `<meta property="og:locale" content="es_CO">`,
+      `<meta property="og:locale" content="${lang === 'en' ? 'en_US' : 'es_CO'}">`,
+      `<meta property="og:locale:alternate" content="${lang === 'en' ? 'es_CO' : 'en_US'}">`,
       `<meta property="og:title" content="${title}">`,
       `<meta property="og:description" content="${description}">`,
       `<meta property="og:url" content="${escape(canonical)}">`,
@@ -115,20 +146,26 @@ export async function build() {
       `<meta name="twitter:card" content="summary_large_image">`
     ];
     if (file === 'index.html') {
+      const en = lang === 'en';
       const schema = {
         '@context': 'https://schema.org',
         '@graph': [
           { '@type': 'Person', '@id': `${content.url}#persona`, name: content.name,
             alternateName: 'Kevin Garzon', url: content.url,
             image: new URL('assets/kevin-retrato.jpg', content.url).href,
-            jobTitle: 'Diseñador y director de arte',
+            jobTitle: en ? 'Designer and art director' : 'Diseñador y director de arte',
             address: { '@type': 'PostalAddress', addressLocality: 'Bogotá', addressCountry: 'CO' },
-            knowsAbout: ['Dirección de arte', 'Identidad visual', 'Diseño UX/UI', 'Diseño web', 'Fotografía', 'Video'],
+            knowsAbout: en ? ['Art direction', 'Visual identity', 'UX/UI design', 'Web design', 'Photography', 'Video'] : ['Dirección de arte', 'Identidad visual', 'Diseño UX/UI', 'Diseño web', 'Fotografía', 'Video'],
             sameAs: [content.behance, content.linkedin, content.instagram, content.photoInstagram, content.flickr] },
           { '@type': 'WebSite', '@id': `${content.url}#website`, url: content.url,
-            name: content.name, inLanguage: 'es', publisher: { '@id': `${content.url}#persona` } }
+            name: content.name, inLanguage: ['es', 'en'], publisher: { '@id': `${content.url}#persona` } }
         ]
       };
+      // Preguntas frecuentes visibles en la portada → FAQPage con el mismo texto.
+      const plain = text => text.replace(/<[^>]+>/g, '').replace(/&nbsp;/g, '\u00a0').replace(/&amp;/g, '&').trim();
+      const faq = [...html.matchAll(/<span class="faq-q">([\s\S]*?)<\/span>[\s\S]*?<div class="faq-a"><p>([\s\S]*?)<\/p>/g)];
+      if (faq.length) schema['@graph'].push({ '@type': 'FAQPage', '@id': `${canonical}#preguntas`, inLanguage: lang,
+        mainEntity: faq.map(([, question, answer]) => ({ '@type': 'Question', name: plain(question), acceptedAnswer: { '@type': 'Answer', text: plain(answer) } })) });
       metadata.push(`<script type="application/ld+json">${JSON.stringify(schema).replace(/</g, '\\u003c')}</script>`);
     }
     return html.replace('</head>', metadata.join('\n') + '\n</head>');
@@ -137,6 +174,11 @@ export async function build() {
   await atomicWrite(path.join(root, 'dist/index.html'), await render(await read('apps/portfolio/src/index.html'), 'index.html'));
   for (const file of await readdir(path.join(root, 'apps/portfolio/src/pages'))) {
     if (file.endsWith('.html')) await atomicWrite(path.join(root, 'dist', file), await render(await read(`apps/portfolio/src/pages/${file}`), file));
+  }
+  await mkdir(path.join(root, 'dist/en'), { recursive: true });
+  await atomicWrite(path.join(root, 'dist/en/index.html'), await render(await read('apps/portfolio/src/en/index.html'), 'index.html', { lang: 'en' }));
+  for (const file of await readdir(path.join(root, 'apps/portfolio/src/en/pages'))) {
+    if (file.endsWith('.html')) await atomicWrite(path.join(root, 'dist/en', file), await render(await read(`apps/portfolio/src/en/pages/${file}`), file, { lang: 'en' }));
   }
   // GitHub Pages serves 404.html for unknown paths; it stays out of the sitemap and the index.
   await atomicWrite(path.join(root, 'dist/404.html'), await render(await read('apps/portfolio/src/404.html'), '404.html', { indexable: false }));

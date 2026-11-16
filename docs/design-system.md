@@ -4,7 +4,7 @@
 
 ## Fundamentos
 
-La fuente de verdad es `libs/ui/styles/tokens.css`. La interfaz combina crema, tinta oscura y coral; el lila es un acento secundario. Usar roles (`--paper`, `--ink`, `--muted`, `--coral`) antes que valores nuevos en componentes.
+La fuente de verdad es `libs/ui/styles/tokens.css`. La interfaz combina blanco, tinta oscura y rosa coral (`--coral` #ff9aa8 sobre fondos oscuros, `--accent` #c2335a frambuesa sobre claros; desde el 16/11/2026, en lugar del coral #f3a48f / terracota #bc431e, que se percibía cercano a la paleta de Claude). Uso sobrio: el rosa va en las cursivas de títulos, el botón principal de contacto y etiquetas puntuales; rellenos grandes, pestañas, progreso y números repetidos van en blanco, negro o gris. Usar roles (`--paper`, `--ink`, `--muted`, `--coral`) antes que valores nuevos en componentes.
 
 Tipografía del portafolio: **Arial**, con **Helvetica** y sans-serif como alternativas; **Georgia en cursiva** para acentos editoriales. No hay fuentes remotas. Aeonik Bold y DM Sans Light aparecen documentadas dentro del caso Ahead como parte de esa marca, no como fuentes instaladas del portafolio.
 
@@ -12,8 +12,8 @@ La escala de espacios usa 4, 8, 12, 16, 24, 32, 48, 64 y 96 px. Los tokens inclu
 
 ## Componentes
 
-- Botones: acción principal coral, alternativa con borde; foco visible y texto explícito.
-- Foco: contorno `--accent` (#bc431e, 5,3:1) sobre superficies claras y blanco sobre oscuras (`.av-ink`, `.av-purple`, hero, contacto, navegación de casos). El coral sobre blanco no alcanza 3:1 y no se usa para el foco.
+- Botones: acción principal rosa coral, alternativa con borde; foco visible y texto explícito.
+- Foco: contorno `--accent` (#c2335a, 5,4:1) sobre superficies claras y blanco sobre oscuras (`.av-ink`, `.av-purple`, hero, contacto, navegación de casos). El coral sobre blanco no alcanza 3:1 y no se usa para el foco.
 - Cards: imagen protagonista, categoría y nombre; enlaces nativos hacia la interna.
 - Etiquetas: jerarquía secundaria, sin competir con titulares.
 - Contacto: iconos de marca sólidos y CTA directo a WhatsApp.
@@ -47,7 +47,7 @@ El recorrido de construcción web de Ahead usa una imagen sticky que cambia entr
 `wedding.css` define el tono crema/carbón, títulos serif, galería, cine e invitación de Wedding Art. `wedding-gallery.js` usa un diálogo nativo: flechas para navegar, Escape para cerrar y devolución del foco a la fotografía de origen. Sin JavaScript, los enlaces abren las imágenes individuales.
 
 ### Actualización visual — 29 octubre 2026
-- Base neutra: blanco `#ffffff`, tinta `#151515`, líneas `#d9d9d9`; coral como acento. Las piezas de cada marca conservan sus colores originales.
+- Base neutra: blanco `#ffffff`, tinta `#151515`, líneas `#d9d9d9`; rosa coral como acento (uso sobrio). Las piezas de cada marca conservan sus colores originales.
 - Favicon fotográfico compartido: `assets/kevin-analoga.jpg` en las nueve páginas.
 - Cards: elevación, acercamiento de imagen y giro del asterisco con hover; sin movimiento cuando está desactivado o el sistema solicita movimiento reducido.
 - Wedding: carrusel circular de 19 fotografías, composición con profundidad, controles anterior/siguiente, arrastre horizontal, teclado (flechas, Inicio/Fin) y ampliación en diálogo. La foto central se muestra completa. Sin JavaScript queda una galería horizontal con enlaces directos.

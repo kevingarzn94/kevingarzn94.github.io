@@ -3,7 +3,7 @@ body,h1,h2,h3,button{font-family:var(--font-sans)}em{font-family:var(--font-edit
 .label{font-size:var(--text-xs);letter-spacing:.12em;line-height:1.6}.portrait,.working-note{border-radius:var(--radius-card)}
 a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var(--accent);outline-offset:5px}
 .contact-top>.label{order:1}
-.analog-photo{background:#141316;border:1px solid #353139;padding:14px 14px 38px;box-shadow:0 22px 50px #0003}.analog-photo::after{content:"35 MM / FRAME 01";position:absolute;left:14px;bottom:13px;color:#f3a48f;font:8px var(--font-sans);letter-spacing:2px}.analog-photo img{filter:grayscale(1)}
+.analog-photo{background:#141316;border:1px solid #353139;padding:14px 14px 38px;box-shadow:0 22px 50px #0003}.analog-photo::after{content:"35 MM / FRAME 01";position:absolute;left:14px;bottom:13px;color:var(--coral);font:8px var(--font-sans);letter-spacing:2px}.analog-photo img{filter:grayscale(1)}
 .portrait{animation:portrait-drift 7s ease-in-out infinite alternate}.analog-photo{animation:film-drift 6s ease-in-out infinite alternate}@keyframes portrait-drift{from{transform:translateY(0) rotate(.3deg)}to{transform:translateY(-12px) rotate(-.4deg)}}@keyframes film-drift{from{transform:translateY(-3px) rotate(-6deg)}to{transform:translateY(9px) rotate(-2deg)}}
 .photo-backdrop img{animation-name:photo-cycle;animation-duration:48s;animation-delay:calc(var(--slide)*8s);transform-origin:50% 50%}@keyframes photo-cycle{0%{opacity:0;transform:translate(-2%,-1%) scale(1.08) rotate(-1.3deg)}4%,16.67%{opacity:1}21%,100%{opacity:0;transform:translate(2%,1%) scale(1.16) rotate(1.3deg)}}
 

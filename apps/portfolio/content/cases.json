@@ -1,13 +1,77 @@
 {
   "note": "Orden de los casos internos; coincide con la galería de inicio. build.mjs genera desde aquí la navegación anterior/siguiente y la imagen para compartir (og:image) de cada caso.",
   "cases": [
-    { "file": "proyecto-ahead.html", "title": "We Are Ahead", "category": "Rebranding · UX/UI · Web", "image": "assets/ahead-facade.webp", "og": "assets/og/ahead.jpg" },
-    { "file": "proyecto-wedding-art.html", "title": "Wedding Art", "category": "Fotografía · Video · Dirección de arte", "image": "assets/wedding-photo-15.webp", "og": "assets/og/wedding-art.jpg" },
-    { "file": "proyecto-centauro.html", "title": "Centauro México", "category": "Identidad visual · Brand guidelines", "image": "assets/centauro.jpg", "og": "assets/og/centauro.jpg" },
-    { "file": "proyecto-colonia.html", "title": "Colonia 722", "category": "UX/UI · Landing publicada", "image": "assets/colonia.jpg", "og": "assets/og/colonia.jpg" },
-    { "file": "proyecto-colombia-real.html", "title": "La Colombia Real", "category": "Dirección de arte · Motion · Edición", "image": "assets/ml-portada.jpg", "og": "assets/og/colombia-real.jpg" },
-    { "file": "proyecto-bimbo.html", "title": "Bimbo · Amor a Mordiscos", "category": "Dirección creativa · Propuesta creativa", "image": "assets/bimbo-kv-pareja.webp", "og": "assets/og/bimbo.jpg" },
-    { "file": "proyecto-breakers-fest.html", "title": "Breakers Fest", "category": "Dirección creativa · Propuesta creativa", "image": "assets/breakers-07.webp", "og": "assets/og/breakers-fest.jpg" },
-    { "file": "proyecto-viajero.html", "title": "Viajero Co", "category": "Experiencia · Interfaz móvil", "image": "assets/viajero-portada.webp", "og": "assets/og/viajero.jpg" }
+    {
+      "file": "proyecto-ahead.html",
+      "title": "We Are Ahead",
+      "category": "Rebranding · UX/UI · Web",
+      "image": "assets/ahead-facade.webp",
+      "og": "assets/og/ahead.jpg",
+      "titleEn": "We Are Ahead",
+      "categoryEn": "Rebranding · UX/UI · Web"
+    },
+    {
+      "file": "proyecto-wedding-art.html",
+      "title": "Wedding Art",
+      "category": "Fotografía · Video · Dirección de arte",
+      "image": "assets/wedding-photo-15.webp",
+      "og": "assets/og/wedding-art.jpg",
+      "titleEn": "Wedding Art",
+      "categoryEn": "Photography · Video · Art direction"
+    },
+    {
+      "file": "proyecto-centauro.html",
+      "title": "Centauro México",
+      "category": "Identidad visual · Brand guidelines",
+      "image": "assets/centauro.jpg",
+      "og": "assets/og/centauro.jpg",
+      "titleEn": "Centauro México",
+      "categoryEn": "Visual identity · Brand guidelines"
+    },
+    {
+      "file": "proyecto-colonia.html",
+      "title": "Colonia 722",
+      "category": "UX/UI · Landing publicada",
+      "image": "assets/colonia.jpg",
+      "og": "assets/og/colonia.jpg",
+      "titleEn": "Colonia 722",
+      "categoryEn": "UX/UI · Live landing page"
+    },
+    {
+      "file": "proyecto-colombia-real.html",
+      "title": "La Colombia Real",
+      "category": "Dirección de arte · Motion · Edición",
+      "image": "assets/ml-portada.jpg",
+      "og": "assets/og/colombia-real.jpg",
+      "titleEn": "La Colombia Real",
+      "categoryEn": "Art direction · Motion · Editing"
+    },
+    {
+      "file": "proyecto-bimbo.html",
+      "title": "Bimbo · Amor a Mordiscos",
+      "category": "Dirección creativa · Propuesta creativa",
+      "image": "assets/bimbo-kv-pareja.webp",
+      "og": "assets/og/bimbo.jpg",
+      "titleEn": "Bimbo · Amor a Mordiscos",
+      "categoryEn": "Creative direction · Creative proposal"
+    },
+    {
+      "file": "proyecto-breakers-fest.html",
+      "title": "Breakers Fest",
+      "category": "Dirección creativa · Propuesta creativa",
+      "image": "assets/breakers-07.webp",
+      "og": "assets/og/breakers-fest.jpg",
+      "titleEn": "Breakers Fest",
+      "categoryEn": "Creative direction · Creative proposal"
+    },
+    {
+      "file": "proyecto-viajero.html",
+      "title": "Viajero Co",
+      "category": "Experiencia · Interfaz móvil",
+      "image": "assets/viajero-portada.webp",
+      "og": "assets/og/viajero.jpg",
+      "titleEn": "Viajero Co",
+      "categoryEn": "Experience · Mobile interface"
+    }
   ]
 }

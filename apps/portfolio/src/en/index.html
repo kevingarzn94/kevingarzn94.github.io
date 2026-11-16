@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="{{description}}">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="theme-color" content="#0d0d0d">
+<title>{{title}}</title>
+<link rel="stylesheet" href="style.css?v=20261112-1">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+</head>
+<body class="v2 home-v2">
+<a class="skip" href="#trabajo">Skip to work</a>
+<header>
+ <a class="wordmark" href="#inicio" aria-label="{{name}}, home">kevin garzón<span><svg class="ic ic-ast" viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="butt" stroke-linejoin="miter" aria-hidden="true" focusable="false"><path d="M12 2v20M3.34 7l17.32 10M3.34 17 20.66 7"/></svg></span></a>
+ <nav aria-label="Main"><a href="#trabajo">Work</a><a href="#servicios">Services</a><a href="#sobre-mi">About</a><a href="{{whatsapp}}" target="_blank" rel="noopener noreferrer">Let’s talk <span><svg class="ic ic-ne" viewBox="0 0 24 24" width=".8em" height=".8em" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6.5 17.5 17.5 6.5M8.5 6.5h9v9"/></svg></span></a></nav>
+</header>
+<main>
+{{> hero}}
+<nav class="av-index" aria-label="Sections">
+ <ol>
+  <li><a href="#trabajo"><span>01</span> Work</a></li>
+  <li><a href="#servicios"><span>02</span> Services</a></li>
+  <li><a href="#sobre-mi"><span>03</span> About</a></li>
+  <li><a href="#contacto"><span>04</span> Contact</a></li>
+ </ol>
+ <span class="av-percent" aria-hidden="true">00%</span>
+ <span class="av-bar" aria-hidden="true"></span>
+</nav>
+<div class="av-story">
+{{> work}}
+{{> services}}
+{{> about}}
+{{> faq}}
+</div>
+{{> contact}}
+</main>
+<footer><a class="wordmark" href="#inicio">kevin garzón<span><svg class="ic ic-ast" viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="butt" stroke-linejoin="miter" aria-hidden="true" focusable="false"><path d="M12 2v20M3.34 7l17.32 10M3.34 17 20.66 7"/></svg></span></a><span>Design with intention. © 2026</span><a href="#inicio">Back to top <svg class="ic ic-up" viewBox="0 0 24 24" width=".8em" height=".8em" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 20V4M5.5 10.5 12 4l6.5 6.5"/></svg></a></footer>
+<script src="v2.js?v=20261110-1" defer></script>
+</body>
+</html>

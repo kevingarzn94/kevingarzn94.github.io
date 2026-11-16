@@ -185,3 +185,31 @@ Portada y ocho casos revisados en escritorio y móvil. [Informe, correcciones y 
 - Hallazgo descartado: el naranja de Breakers sobre blanco ya estaba corregido (`#a54b00` en `.av-paper`).
 - Estado: **publicado.** Commit `3288b0a` enviado a `main` por autorización de Kevin el 14/11; workflow de GitHub Pages n.º 17 terminado en verde. Comprobado en https://kevingarzon.com/: `og:image`, versión de CSS por hash, hero en español, 404 propia, navegación anterior/siguiente y Three.js retirado (404). Reiniciar `npm start` en local porque cambió `scripts/build.mjs`.
 
+
+### Diagnóstico de aviso de Search Console — 16 de noviembre de 2026
+- Aviso recibido por Kevin: «Excluida por una etiqueta noindex» y «Página con redirección».
+- Comprobado en producción: las nueve URL del sitemap responden 200 con `index, follow` y canonical propio; `robots.txt` permite todo. Solo `/404.html` lleva `noindex`, y es intencional (no debe indexarse).
+- Las redirecciones son las variantes `http://`, `www` y `/index.html` → `https://kevingarzon.com/` (301 o canonical). Es el comportamiento correcto; Google las lista como «Página con redirección» y no deben corregirse.
+- Probable origen del noindex: rastreos anteriores a `63bdd3e` (cuando todo el sitio tenía `noindex,nofollow`) y/o la 404. La revisión del 14/11 no reintrodujo noindex ni borró páginas (las internas retiradas `mansion-chilling` y `sweet-or-spicy` son del 29/10).
+- Revisado en Search Console (datos actualizados al 12/11): 1 página indexada y 8 sin indexar. Las 7 con noindex son `proyecto-colonia`, `proyecto-breakers-fest`, `proyecto-colombia-real` (https), `http://…/proyecto-wedding-art.html`, `http://…/proyecto-breakers-fest.html`, `http://www…/` y `https://www…/`, todas rastreadas el 6–7/11, antes de retirar el noindex (12/11). Las variantes http/www ahora redirigen a la canónica. Kevin pulsó «Validar corrección» en ambos motivos el 16/11; Search Console muestra los dos como «Iniciada». Google avisará por correo cuando termine (de días a un par de semanas).
+- Sin cambios de código. Pendiente: revisar el resultado de la validación; no reenviar solicitudes mientras esté en curso.
+
+### Rediseño de servicios, proceso y cierre Behance; PDF y PageSpeed — 16 de noviembre de 2026
+- PageSpeed móvil (producción, `3288b0a`): 97 / 100 / 100 / 100. FCP y LCP 0,9 s, TBT 0 ms, CLS 0,095.
+- Servicios con imagen propia y entregables; proceso «Un buen comienzo» en cuatro pestañas accesibles (flechas, Inicio/Fin, foco visible, `prefers-reduced-motion`); cierre Behance sin barrido; textos de Sobre mí. Detalle en `continuidad.md`.
+- Medios: PDF de Ahead 9,3 → 5,9 MB con PyMuPDF; video Save the Date conservado (recompresión sin beneficio). Herramientas (ffmpeg-static, PyMuPDF) instaladas solo en la carpeta temporal de la sesión, no en el proyecto.
+- Validación: `npm run check` y `npm run build` correctos; `git diff --check` sin errores (excepto el PDF binario). Revisado en Chrome a 1440, 820 y 390 px, sin desbordamiento horizontal; pestañas y «Siguiente paso» probados.
+- Estado: **local, sin commit ni publicar.** Pendiente: visto bueno de Kevin a los textos del proceso y de Sobre mí.
+- Segunda iteración (16/11): fotos de servicios reemplazadas y recortadas, tarjetas rediseñadas, Opitech en el recorrido y DDB sin Big Track. Check/build correctos; revisado a 1440, 820 y 390 px.
+
+### Versión en inglés, WhatsApp por servicio y recorrido — 16 de noviembre de 2026
+- Inglés completo en `/en/` (portada y ocho casos) con selector ES/EN, `hreflang`, `og:locale` y sitemap de 18 URL. Casos traducidos en paralelo y verificados con `scripts/i18n-structure.py` (estructura idéntica en las 9 páginas). Decisiones de traducción para revisión de Kevin: «moño» → «bow» (Wedding, foto 06), «candidatura presidencial» → «presidential campaign», eslóganes de Breakers y Bimbo en español, titular de Colonia traducido («Arrive. Rest. Live Colonia.»).
+- Servicios: cada tarjeta abre WhatsApp con un mensaje propio (`whatsappMarca`, `whatsappWeb`, `whatsappFoto` en `site.json` y `site.en.json`) y conserva un enlace secundario al caso o a Instagram.
+- Recorrido: «Opitech · Freelance · Findasense · DDB · Fullreto.co · Totto» (de lo más reciente a lo más antiguo).
+- `dev.mjs` sirve `/en/` como `en/index.html`. Reiniciar `npm start` (cambió el build).
+- Validación: `npm run check` (9 páginas en español y 9 en inglés, hreflang, selector, enlaces y recursos) y `npm run build` correctos. Revisado en Chrome: selector conserva la sección, recursos de `/en/` sin errores, encabezado a 390 px sin desbordes. Nota: con la traducción automática de Chrome activada, `/en/` se ve traducido al español; el HTML servido está en inglés.
+- Estado: **local, sin commit ni publicar.**
+- Tercera iteración (16/11): preguntas frecuentes bilingües con `FAQPage`, interruptor ES|EN animado. Check/build correctos; revisado a 1440, 390 y 360 px. Reiniciar `npm start` si cambia `scripts/build.mjs` (el servidor guarda el build anterior en memoria).
+- Ajuste (16/11): preguntas frecuentes en panel separado y lista plegada tras el botón «Ver preguntas frecuentes»; se neutralizaron bordes heredados de `details` en `site.css`. Check/build correctos; revisado a 1440 y 390 px.
+- Color (16/11): rosa coral #ff9aa8 / frambuesa #c2335a con uso sobrio; tonos fijos a variables; imágenes og regeneradas. Check/build correctos; revisado inicio, servicios, panel, Sobre mí, preguntas y contacto a 1440 px.
+- Cierre (16/11): imágenes para compartir en inglés (`assets/og/en/`, generadas por `og-images.mjs`); `/en/` usa su propia `og:image`. Validación final: `npm run check` y `npm run build` correctos (9 + 9 páginas), estructura es/en idéntica en todas las páginas y secciones, sintaxis de todos los JS y scripts, `git diff --check` sin errores y 18 páginas recorridas en Chrome sin errores de consola. Estado: **commit local en `main`, sin push**; publicar requiere que Kevin haga push desde VS Code y confirme el workflow en verde.

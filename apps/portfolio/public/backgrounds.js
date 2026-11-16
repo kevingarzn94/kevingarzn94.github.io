@@ -1,3 +1,4 @@
+const bgEn = document.documentElement.lang === 'en';
 // Fondos fotográficos, retrato y pasos del inicio. El movimiento sigue la preferencia del dispositivo.
 const preference = matchMedia('(prefers-reduced-motion: reduce)');
 const updates = [];
@@ -34,7 +35,7 @@ for (const backdrop of document.querySelectorAll('.photo-backdrop')) {
 const portrait = document.querySelector('.about-visual');
 if (portrait) new IntersectionObserver(entries => portrait.classList.toggle('motion-away', !entries[0].isIntersecting)).observe(portrait);
 
-const panel = document.querySelector('.working-note');
+const panel = document.querySelector('.start-panel');
 if (panel) {
  panel.addEventListener('pointermove', event => {
   if (document.documentElement.dataset.motion === 'off') return;
@@ -45,9 +46,38 @@ if (panel) {
  panel.addEventListener('pointerleave', () => { panel.style.removeProperty('--spot-x'); panel.style.removeProperty('--spot-y'); });
 }
 
-for (const item of document.querySelectorAll('.start-steps li')) {
- const button = item.querySelector('button'), description = item.querySelector('p');
- const show = value => { button.setAttribute('aria-expanded', String(value)); description.hidden = !value; };
- button.addEventListener('click', () => show(button.getAttribute('aria-expanded') !== 'true'));
- button.addEventListener('keydown', event => { if (event.key === 'Escape') show(false); });
+const process = document.querySelector('[data-process]');
+if (process) {
+ const tabs = [...process.querySelectorAll('[role="tab"]')];
+ const panels = tabs.map(tab => document.getElementById(tab.getAttribute('aria-controls')));
+ const next = process.querySelector('[data-next]');
+ const select = (index, focus) => {
+  tabs.forEach((tab, i) => {
+   const active = i === index;
+   tab.setAttribute('aria-selected', String(active));
+   tab.tabIndex = active ? 0 : -1;
+   panels[i].hidden = !active;
+  });
+  process.style.setProperty('--step', index);
+  process.dataset.last = String(index === tabs.length - 1);
+  if (next) next.firstChild.textContent = index === tabs.length - 1 ? (bgEn ? 'Back to start ' : 'Volver al inicio ') : (bgEn ? 'Next step ' : 'Siguiente paso ');
+  if (focus) tabs[index].focus();
+ };
+ const current = () => tabs.findIndex(tab => tab.getAttribute('aria-selected') === 'true');
+ tabs.forEach((tab, i) => {
+  tab.addEventListener('click', () => select(i));
+  tab.addEventListener('keydown', event => {
+   const keys = { ArrowRight: 1, ArrowDown: 1, ArrowLeft: -1, ArrowUp: -1 };
+   let target = null;
+   if (event.key in keys) target = (i + keys[event.key] + tabs.length) % tabs.length;
+   if (event.key === 'Home') target = 0;
+   if (event.key === 'End') target = tabs.length - 1;
+   if (target === null) return;
+   event.preventDefault();
+   select(target, true);
+  });
+ });
+ next?.addEventListener('click', () => select((current() + 1) % tabs.length));
+ process.classList.add('is-ready');
+ select(0);
 }

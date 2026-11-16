@@ -16,7 +16,7 @@ const server = http.createServer(async (req,res) => {
   try {
     await pending;
     const pathname = decodeURIComponent(new URL(req.url, 'http://localhost').pathname);
-    const file = path.resolve(dist, '.' + (pathname === '/' ? '/index.html' : pathname));
+    const file = path.resolve(dist, '.' + (pathname.endsWith('/') ? pathname + 'index.html' : pathname));
     if (!file.startsWith(dist + path.sep)) { res.writeHead(404).end('No encontrado'); return; }
     const info = await stat(file);
     if (!info.isFile()) { res.writeHead(404).end('No encontrado'); return; }

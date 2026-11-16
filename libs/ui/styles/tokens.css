@@ -2,7 +2,7 @@
 :root{
  --font-sans:Arial,Helvetica,sans-serif;--font-editorial:Georgia,'Times New Roman',serif;
  --paper:#ffffff;--ink:#151515;--muted:#666666;--asterisk-gray:#a6a6a6;--line:#d9d9d9;
- --coral:#f3a48f;--accent:#bc431e;--lilac:#eeeeee;
+ --coral:#ff9aa8;--accent:#c2335a;--lilac:#eeeeee;
  --hero-dark:#101010;--hero-light:var(--paper);--hero-soft:#cccccc;--hero-orange:#f17c52;
  --panel-dark:#161616;--panel-soft:#cccccc;--photo-opacity:.28;
  --space-1:4px;--space-2:8px;--space-3:12px;--space-4:16px;--space-6:24px;--space-8:32px;--space-12:48px;--space-16:64px;--space-24:96px;
