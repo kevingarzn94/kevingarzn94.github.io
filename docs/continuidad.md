@@ -9,7 +9,7 @@ Documento de inicio para futuras sesiones sin acceso al chat original. Complemen
 - Último commit funcional: `c4af12d`, “Refuerza SEO organico y estabilidad visual”. Kevin compartió push exitoso y confirmó que el despliegue terminó.
 - Hosting GitHub Pages vía Actions; DNS en Porkbun. HTTPS forzado confirmado durante esta sesión. No requiere contratar hosting adicional.
 - Nueve páginas: portada y Ahead, Wedding Art, Centauro, Colonia, La Colombia Real, Bimbo, Breakers Fest y Viajero. Tres tarjetas adicionales enlazan a Behance, no son internas.
-- **16/11: rediseño de portada, versión en inglés, preguntas frecuentes y color rosa coral** en un commit local sobre `main`, pendiente de push por Kevin (ver secciones del 16 de noviembre y `docs/estado.md`).
+- **16/11: rediseño de portada, versión en inglés, preguntas frecuentes y color rosa coral** **publicado** (`0c62422`, workflow n.º 18 en verde, comprobado en producción) (ver secciones del 16 de noviembre y `docs/estado.md`).
 - `032d981` consolidó la documentación. **14/11: revisión integral publicada** en el commit `3288b0a` (workflow en verde, comprobada en producción). Ver «Revisión integral del 14 de noviembre» y `docs/estado.md`.
 
 ## Forma de trabajar con Kevin
