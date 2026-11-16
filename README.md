@@ -1,6 +1,20 @@
 # Kevin Garzón · Portafolio
 
-Sitio público de diseño gráfico, dirección de arte, UX/UI, fotografía y video. Portada y ocho casos de proyecto. **Estado actualizado al 16 de noviembre de 2026: publicado en https://kevingarzon.com/**. Último cambio funcional publicado: `3288b0a` (revisión integral del 14/11, workflow en verde y comprobada en producción).
+Sitio público de diseño gráfico, dirección de arte, UX/UI, fotografía y video. Portada y ocho casos de proyecto, en español (raíz) e inglés (`/en/`). **Estado al 16 de noviembre de 2026: publicado en https://kevingarzon.com/**. Último cambio funcional: `0c62422` (portada renovada, versión en inglés, preguntas frecuentes y color rosa coral), enviado a `main` el 16/11. Confirmar en GitHub Actions y en el sitio que el despliegue quedó en verde antes de darlo por publicado.
+
+## Retomar aquí · sesión del 16 de noviembre de 2026
+
+Esta conversación no se conserva: el contexto necesario queda en este README, `docs/continuidad.md` y `docs/estado.md`.
+
+**Qué se hizo:** diagnóstico de Search Console (avisos de noindex por rastreos anteriores al 12/11; validación iniciada por Kevin), PageSpeed móvil 97/100/100/100, PDF de Ahead 9,3 → 5,9 MB, servicios con fotos propias y WhatsApp por servicio, proceso «Un buen comienzo» en cuatro pestañas, cierre de Behance rediseñado, textos de Sobre mí y recorrido («Opitech · Freelance · Findasense · DDB · Fullreto.co · Totto»), versión completa en inglés con interruptor ES|EN, preguntas frecuentes plegables (respuestas aprobadas por Kevin) y cambio del coral al **rosa coral** `#ff9aa8` / frambuesa `#c2335a` con uso sobrio (el coral se percibía como el color de Claude).
+
+**Pendientes para la próxima sesión (recordárselos a Kevin al empezar):**
+1. **Confirmar publicación** de `0c62422`: Actions en verde, revisar https://kevingarzon.com/ y https://kevingarzon.com/en/, y reenviar `sitemap.xml` en Search Console (ahora 18 URL). Revisar el resultado de la validación de «noindex» iniciada el 16/11.
+2. **Testimonios reales** de 2–3 clientes (Ahead, Colonia, Michelle y Felipe…) con nombre, cargo y autorización de cada persona. Kevin los consigue.
+3. **Medición de visitas sin cookies** con Cloudflare Web Analytics: Kevin crea cuenta en dash.cloudflare.com → Web Analytics → Add a site → `kevingarzon.com` → instalación manual (fragmento JS; no mover el DNS de Porkbun) y comparte el fragmento para agregarlo al build en ES y EN.
+4. **Resultados verificables en los casos** (alcance, visitas, cifras): solo con datos que entregue Kevin; no inventar.
+5. **Revisar decisiones de traducción** al inglés: «moño» → «bow» (Wedding, foto 06), «candidatura presidencial» → «presidential campaign» (La Colombia Real), titular de Colonia «Arrive. Rest. Live Colonia.», eslóganes de Breakers y Bimbo conservados en español.
+6. Al cambiar cualquier texto en español, actualizar su par en `apps/portfolio/src/en/` y validar con `python3 -I scripts/i18n-structure.py <es> <en>`. Si cambian el acento o los títulos, regenerar las imágenes para compartir con `node scripts/og-images.mjs`.
 
 ## Empezar aquí en cada sesión (ChatGPT, Claude o cualquier colaborador)
 
