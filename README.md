@@ -1,10 +1,10 @@
 # Kevin Garzón · Portafolio
 
-Sitio público de diseño gráfico, dirección de arte, UX/UI, fotografía y video. Portada y ocho casos de proyecto, en español (raíz) e inglés (`/en/`). **Estado al 16 de noviembre de 2026: publicado en https://kevingarzon.com/**. Último cambio funcional: `0c62422` (portada renovada, versión en inglés, preguntas frecuentes y color rosa coral), publicado el 16/11 (workflow n.º 18 en verde, comprobado en producción: ES y EN responden 200, interruptor, preguntas, sitemap de 18 URL y rosa coral).
+Sitio público de diseño gráfico, dirección de arte, UX/UI, fotografía y video. Portada y ocho casos de proyecto, en español (raíz) e inglés (`/en/`). **Estado al 17 de noviembre de 2026: publicado en https://kevingarzon.com/**. Último cambio funcional: `0c62422` (portada renovada, versión en inglés, preguntas frecuentes y color rosa coral), publicado el 16/11 (workflow n.º 18 en verde, comprobado en producción: ES y EN responden 200, interruptor, preguntas, sitemap de 18 URL y rosa coral).
 
-## Retomar aquí · sesión del 16 de noviembre de 2026
+## Retomar aquí · sesión del 16 y 17 de noviembre de 2026 (cerrada)
 
-Esta conversación no se conserva: el contexto necesario queda en este README, `docs/continuidad.md` y `docs/estado.md`.
+La conversación se cerró sin memoria ni archivos temporales: todo el contexto necesario queda en este README, `docs/continuidad.md` y `docs/estado.md`. Para continuar, abrir un chat nuevo y pedir que lea este README.
 
 **Qué se hizo:** diagnóstico de Search Console (avisos de noindex por rastreos anteriores al 12/11; validación iniciada por Kevin), PageSpeed móvil 97/100/100/100, PDF de Ahead 9,3 → 5,9 MB, servicios con fotos propias y WhatsApp por servicio, proceso «Un buen comienzo» en cuatro pestañas, cierre de Behance rediseñado, textos de Sobre mí y recorrido («Opitech · Freelance · Findasense · DDB · Fullreto.co · Totto»), versión completa en inglés con interruptor ES|EN, preguntas frecuentes plegables (respuestas aprobadas por Kevin) y cambio del coral al **rosa coral** `#ff9aa8` / frambuesa `#c2335a` con uso sobrio (el coral se percibía como el color de Claude).
 
